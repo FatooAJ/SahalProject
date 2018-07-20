@@ -1,0 +1,6 @@
+framework module Pods_sahal {
+  umbrella header "Pods-sahal-umbrella.h"
+
+  export *
+  module * { export * }
+}
