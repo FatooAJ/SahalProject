@@ -7,42 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02CAE638EF1CEEBD6F5740498F9CA3F8 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDAE404A02FF4EBE550B3153BF8E291 /* DropDown.swift */; };
+		02A797AFB007C5CBECCEA940D6394234 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0512F079F4C72B7F4CCDFBA02D48A8 /* YoshikoTextField.swift */; };
+		02CAE638EF1CEEBD6F5740498F9CA3F8 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0AB97789E53EAE7646C5CC1012204A /* DropDown.swift */; };
+		0696101AE1B52A5501F69E5034C1B194 /* MadokaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85099BABC2559F0C675DD89CB6DD0F /* MadokaTextField.swift */; };
+		084F6A57EBDF07E22383359D97DBF85C /* Pods-sahal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E28CE6429C68C1860FB1849602CEA9 /* Pods-sahal-dummy.m */; };
+		09725C277226CEBB3034EC0309817725 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E9869729C790EE691763B40C37F84 /* IsaoTextField.swift */; };
 		09826EE9D57F91E65C16A59A5FF2DECA /* Pods-sahalTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 497C10DCF2514E3B119B8DB4A304677C /* Pods-sahalTests-dummy.m */; };
-		098F056D90AF9CD3FD60D8A81DF043B6 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B98517AAE5C8402966B29E502D6D40F /* DropDownCell.swift */; };
+		098F056D90AF9CD3FD60D8A81DF043B6 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A053E38DD02F2AC084A9E6DB07DC7C /* DropDownCell.swift */; };
 		11B310E0338BF86A08D139AF228F28ED /* Pods-sahalUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D588D0593EF6D44F51B4708E611963C4 /* Pods-sahalUITests-dummy.m */; };
-		1F515BAB4C4CB5533BABC16C9A23D123 /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D011490B708F5647CE5E4E8C50EDA67 /* AkiraTextField.swift */; };
-		2466C54E44FE71B511DBF7A328F36471 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C51077BCD9EAE1F4F302C34FF7284ED /* IsaoTextField.swift */; };
-		2E7E74DF0C455B0BC43BFDD1D0163E64 /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D1CDC0F887D23C9BCABCA9DDE612340 /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		369CD3F518BEAECFBF26AD2F964B9533 /* TextFieldEffects-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB7942771D10B67BA4A571426AF493D6 /* TextFieldEffects-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		37C293AEA575D6E5186739D1B07805F2 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4C83ADEB94A1BAF392E4B535D42AA9 /* DropDownCell.xib */; };
-		3E64D83569F31C480332FE050C7914E9 /* Pods-sahal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E28CE6429C68C1860FB1849602CEA9 /* Pods-sahal-dummy.m */; };
-		3FFEED314423E361D40C07DCDAC6C77D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		442ADADA3215E1E5CA1557E708D4228C /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C495FD370D8BDB3F5CFE8C16448DD10 /* DropDown+Appearance.swift */; };
-		49DE8C078CAFCAB2ACC16D39DEAA8FF8 /* Pods-sahal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 288C015F0E89DD9446C92B9A7CF187BC /* Pods-sahal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4AFB45505F2FBBBA6FDFC13E9D695DA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		2E7E74DF0C455B0BC43BFDD1D0163E64 /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EEA5A906874841E67A034730567058E /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37C293AEA575D6E5186739D1B07805F2 /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F358EF67FE170EB29F007A38C1D896EB /* DropDownCell.xib */; };
+		3830EDE016212F5D1DE6082CAFF22F21 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0180EA7875B8BB6FE9778F624D4790C /* HoshiTextField.swift */; };
+		442ADADA3215E1E5CA1557E708D4228C /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679044A169822E62F98DF6700BC75DBB /* DropDown+Appearance.swift */; };
+		463E2EDA44F2934EEA1E00E0BEE15E01 /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71E103DD9D603FD14C110A1AB3530F1 /* KaedeTextField.swift */; };
+		495A19928B0B37DB69C8B1531677499D /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9EB73B22CC2860576AE3FA4778291 /* TextFieldEffects.swift */; };
+		5129219AB2CED021E011B8222FFA0B5F /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F982336CD4C07D7D7E4B7E61CC189A /* MinoruTextField.swift */; };
+		5E7E0B70C0D1CCD0AC694A99E8324ECD /* DLRadioButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F99C49F5D21DC64992D9582A7EA4845 /* DLRadioButton-dummy.m */; };
+		647A20F1F5A213E22FDC34568107738F /* TextFieldEffects-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE4C1EF489677A5D4D8EF59710FFA69 /* TextFieldEffects-dummy.m */; };
+		6CBA7D930685CD1066F6949AF546A31B /* JiroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAEF3B585A09DA667CAC21E8C87B581 /* JiroTextField.swift */; };
 		75869D7B7018B8975F47884EBEBBBC4A /* Pods-sahalUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E11DDA9F85D988D73D21C2ED229E772 /* Pods-sahalUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		76A9065023BE13562D8688AB8FA843F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		881007A0AFEC6034AC3E085E27464B73 /* MadokaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48018454215A0E8D3CC59714532B3F /* MadokaTextField.swift */; };
-		9498E1BD2282BEF11A1BC71EB61C866E /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82E62A1B0D008A80D1793BB0F761E0 /* KaedeTextField.swift */; };
-		963D6E198A4476487BD1EFAF13117F1A /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C1D919A7B32F8301735B45AE0AECE6 /* YoshikoTextField.swift */; };
-		9D0221E27E37CDA9DF26DD3CFA56D75B /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42989FAD5E28E44E0042AC2441DC9301 /* DPDKeyboardListener.swift */; };
-		A32DE02B24D6D6DA040EE46EA77108D4 /* JiroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF598EB437DD5D170D7770742A1A93 /* JiroTextField.swift */; };
-		A401CF18D15DF246F40FAC4E8F06CBC7 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F9B4B4EF3DD64DA5CBD439895679F7 /* DPDUIView+Extension.swift */; };
-		A5F7437D0D3C818CCEFFFCACB86D7716 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		A812E7811821F66B3B7499F6F1B513BA /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE9697DB7001388B4506BFA7FBE0EA /* DPDConstants.swift */; };
-		AC6581D9387744158B44BE683403C3BC /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D9147E49492EE6796687AEDE0409998A /* DropDown-dummy.m */; };
-		AE89C9398F37C6AD7D656C2D90501FFE /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A921F4255F0308D0DAB7F534EC68597E /* MinoruTextField.swift */; };
-		C163C056D13516F253A543E3FBB63B99 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265DEE91CA3D976AFF7449B827B957D6 /* HoshiTextField.swift */; };
-		C2DD40D76A3BB644766AE9E895E51A5E /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06B9AC336AA57BAB7F90BE0A0BE2A5E /* TextFieldEffects.swift */; };
-		CC740E16011F3C29CD2B7979467316BC /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3356008F7DBA02F8F251C8A83E92F /* YokoTextField.swift */; };
-		DB4F7FC39FE6D3C961E5202FBE094279 /* TextFieldEffects-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 546A12F1A117FB3C759707B989F6053C /* TextFieldEffects-dummy.m */; };
-		E5BA237CA30B5B01373DAD85F9315538 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		7D7AEC379E904708D138E7371B9FDEDC /* Pods-sahal-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 288C015F0E89DD9446C92B9A7CF187BC /* Pods-sahal-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84116DD709725E60919846D7B1AF714B /* DLRadioButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 697F0FEC6E7B096CE813B21A39718713 /* DLRadioButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F2D8EC348F59816CFDEA65538E3E532 /* DLRadioButton.h in Headers */ = {isa = PBXBuildFile; fileRef = CB699AF3C179A9EE09452B1A1F1986D3 /* DLRadioButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D0221E27E37CDA9DF26DD3CFA56D75B /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B61E21430EC6FC8E490B7070A13D3FC /* DPDKeyboardListener.swift */; };
+		A401CF18D15DF246F40FAC4E8F06CBC7 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BEC0FA93C08345CD7CC960F770021D /* DPDUIView+Extension.swift */; };
+		A812E7811821F66B3B7499F6F1B513BA /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D71BCF0737B2D2DE0FF868F143F05A /* DPDConstants.swift */; };
+		AB6249D871DDA072BE6B6AF5377719E6 /* TextFieldEffects-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C85DEE2E6835B078CFFC48C3403BCDDF /* TextFieldEffects-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC6581D9387744158B44BE683403C3BC /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0BC9172CED988023F78EA53DC2CFD /* DropDown-dummy.m */; };
+		C2286780FD80A4B32A205F7645AEFCF1 /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FEEDD3BE2BB134C5451268EE234DD /* AkiraTextField.swift */; };
+		C42E4907743C4E187E1F3E8CA4FFA5C4 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80AB5E565D66AE01EFF097E609F8EB /* YokoTextField.swift */; };
+		EF2F59EEA3194DFCFB39352F4DA16D76 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C792B793802215FEE6E983C1375A6F /* DLRadioButton.m */; };
 		FB486AD70E46DABF35B8B45695E652D5 /* Pods-sahalTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A1D4ECD15D64012A5D69A4DDAE271756 /* Pods-sahalTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		13E1AF00E4A7B666B43D6A8E9B96519E /* PBXContainerItemProxy */ = {
+		140FD937E3B497C4D35AA03BD8E6321E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6A77E2753C279F67F70C5C21D6FAE15;
+			remoteInfo = DLRadioButton;
+		};
+		2A88646653D6220DF0FAEDB16E3C4043 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -53,92 +59,100 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 705D89F79F52B225599C3D3C90CA2439;
+			remoteGlobalIDString = C80C71029D07117003E710E86F6B9F63;
 			remoteInfo = "Pods-sahal";
 		};
-		D69E38392333C7797E20B9CF385BDFAE /* PBXContainerItemProxy */ = {
+		E5BF50472897DC7849093C7DEE1B2FB0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C37EA9CB8F874D77F3EB399B2B22B6A0;
+			remoteGlobalIDString = F4F7365CD1AD094897024F682EB50652;
 			remoteInfo = TextFieldEffects;
 		};
 		F9D24D8887CE71654BB045783AB56FA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 705D89F79F52B225599C3D3C90CA2439;
+			remoteGlobalIDString = C80C71029D07117003E710E86F6B9F63;
 			remoteInfo = "Pods-sahal";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0010DCF0E294FE60D9260A8C87DE6771 /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DropDown.modulemap; sourceTree = "<group>"; };
-		0904BF042BA8423BC59702905EB9080E /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		070E88BC710575A6C4344C20FD92DFE4 /* DLRadioButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLRadioButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AAEF3B585A09DA667CAC21E8C87B581 /* JiroTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JiroTextField.swift; path = TextFieldEffects/TextFieldEffects/JiroTextField.swift; sourceTree = "<group>"; };
 		15E28CE6429C68C1860FB1849602CEA9 /* Pods-sahal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-sahal-dummy.m"; sourceTree = "<group>"; };
-		1907E79F6F682F2FCF4EE4245899B64C /* Pods_sahalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sahalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		192CDBC75F4504ECEF9C97414E1D2348 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		199DA470137A527D3E6655D5703D15C1 /* TextFieldEffects-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TextFieldEffects-prefix.pch"; sourceTree = "<group>"; };
+		199E9869729C790EE691763B40C37F84 /* IsaoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IsaoTextField.swift; path = TextFieldEffects/TextFieldEffects/IsaoTextField.swift; sourceTree = "<group>"; };
+		19C9EB73B22CC2860576AE3FA4778291 /* TextFieldEffects.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFieldEffects.swift; path = TextFieldEffects/TextFieldEffects/TextFieldEffects.swift; sourceTree = "<group>"; };
+		1B5ECC70F7D63E918931021130994854 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B886B3594957C5788C40E82C7B094FE /* Pods_sahalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sahalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B5600ADE1BE827F76AD9710CA29D9B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		265DEE91CA3D976AFF7449B827B957D6 /* HoshiTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HoshiTextField.swift; path = TextFieldEffects/TextFieldEffects/HoshiTextField.swift; sourceTree = "<group>"; };
 		26CBF5F8703597891F53CB30648A201B /* Pods-sahal-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-sahal-resources.sh"; sourceTree = "<group>"; };
 		288C015F0E89DD9446C92B9A7CF187BC /* Pods-sahal-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-sahal-umbrella.h"; sourceTree = "<group>"; };
 		2E11DDA9F85D988D73D21C2ED229E772 /* Pods-sahalUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-sahalUITests-umbrella.h"; sourceTree = "<group>"; };
 		2E20A6F2BB4F5D6668EAF9A86783F5B1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3883F98BFB62AD092748C758CDFE1C1D /* Pods-sahal-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sahal-acknowledgements.plist"; sourceTree = "<group>"; };
-		3C51077BCD9EAE1F4F302C34FF7284ED /* IsaoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IsaoTextField.swift; path = TextFieldEffects/TextFieldEffects/IsaoTextField.swift; sourceTree = "<group>"; };
-		3D011490B708F5647CE5E4E8C50EDA67 /* AkiraTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AkiraTextField.swift; path = TextFieldEffects/TextFieldEffects/AkiraTextField.swift; sourceTree = "<group>"; };
-		42989FAD5E28E44E0042AC2441DC9301 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
+		3C408613EDD7AAB5B461283886B09337 /* TextFieldEffects-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TextFieldEffects-prefix.pch"; sourceTree = "<group>"; };
+		460FEEDD3BE2BB134C5451268EE234DD /* AkiraTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AkiraTextField.swift; path = TextFieldEffects/TextFieldEffects/AkiraTextField.swift; sourceTree = "<group>"; };
+		469676D3A6906F8EFD88E7E8F85DFFA1 /* DLRadioButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DLRadioButton.xcconfig; sourceTree = "<group>"; };
 		497C10DCF2514E3B119B8DB4A304677C /* Pods-sahalTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-sahalTests-dummy.m"; sourceTree = "<group>"; };
-		49F7620345E3D4338FADCC9335E2F7BB /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
-		4C4C83ADEB94A1BAF392E4B535D42AA9 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
+		4AF0BC9172CED988023F78EA53DC2CFD /* DropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropDown-dummy.m"; sourceTree = "<group>"; };
+		4F99C49F5D21DC64992D9582A7EA4845 /* DLRadioButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DLRadioButton-dummy.m"; sourceTree = "<group>"; };
 		4F9BAE2473FF2DDD59D1868FDEE28850 /* Pods-sahalTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-sahalTests-resources.sh"; sourceTree = "<group>"; };
 		4FE7C51AAF5D0ED9721DAB69D86C7FFB /* Pods-sahalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sahalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		51A053E38DD02F2AC084A9E6DB07DC7C /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
 		545A92F8E333E352154292930F830F50 /* Pods-sahalUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-sahalUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		546A12F1A117FB3C759707B989F6053C /* TextFieldEffects-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TextFieldEffects-dummy.m"; sourceTree = "<group>"; };
-		560FAA1C134C09FB064EB08EEF5D2043 /* TextFieldEffects.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TextFieldEffects.modulemap; sourceTree = "<group>"; };
-		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		57C224AB7C4CE51E974906BFA0F2D42D /* DropDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.xcconfig; sourceTree = "<group>"; };
 		5CE1A9FBB80C8A203D1745322476F3A3 /* Pods-sahal-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-sahal-frameworks.sh"; sourceTree = "<group>"; };
-		5D1CDC0F887D23C9BCABCA9DDE612340 /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
-		63DE9697DB7001388B4506BFA7FBE0EA /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
+		5E74AC6E7ECADC2B88603EFA4C7101E7 /* TextFieldEffects.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TextFieldEffects.modulemap; sourceTree = "<group>"; };
+		6323312AC72CA0F5D9280D2FF54D935F /* TextFieldEffects.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TextFieldEffects.xcconfig; sourceTree = "<group>"; };
 		63E322EC3EFAF4C468E6BB19C568D5F4 /* Pods-sahalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sahalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		663EF37A11BE9D46A1132746206C1503 /* Pods-sahalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sahalTests.release.xcconfig"; sourceTree = "<group>"; };
+		679044A169822E62F98DF6700BC75DBB /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		697F0FEC6E7B096CE813B21A39718713 /* DLRadioButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLRadioButton-umbrella.h"; sourceTree = "<group>"; };
 		6A29F94EC80334354AAF92EB73580909 /* Pods-sahalUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-sahalUITests-frameworks.sh"; sourceTree = "<group>"; };
-		6B98517AAE5C8402966B29E502D6D40F /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
 		72F9E326A61F785C797C424D293E23DB /* Pods-sahalUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-sahalUITests-resources.sh"; sourceTree = "<group>"; };
-		757E7DF80771EC121D25ADF971BA40F6 /* TextFieldEffects.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TextFieldEffects.xcconfig; sourceTree = "<group>"; };
-		7F82E62A1B0D008A80D1793BB0F761E0 /* KaedeTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KaedeTextField.swift; path = TextFieldEffects/TextFieldEffects/KaedeTextField.swift; sourceTree = "<group>"; };
-		82B3356008F7DBA02F8F251C8A83E92F /* YokoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YokoTextField.swift; path = TextFieldEffects/TextFieldEffects/YokoTextField.swift; sourceTree = "<group>"; };
+		77DBFF846D1E755A5A85F00EDE606B2B /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EEA5A906874841E67A034730567058E /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
+		80923B55BE9443F617573303A7CFB269 /* Pods_sahal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sahal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82C01A956097DB8EABE7659AEA0CF56E /* Pods_sahalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sahalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F982336CD4C07D7D7E4B7E61CC189A /* MinoruTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MinoruTextField.swift; path = TextFieldEffects/TextFieldEffects/MinoruTextField.swift; sourceTree = "<group>"; };
 		85300CFB552555DD1DC01140B7172EAB /* Pods-sahalTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-sahalTests.modulemap"; sourceTree = "<group>"; };
-		86EF598EB437DD5D170D7770742A1A93 /* JiroTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JiroTextField.swift; path = TextFieldEffects/TextFieldEffects/JiroTextField.swift; sourceTree = "<group>"; };
-		87F9B4B4EF3DD64DA5CBD439895679F7 /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
+		87BEC0FA93C08345CD7CC960F770021D /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
+		8A42EEBBFB0CE964E64F974E503D54C0 /* TextFieldEffects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TextFieldEffects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EE4C1EF489677A5D4D8EF59710FFA69 /* TextFieldEffects-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TextFieldEffects-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9B1A960B91DC36D39D1079693E24BC88 /* TextFieldEffects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TextFieldEffects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C495FD370D8BDB3F5CFE8C16448DD10 /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		98D71BCF0737B2D2DE0FF868F143F05A /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
+		9B0AB97789E53EAE7646C5CC1012204A /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
+		9B61E21430EC6FC8E490B7070A13D3FC /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
 		A1D4ECD15D64012A5D69A4DDAE271756 /* Pods-sahalTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-sahalTests-umbrella.h"; sourceTree = "<group>"; };
-		A56664D9A1320FA60BA728173F89265D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5D29ABD4A7C137F3D82CC7FBD85D30C /* DropDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.xcconfig; sourceTree = "<group>"; };
-		A8A365B38670C290A772385429FA8FD2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8D5DC0800F5D02061E7233F3FF8B847 /* Pods-sahal.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-sahal.modulemap"; sourceTree = "<group>"; };
-		A921F4255F0308D0DAB7F534EC68597E /* MinoruTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MinoruTextField.swift; path = TextFieldEffects/TextFieldEffects/MinoruTextField.swift; sourceTree = "<group>"; };
-		AB7942771D10B67BA4A571426AF493D6 /* TextFieldEffects-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TextFieldEffects-umbrella.h"; sourceTree = "<group>"; };
-		ACDAE404A02FF4EBE550B3153BF8E291 /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
+		AA8109A5ED7CDBBD2C65F4CF246AFA8E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFC09604DEABF957E6B6976862D8757D /* Pods-sahalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sahalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0180EA7875B8BB6FE9778F624D4790C /* HoshiTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HoshiTextField.swift; path = TextFieldEffects/TextFieldEffects/HoshiTextField.swift; sourceTree = "<group>"; };
 		B49BEE861BAF670039271B692AEDE49C /* Pods-sahal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sahal.debug.xcconfig"; sourceTree = "<group>"; };
+		B71E103DD9D603FD14C110A1AB3530F1 /* KaedeTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KaedeTextField.swift; path = TextFieldEffects/TextFieldEffects/KaedeTextField.swift; sourceTree = "<group>"; };
 		BB3D42D5BBDF68975FB8C8F9A9D62A10 /* Pods-sahalUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-sahalUITests.modulemap"; sourceTree = "<group>"; };
-		C06B9AC336AA57BAB7F90BE0A0BE2A5E /* TextFieldEffects.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFieldEffects.swift; path = TextFieldEffects/TextFieldEffects/TextFieldEffects.swift; sourceTree = "<group>"; };
-		C4C1D919A7B32F8301735B45AE0AECE6 /* YoshikoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YoshikoTextField.swift; path = TextFieldEffects/TextFieldEffects/YoshikoTextField.swift; sourceTree = "<group>"; };
-		CE48018454215A0E8D3CC59714532B3F /* MadokaTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MadokaTextField.swift; path = TextFieldEffects/TextFieldEffects/MadokaTextField.swift; sourceTree = "<group>"; };
+		BF80AB5E565D66AE01EFF097E609F8EB /* YokoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YokoTextField.swift; path = TextFieldEffects/TextFieldEffects/YokoTextField.swift; sourceTree = "<group>"; };
+		C85DEE2E6835B078CFFC48C3403BCDDF /* TextFieldEffects-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TextFieldEffects-umbrella.h"; sourceTree = "<group>"; };
+		CB699AF3C179A9EE09452B1A1F1986D3 /* DLRadioButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = DLRadioButton/DLRadioButton.h; sourceTree = "<group>"; };
 		D588D0593EF6D44F51B4708E611963C4 /* Pods-sahalUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-sahalUITests-dummy.m"; sourceTree = "<group>"; };
-		D9147E49492EE6796687AEDE0409998A /* DropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropDown-dummy.m"; sourceTree = "<group>"; };
+		D6C792B793802215FEE6E983C1375A6F /* DLRadioButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = DLRadioButton/DLRadioButton.m; sourceTree = "<group>"; };
 		D9A498D209162BE9DD98E59B0AC023A5 /* Pods-sahalTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-sahalTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D9E3FC5D9697790A735CEA383862D882 /* DLRadioButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DLRadioButton.modulemap; sourceTree = "<group>"; };
 		DB21E0F0AC1C17ED4D87BB67A1582A73 /* Pods-sahalTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sahalTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		DB85099BABC2559F0C675DD89CB6DD0F /* MadokaTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MadokaTextField.swift; path = TextFieldEffects/TextFieldEffects/MadokaTextField.swift; sourceTree = "<group>"; };
 		DCAB5966461C7EB5C1739B610DC94EDC /* Pods-sahal-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-sahal-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DD211B21DC01BE3CF1045661817173CA /* DLRadioButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLRadioButton-prefix.pch"; sourceTree = "<group>"; };
 		E034155192480373E60D1DE480D47A59 /* Pods-sahalUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sahalUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		E47F07E2ABFC408233EFB9AFDFCF685E /* Pods_sahal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sahal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E60C0E150F13BEAD592AD496D53BA857 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E748CBD949839F089F1A1286718AF75D /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DropDown.modulemap; sourceTree = "<group>"; };
 		E80637CBCCBB928AC1E5DBE33465B0AB /* Pods-sahalTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-sahalTests-frameworks.sh"; sourceTree = "<group>"; };
+		ED0512F079F4C72B7F4CCDFBA02D48A8 /* YoshikoTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YoshikoTextField.swift; path = TextFieldEffects/TextFieldEffects/YoshikoTextField.swift; sourceTree = "<group>"; };
+		EDDA772E3F7EB5D83E06739A891638DA /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
 		EFDC5A0EF5B872F6183EA356CFDA64A9 /* Pods-sahal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sahal.release.xcconfig"; sourceTree = "<group>"; };
-		FDC35050312C6F3DA1AE5DD376222E74 /* Pods_sahalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sahalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F358EF67FE170EB29F007A38C1D896EB /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +160,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76A9065023BE13562D8688AB8FA843F8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,23 +167,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5BA237CA30B5B01373DAD85F9315538 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4F7165E7010FC6D27B88C705DD402FF1 /* Frameworks */ = {
+		667540B3EAB999866D6669D8988DCF06 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5F7437D0D3C818CCEFFFCACB86D7716 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		722396BE7CA61A07B0FBDF58C665E177 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AFB45505F2FBBBA6FDFC13E9D695DA7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,25 +181,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FFEED314423E361D40C07DCDAC6C77D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A324E81F33CA8363E22E0C427CBC97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF2C657C403F78178C13D28FE8CFDC33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03174AA10550613D52632A7B96D05BAE /* Support Files */ = {
+		06CF5337F7F3E6A9073AC7A19FE8F5E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A8A365B38670C290A772385429FA8FD2 /* Info.plist */,
-				560FAA1C134C09FB064EB08EEF5D2043 /* TextFieldEffects.modulemap */,
-				757E7DF80771EC121D25ADF971BA40F6 /* TextFieldEffects.xcconfig */,
-				546A12F1A117FB3C759707B989F6053C /* TextFieldEffects-dummy.m */,
-				199DA470137A527D3E6655D5703D15C1 /* TextFieldEffects-prefix.pch */,
-				AB7942771D10B67BA4A571426AF493D6 /* TextFieldEffects-umbrella.h */,
+				070E88BC710575A6C4344C20FD92DFE4 /* DLRadioButton.framework */,
+				77DBFF846D1E755A5A85F00EDE606B2B /* DropDown.framework */,
+				80923B55BE9443F617573303A7CFB269 /* Pods_sahal.framework */,
+				82C01A956097DB8EABE7659AEA0CF56E /* Pods_sahalTests.framework */,
+				1B886B3594957C5788C40E82C7B094FE /* Pods_sahalUITests.framework */,
+				8A42EEBBFB0CE964E64F974E503D54C0 /* TextFieldEffects.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/TextFieldEffects";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		1083738CE42DECE44F609EBC3794137B /* Targets Support Files */ = {
@@ -207,6 +222,21 @@
 				693120FF39D07C1167445952573698B3 /* Pods-sahalUITests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2517B273F90F2C0866AE34AB7E346BDA /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				98D71BCF0737B2D2DE0FF868F143F05A /* DPDConstants.swift */,
+				9B61E21430EC6FC8E490B7070A13D3FC /* DPDKeyboardListener.swift */,
+				87BEC0FA93C08345CD7CC960F770021D /* DPDUIView+Extension.swift */,
+				9B0AB97789E53EAE7646C5CC1012204A /* DropDown.swift */,
+				679044A169822E62F98DF6700BC75DBB /* DropDown+Appearance.swift */,
+				51A053E38DD02F2AC084A9E6DB07DC7C /* DropDownCell.swift */,
+				523FFC0535035E3B02ECDEB448E9FC70 /* Resources */,
+				BF707AACD1117DBB4AEBB1A27779AE8D /* Support Files */,
+			);
+			path = DropDown;
 			sourceTree = "<group>";
 		};
 		2FE14AE064B57BBB46D2E87D3AA17F73 /* Pods-sahalTests */ = {
@@ -225,6 +255,28 @@
 			);
 			name = "Pods-sahalTests";
 			path = "Target Support Files/Pods-sahalTests";
+			sourceTree = "<group>";
+		};
+		389BFBB020D14AA7E4D189E938B3E97C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D9E3FC5D9697790A735CEA383862D882 /* DLRadioButton.modulemap */,
+				469676D3A6906F8EFD88E7E8F85DFFA1 /* DLRadioButton.xcconfig */,
+				4F99C49F5D21DC64992D9582A7EA4845 /* DLRadioButton-dummy.m */,
+				DD211B21DC01BE3CF1045661817173CA /* DLRadioButton-prefix.pch */,
+				697F0FEC6E7B096CE813B21A39718713 /* DLRadioButton-umbrella.h */,
+				E60C0E150F13BEAD592AD496D53BA857 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DLRadioButton";
+			sourceTree = "<group>";
+		};
+		523FFC0535035E3B02ECDEB448E9FC70 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F358EF67FE170EB29F007A38C1D896EB /* DropDownCell.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		5836AA97A4909C62A8D32A2FE833EC19 /* Pods-sahal */ = {
@@ -248,27 +300,8 @@
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		6395993C45BA99DB6A55497C2CCBB0B7 /* TextFieldEffects */ = {
-			isa = PBXGroup;
-			children = (
-				3D011490B708F5647CE5E4E8C50EDA67 /* AkiraTextField.swift */,
-				265DEE91CA3D976AFF7449B827B957D6 /* HoshiTextField.swift */,
-				3C51077BCD9EAE1F4F302C34FF7284ED /* IsaoTextField.swift */,
-				86EF598EB437DD5D170D7770742A1A93 /* JiroTextField.swift */,
-				7F82E62A1B0D008A80D1793BB0F761E0 /* KaedeTextField.swift */,
-				CE48018454215A0E8D3CC59714532B3F /* MadokaTextField.swift */,
-				A921F4255F0308D0DAB7F534EC68597E /* MinoruTextField.swift */,
-				C06B9AC336AA57BAB7F90BE0A0BE2A5E /* TextFieldEffects.swift */,
-				82B3356008F7DBA02F8F251C8A83E92F /* YokoTextField.swift */,
-				C4C1D919A7B32F8301735B45AE0AECE6 /* YoshikoTextField.swift */,
-				03174AA10550613D52632A7B96D05BAE /* Support Files */,
-			);
-			path = TextFieldEffects;
 			sourceTree = "<group>";
 		};
 		693120FF39D07C1167445952573698B3 /* Pods-sahalUITests */ = {
@@ -294,34 +327,28 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				B8298EF88190A4CA6A37011694A5C17B /* Pods */,
-				F19F6B2DE8A224366D74A8B96411F624 /* Products */,
+				D68FA4963B2C6D473B9238A5D4F20908 /* Pods */,
+				06CF5337F7F3E6A9073AC7A19FE8F5E9 /* Products */,
 				1083738CE42DECE44F609EBC3794137B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		93980E2A68A6206DD4497541BBF4B687 /* DropDown */ = {
+		80E4A90B3E930737B36FA546D966B159 /* TextFieldEffects */ = {
 			isa = PBXGroup;
 			children = (
-				63DE9697DB7001388B4506BFA7FBE0EA /* DPDConstants.swift */,
-				42989FAD5E28E44E0042AC2441DC9301 /* DPDKeyboardListener.swift */,
-				87F9B4B4EF3DD64DA5CBD439895679F7 /* DPDUIView+Extension.swift */,
-				ACDAE404A02FF4EBE550B3153BF8E291 /* DropDown.swift */,
-				9C495FD370D8BDB3F5CFE8C16448DD10 /* DropDown+Appearance.swift */,
-				6B98517AAE5C8402966B29E502D6D40F /* DropDownCell.swift */,
-				DF23A31FC8711FB197D9CE601C9E2A50 /* Resources */,
-				F993B78C4CDF96D457A254AA02870ECD /* Support Files */,
+				460FEEDD3BE2BB134C5451268EE234DD /* AkiraTextField.swift */,
+				B0180EA7875B8BB6FE9778F624D4790C /* HoshiTextField.swift */,
+				199E9869729C790EE691763B40C37F84 /* IsaoTextField.swift */,
+				0AAEF3B585A09DA667CAC21E8C87B581 /* JiroTextField.swift */,
+				B71E103DD9D603FD14C110A1AB3530F1 /* KaedeTextField.swift */,
+				DB85099BABC2559F0C675DD89CB6DD0F /* MadokaTextField.swift */,
+				84F982336CD4C07D7D7E4B7E61CC189A /* MinoruTextField.swift */,
+				19C9EB73B22CC2860576AE3FA4778291 /* TextFieldEffects.swift */,
+				BF80AB5E565D66AE01EFF097E609F8EB /* YokoTextField.swift */,
+				ED0512F079F4C72B7F4CCDFBA02D48A8 /* YoshikoTextField.swift */,
+				FF960335AC7C9A453013D6EAC491F14A /* Support Files */,
 			);
-			path = DropDown;
-			sourceTree = "<group>";
-		};
-		B8298EF88190A4CA6A37011694A5C17B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				93980E2A68A6206DD4497541BBF4B687 /* DropDown */,
-				6395993C45BA99DB6A55497C2CCBB0B7 /* TextFieldEffects */,
-			);
-			name = Pods;
+			path = TextFieldEffects;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -332,43 +359,65 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DF23A31FC8711FB197D9CE601C9E2A50 /* Resources */ = {
+		BF707AACD1117DBB4AEBB1A27779AE8D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4C4C83ADEB94A1BAF392E4B535D42AA9 /* DropDownCell.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		F19F6B2DE8A224366D74A8B96411F624 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0904BF042BA8423BC59702905EB9080E /* DropDown.framework */,
-				E47F07E2ABFC408233EFB9AFDFCF685E /* Pods_sahal.framework */,
-				FDC35050312C6F3DA1AE5DD376222E74 /* Pods_sahalTests.framework */,
-				1907E79F6F682F2FCF4EE4245899B64C /* Pods_sahalUITests.framework */,
-				9B1A960B91DC36D39D1079693E24BC88 /* TextFieldEffects.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F993B78C4CDF96D457A254AA02870ECD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0010DCF0E294FE60D9260A8C87DE6771 /* DropDown.modulemap */,
-				A5D29ABD4A7C137F3D82CC7FBD85D30C /* DropDown.xcconfig */,
-				D9147E49492EE6796687AEDE0409998A /* DropDown-dummy.m */,
-				49F7620345E3D4338FADCC9335E2F7BB /* DropDown-prefix.pch */,
-				5D1CDC0F887D23C9BCABCA9DDE612340 /* DropDown-umbrella.h */,
-				A56664D9A1320FA60BA728173F89265D /* Info.plist */,
+				E748CBD949839F089F1A1286718AF75D /* DropDown.modulemap */,
+				57C224AB7C4CE51E974906BFA0F2D42D /* DropDown.xcconfig */,
+				4AF0BC9172CED988023F78EA53DC2CFD /* DropDown-dummy.m */,
+				EDDA772E3F7EB5D83E06739A891638DA /* DropDown-prefix.pch */,
+				7EEA5A906874841E67A034730567058E /* DropDown-umbrella.h */,
+				AA8109A5ED7CDBBD2C65F4CF246AFA8E /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/DropDown";
 			sourceTree = "<group>";
 		};
+		D68FA4963B2C6D473B9238A5D4F20908 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9D04862AE97C8EBAB8AE6EB1D21C880 /* DLRadioButton */,
+				2517B273F90F2C0866AE34AB7E346BDA /* DropDown */,
+				80E4A90B3E930737B36FA546D966B159 /* TextFieldEffects */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F9D04862AE97C8EBAB8AE6EB1D21C880 /* DLRadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				CB699AF3C179A9EE09452B1A1F1986D3 /* DLRadioButton.h */,
+				D6C792B793802215FEE6E983C1375A6F /* DLRadioButton.m */,
+				389BFBB020D14AA7E4D189E938B3E97C /* Support Files */,
+			);
+			path = DLRadioButton;
+			sourceTree = "<group>";
+		};
+		FF960335AC7C9A453013D6EAC491F14A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B5ECC70F7D63E918931021130994854 /* Info.plist */,
+				5E74AC6E7ECADC2B88603EFA4C7101E7 /* TextFieldEffects.modulemap */,
+				6323312AC72CA0F5D9280D2FF54D935F /* TextFieldEffects.xcconfig */,
+				8EE4C1EF489677A5D4D8EF59710FFA69 /* TextFieldEffects-dummy.m */,
+				3C408613EDD7AAB5B461283886B09337 /* TextFieldEffects-prefix.pch */,
+				C85DEE2E6835B078CFFC48C3403BCDDF /* TextFieldEffects-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TextFieldEffects";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0CA08DFA6F5B91B4F214DC8A7EF51070 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6249D871DDA072BE6B6AF5377719E6 /* TextFieldEffects-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		10BF4FAB7EC3354AA9A4332545EC3FF7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,11 +434,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B3B559BFE93D982370FB9BE67D6001E /* Headers */ = {
+		220E61F93FBE49E9C3EBBEE5E9331C18 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49DE8C078CAFCAB2ACC16D39DEAA8FF8 /* Pods-sahal-umbrella.h in Headers */,
+				84116DD709725E60919846D7B1AF714B /* DLRadioButton-umbrella.h in Headers */,
+				8F2D8EC348F59816CFDEA65538E3E532 /* DLRadioButton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		308E0F1C3ED1CBF393C0FAB92EC78BE4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7AEC379E904708D138E7371B9FDEDC /* Pods-sahal-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,14 +456,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB486AD70E46DABF35B8B45695E652D5 /* Pods-sahalTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DD61305743940709B64642C6DE41D0CC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				369CD3F518BEAECFBF26AD2F964B9533 /* TextFieldEffects-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,35 +477,36 @@
 			);
 			name = DropDown;
 			productName = DropDown;
-			productReference = 0904BF042BA8423BC59702905EB9080E /* DropDown.framework */;
+			productReference = 77DBFF846D1E755A5A85F00EDE606B2B /* DropDown.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		705D89F79F52B225599C3D3C90CA2439 /* Pods-sahal */ = {
+		C80C71029D07117003E710E86F6B9F63 /* Pods-sahal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BB302AB9E0F0D288F600FF17C74E315 /* Build configuration list for PBXNativeTarget "Pods-sahal" */;
+			buildConfigurationList = 890B8EEC215238DBA4B235779676F70D /* Build configuration list for PBXNativeTarget "Pods-sahal" */;
 			buildPhases = (
-				7B55D6B53552BE6077F02720ADB72572 /* Sources */,
-				4F7165E7010FC6D27B88C705DD402FF1 /* Frameworks */,
-				5B3B559BFE93D982370FB9BE67D6001E /* Headers */,
+				4A317DA1B7BC79200959B46E8BD5B1D0 /* Sources */,
+				EF2C657C403F78178C13D28FE8CFDC33 /* Frameworks */,
+				308E0F1C3ED1CBF393C0FAB92EC78BE4 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1F2F9D6139DF676530AB3EEC16BF50D1 /* PBXTargetDependency */,
-				DD8CD76A14FE3CD511E3B16B3DB1B973 /* PBXTargetDependency */,
+				179D09EEC88BF17B7F0BFA0605DE21FE /* PBXTargetDependency */,
+				90D95F2735F81D5ADB0CA1A04F22F878 /* PBXTargetDependency */,
+				A8B574224FD629B08C4DABB5B3F5428C /* PBXTargetDependency */,
 			);
 			name = "Pods-sahal";
 			productName = "Pods-sahal";
-			productReference = E47F07E2ABFC408233EFB9AFDFCF685E /* Pods_sahal.framework */;
+			productReference = 80923B55BE9443F617573303A7CFB269 /* Pods_sahal.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C37EA9CB8F874D77F3EB399B2B22B6A0 /* TextFieldEffects */ = {
+		F4F7365CD1AD094897024F682EB50652 /* TextFieldEffects */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5492D28B3633706A2E88B71C38603C21 /* Build configuration list for PBXNativeTarget "TextFieldEffects" */;
+			buildConfigurationList = C8512B121A8810880D9F0B6C6B3EDE12 /* Build configuration list for PBXNativeTarget "TextFieldEffects" */;
 			buildPhases = (
-				7C614D5A8CD1C4C6B34DB7CFF2BCB280 /* Sources */,
-				722396BE7CA61A07B0FBDF58C665E177 /* Frameworks */,
-				DD61305743940709B64642C6DE41D0CC /* Headers */,
+				6F2A15F7C3B93432382DC59DC617B544 /* Sources */,
+				667540B3EAB999866D6669D8988DCF06 /* Frameworks */,
+				0CA08DFA6F5B91B4F214DC8A7EF51070 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -463,7 +514,24 @@
 			);
 			name = TextFieldEffects;
 			productName = TextFieldEffects;
-			productReference = 9B1A960B91DC36D39D1079693E24BC88 /* TextFieldEffects.framework */;
+			productReference = 8A42EEBBFB0CE964E64F974E503D54C0 /* TextFieldEffects.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F6A77E2753C279F67F70C5C21D6FAE15 /* DLRadioButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 118FCC60066EF1D7DD17E50B82C12AA4 /* Build configuration list for PBXNativeTarget "DLRadioButton" */;
+			buildPhases = (
+				8F67A4B4F56469850BF8A099A6E12AE8 /* Sources */,
+				A2A324E81F33CA8363E22E0C427CBC97 /* Frameworks */,
+				220E61F93FBE49E9C3EBBEE5E9331C18 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DLRadioButton;
+			productName = DLRadioButton;
+			productReference = 070E88BC710575A6C4344C20FD92DFE4 /* DLRadioButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F769D679E11D54D811C1ECB1C3A84E76 /* Pods-sahalUITests */ = {
@@ -481,7 +549,7 @@
 			);
 			name = "Pods-sahalUITests";
 			productName = "Pods-sahalUITests";
-			productReference = 1907E79F6F682F2FCF4EE4245899B64C /* Pods_sahalUITests.framework */;
+			productReference = 1B886B3594957C5788C40E82C7B094FE /* Pods_sahalUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FB1181469447BA2AB5D01B3C6EBD5B25 /* Pods-sahalTests */ = {
@@ -499,7 +567,7 @@
 			);
 			name = "Pods-sahalTests";
 			productName = "Pods-sahalTests";
-			productReference = FDC35050312C6F3DA1AE5DD376222E74 /* Pods_sahalTests.framework */;
+			productReference = 82C01A956097DB8EABE7659AEA0CF56E /* Pods_sahalTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -509,7 +577,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -519,15 +587,16 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = F19F6B2DE8A224366D74A8B96411F624 /* Products */;
+			productRefGroup = 06CF5337F7F3E6A9073AC7A19FE8F5E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				F6A77E2753C279F67F70C5C21D6FAE15 /* DLRadioButton */,
 				5168099F2EBFC99A707C03C9EADE01A5 /* DropDown */,
-				705D89F79F52B225599C3D3C90CA2439 /* Pods-sahal */,
+				C80C71029D07117003E710E86F6B9F63 /* Pods-sahal */,
 				FB1181469447BA2AB5D01B3C6EBD5B25 /* Pods-sahalTests */,
 				F769D679E11D54D811C1ECB1C3A84E76 /* Pods-sahalUITests */,
-				C37EA9CB8F874D77F3EB399B2B22B6A0 /* TextFieldEffects */,
+				F4F7365CD1AD094897024F682EB50652 /* TextFieldEffects */,
 			);
 		};
 /* End PBXProject section */
@@ -544,29 +613,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7B55D6B53552BE6077F02720ADB72572 /* Sources */ = {
+		4A317DA1B7BC79200959B46E8BD5B1D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E64D83569F31C480332FE050C7914E9 /* Pods-sahal-dummy.m in Sources */,
+				084F6A57EBDF07E22383359D97DBF85C /* Pods-sahal-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7C614D5A8CD1C4C6B34DB7CFF2BCB280 /* Sources */ = {
+		6F2A15F7C3B93432382DC59DC617B544 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F515BAB4C4CB5533BABC16C9A23D123 /* AkiraTextField.swift in Sources */,
-				C163C056D13516F253A543E3FBB63B99 /* HoshiTextField.swift in Sources */,
-				2466C54E44FE71B511DBF7A328F36471 /* IsaoTextField.swift in Sources */,
-				A32DE02B24D6D6DA040EE46EA77108D4 /* JiroTextField.swift in Sources */,
-				9498E1BD2282BEF11A1BC71EB61C866E /* KaedeTextField.swift in Sources */,
-				881007A0AFEC6034AC3E085E27464B73 /* MadokaTextField.swift in Sources */,
-				AE89C9398F37C6AD7D656C2D90501FFE /* MinoruTextField.swift in Sources */,
-				DB4F7FC39FE6D3C961E5202FBE094279 /* TextFieldEffects-dummy.m in Sources */,
-				C2DD40D76A3BB644766AE9E895E51A5E /* TextFieldEffects.swift in Sources */,
-				CC740E16011F3C29CD2B7979467316BC /* YokoTextField.swift in Sources */,
-				963D6E198A4476487BD1EFAF13117F1A /* YoshikoTextField.swift in Sources */,
+				C2286780FD80A4B32A205F7645AEFCF1 /* AkiraTextField.swift in Sources */,
+				3830EDE016212F5D1DE6082CAFF22F21 /* HoshiTextField.swift in Sources */,
+				09725C277226CEBB3034EC0309817725 /* IsaoTextField.swift in Sources */,
+				6CBA7D930685CD1066F6949AF546A31B /* JiroTextField.swift in Sources */,
+				463E2EDA44F2934EEA1E00E0BEE15E01 /* KaedeTextField.swift in Sources */,
+				0696101AE1B52A5501F69E5034C1B194 /* MadokaTextField.swift in Sources */,
+				5129219AB2CED021E011B8222FFA0B5F /* MinoruTextField.swift in Sources */,
+				647A20F1F5A213E22FDC34568107738F /* TextFieldEffects-dummy.m in Sources */,
+				495A19928B0B37DB69C8B1531677499D /* TextFieldEffects.swift in Sources */,
+				C42E4907743C4E187E1F3E8CA4FFA5C4 /* YokoTextField.swift in Sources */,
+				02A797AFB007C5CBECCEA940D6394234 /* YoshikoTextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F67A4B4F56469850BF8A099A6E12AE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E7E0B70C0D1CCD0AC694A99E8324ECD /* DLRadioButton-dummy.m in Sources */,
+				EF2F59EEA3194DFCFB39352F4DA16D76 /* DLRadioButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,29 +681,35 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1F2F9D6139DF676530AB3EEC16BF50D1 /* PBXTargetDependency */ = {
+		179D09EEC88BF17B7F0BFA0605DE21FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DropDown;
-			target = 5168099F2EBFC99A707C03C9EADE01A5 /* DropDown */;
-			targetProxy = 13E1AF00E4A7B666B43D6A8E9B96519E /* PBXContainerItemProxy */;
+			name = DLRadioButton;
+			target = F6A77E2753C279F67F70C5C21D6FAE15 /* DLRadioButton */;
+			targetProxy = 140FD937E3B497C4D35AA03BD8E6321E /* PBXContainerItemProxy */;
 		};
 		316D87EE0F934007880A3DB01C6E3C26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-sahal";
-			target = 705D89F79F52B225599C3D3C90CA2439 /* Pods-sahal */;
+			target = C80C71029D07117003E710E86F6B9F63 /* Pods-sahal */;
 			targetProxy = 853845E66046CCD630E44053DBA922F7 /* PBXContainerItemProxy */;
+		};
+		90D95F2735F81D5ADB0CA1A04F22F878 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DropDown;
+			target = 5168099F2EBFC99A707C03C9EADE01A5 /* DropDown */;
+			targetProxy = 2A88646653D6220DF0FAEDB16E3C4043 /* PBXContainerItemProxy */;
 		};
 		9D4DA7E1A2D9B79660A924F972D5AAB1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-sahal";
-			target = 705D89F79F52B225599C3D3C90CA2439 /* Pods-sahal */;
+			target = C80C71029D07117003E710E86F6B9F63 /* Pods-sahal */;
 			targetProxy = F9D24D8887CE71654BB045783AB56FA7 /* PBXContainerItemProxy */;
 		};
-		DD8CD76A14FE3CD511E3B16B3DB1B973 /* PBXTargetDependency */ = {
+		A8B574224FD629B08C4DABB5B3F5428C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TextFieldEffects;
-			target = C37EA9CB8F874D77F3EB399B2B22B6A0 /* TextFieldEffects */;
-			targetProxy = D69E38392333C7797E20B9CF385BDFAE /* PBXContainerItemProxy */;
+			target = F4F7365CD1AD094897024F682EB50652 /* TextFieldEffects */;
+			targetProxy = E5BF50472897DC7849093C7DEE1B2FB0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -658,42 +742,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		0B5695410A2AB495ABD96576A32E19C8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B49BEE861BAF670039271B692AEDE49C /* Pods-sahal.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-sahal/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-sahal/Pods-sahal.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -754,14 +802,45 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		4A0C4C3DD637B0F155FEEF4FC9A9791A /* Release */ = {
+		65565817FB06BB642A47EF54E2119FB6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFDC5A0EF5B872F6183EA356CFDA64A9 /* Pods-sahal.release.xcconfig */;
+			baseConfigurationReference = 469676D3A6906F8EFD88E7E8F85DFFA1 /* DLRadioButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DLRadioButton/DLRadioButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DLRadioButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DLRadioButton/DLRadioButton.modulemap";
+				PRODUCT_MODULE_NAME = DLRadioButton;
+				PRODUCT_NAME = DLRadioButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		78B552587D7C28547C6309ED7B05F993 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B49BEE861BAF670039271B692AEDE49C /* Pods-sahal.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -787,50 +866,17 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
-		};
-		75AA6003C5D226F532800591A6B24A5F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 757E7DF80771EC121D25ADF971BA40F6 /* TextFieldEffects.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TextFieldEffects/TextFieldEffects-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TextFieldEffects/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TextFieldEffects/TextFieldEffects.modulemap";
-				PRODUCT_MODULE_NAME = TextFieldEffects;
-				PRODUCT_NAME = TextFieldEffects;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
+			name = Debug;
 		};
 		8A1A793254763290DA347BA462B5A2DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5D29ABD4A7C137F3D82CC7FBD85D30C /* DropDown.xcconfig */;
+			baseConfigurationReference = 57C224AB7C4CE51E974906BFA0F2D42D /* DropDown.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -924,41 +970,9 @@
 			};
 			name = Debug;
 		};
-		B539DCDA9157A3D70680284A10384E1B /* Debug */ = {
+		A0A33ECB585411ED727D5D167EE7E9DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5D29ABD4A7C137F3D82CC7FBD85D30C /* DropDown.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DropDown/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DropDown/DropDown.modulemap";
-				PRODUCT_MODULE_NAME = DropDown;
-				PRODUCT_NAME = DropDown;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CFF85A1B6D4AFFE14BB361A6DEE9E1D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 757E7DF80771EC121D25ADF971BA40F6 /* TextFieldEffects.xcconfig */;
+			baseConfigurationReference = 6323312AC72CA0F5D9280D2FF54D935F /* TextFieldEffects.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -977,6 +991,38 @@
 				MODULEMAP_FILE = "Target Support Files/TextFieldEffects/TextFieldEffects.modulemap";
 				PRODUCT_MODULE_NAME = TextFieldEffects;
 				PRODUCT_NAME = TextFieldEffects;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B539DCDA9157A3D70680284A10384E1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57C224AB7C4CE51E974906BFA0F2D42D /* DropDown.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DropDown/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DropDown/DropDown.modulemap";
+				PRODUCT_MODULE_NAME = DropDown;
+				PRODUCT_NAME = DropDown;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -1057,6 +1103,106 @@
 			};
 			name = Debug;
 		};
+		E7F0DA82D30885979C8782A014B23632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 469676D3A6906F8EFD88E7E8F85DFFA1 /* DLRadioButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DLRadioButton/DLRadioButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DLRadioButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DLRadioButton/DLRadioButton.modulemap";
+				PRODUCT_MODULE_NAME = DLRadioButton;
+				PRODUCT_NAME = DLRadioButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EE085BF76801B15607F6A78A6BC2FAF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFDC5A0EF5B872F6183EA356CFDA64A9 /* Pods-sahal.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-sahal/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-sahal/Pods-sahal.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FAB632591587116ABF226EEA126FF98B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6323312AC72CA0F5D9280D2FF54D935F /* TextFieldEffects.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TextFieldEffects/TextFieldEffects-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TextFieldEffects/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TextFieldEffects/TextFieldEffects.modulemap";
+				PRODUCT_MODULE_NAME = TextFieldEffects;
+				PRODUCT_NAME = TextFieldEffects;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		FE9EEBC3D18BFF85F949BD51C56CF4E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 663EF37A11BE9D46A1132746206C1503 /* Pods-sahalTests.release.xcconfig */;
@@ -1095,6 +1241,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		118FCC60066EF1D7DD17E50B82C12AA4 /* Build configuration list for PBXNativeTarget "DLRadioButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7F0DA82D30885979C8782A014B23632 /* Debug */,
+				65565817FB06BB642A47EF54E2119FB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1113,20 +1268,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5492D28B3633706A2E88B71C38603C21 /* Build configuration list for PBXNativeTarget "TextFieldEffects" */ = {
+		890B8EEC215238DBA4B235779676F70D /* Build configuration list for PBXNativeTarget "Pods-sahal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CFF85A1B6D4AFFE14BB361A6DEE9E1D9 /* Debug */,
-				75AA6003C5D226F532800591A6B24A5F /* Release */,
+				78B552587D7C28547C6309ED7B05F993 /* Debug */,
+				EE085BF76801B15607F6A78A6BC2FAF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8BB302AB9E0F0D288F600FF17C74E315 /* Build configuration list for PBXNativeTarget "Pods-sahal" */ = {
+		C8512B121A8810880D9F0B6C6B3EDE12 /* Build configuration list for PBXNativeTarget "TextFieldEffects" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B5695410A2AB495ABD96576A32E19C8 /* Debug */,
-				4A0C4C3DD637B0F155FEEF4FC9A9791A /* Release */,
+				A0A33ECB585411ED727D5D167EE7E9DF /* Debug */,
+				FAB632591587116ABF226EEA126FF98B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

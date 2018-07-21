@@ -11,6 +11,7 @@ import UIKit
 class SignUpController: UIViewController {
 
     @IBOutlet weak var container: UIView!
+ 
     
     var SellerSignUpView : UIView!
     var buyerSignUpView : UIView!
@@ -24,7 +25,7 @@ class SignUpController: UIViewController {
     container.addSubview(SellerSignUpView)
     container.addSubview(buyerSignUpView)
         
- //container.bringSubview(toFront: SellerSignUpView)
+container.bringSubview(toFront: SellerSignUpView)
     }
 
     override func didReceiveMemoryWarning() {

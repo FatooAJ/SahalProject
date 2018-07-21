@@ -8,6 +8,7 @@ target 'sahal' do
   # Pods for sahal
   pod 'DropDown'
   pod 'TextFieldEffects'
+  pod 'DLRadioButton', '~> 1.4'
 
   target 'sahalTests' do
     inherit! :search_paths
