@@ -10,6 +10,9 @@ import UIKit
 
 class productCell: UITableViewCell {
 
+    @IBOutlet weak var mainBackground: UIView!
+    @IBOutlet weak var shadowBackground: UIView!
+    
     @IBOutlet weak var imageCell: UIImageView!
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var productDescription: UILabel!
@@ -21,4 +24,25 @@ class productCell: UITableViewCell {
         productDescription.text = product.description
       //  UIImageView(named: "" )
     }
+    
+    
+    class ShadowView: UIView {
+        override var bounds: CGRect {
+            didSet {
+                setupShadow()
+            }
+        }
+        
+        private func setupShadow() {
+            self.layer.cornerRadius = 12
+            self.layer.shadowOffset = CGSize(width: 0, height: 3)
+            self.layer.shadowRadius = 3
+            //  self.layer.shadowColor = UIColor.red.cgColor
+            self.layer.shadowOpacity = 0.3
+            self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: 8, height: 8)).cgPath
+            self.layer.shouldRasterize = true
+            self.layer.rasterizationScale = UIScreen.main.scale
+        }
+    }
+    
 }

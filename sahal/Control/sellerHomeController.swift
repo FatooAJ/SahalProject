@@ -18,15 +18,17 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
         
         var tempArray : [Product] = []
         
-        let product1 = Product(img: "productImage", title: "product 1 ", description: "DEscription 1 ")
-        let product2 = Product(img: "productImage", title: "product 1 ", description: "DEscription 1 ")
-        let product3 = Product(img: "productImage", title: "product 1 ", description: "DEscription 1 ")
-     
-     
+        let product1 = Product(img: "1.jpeg", title: "عكس أمامي أزيرا ", description: "حالة المنتج : متاح ")
+        let product2 = Product(img: "2.jpeg", title: "عكس أمامي أزيرا ", description: " المنتج : متاح ")
+        let product3 = Product(img: "3.jpg", title: "عكس أمامي أزيرا", description: " المنتج : متاح ")
+          let product4 = Product(img: "3.jpg", title: "عكس أمامي أزيرا", description: " المنتج : متاح ")
+        
+        
         
         tempArray.append( product1)
         tempArray.append( product2)
         tempArray.append(product3)
+      //  tempArray.append(product4)
         
         return tempArray
     }
@@ -40,6 +42,22 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
 
         let product = productArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! productCell
+        
+        cell.mainBackground.layer.cornerRadius = 10
+        cell.mainBackground.layer.masksToBounds = true
+        
+        cell.shadowBackground.layer.masksToBounds = false
+        cell.shadowBackground.layer.shadowOffset = CGSize(width: CGFloat(0), height: CGFloat(3))
+        cell.shadowBackground.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        cell.shadowBackground.layer.shadowOpacity = 0.23
+        cell.shadowBackground.layer.shadowRadius = 17
+        cell.shadowBackground.layer.shadowPath = UIBezierPath(roundedRect: cell.shadowBackground.bounds, byRoundingCorners: .allCorners , cornerRadii: CGSize(width: 8, height: 8)).cgPath
+        
+        cell.shadowBackground.layer.shouldRasterize = true
+        cell.shadowBackground.layer.rasterizationScale = UIScreen.main.scale
+        cell.selectionStyle = .none
+       
+        
         cell.setProduct(product: product )
     
         return cell
@@ -49,6 +67,7 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         productArray = creatProductArray()
+        tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {

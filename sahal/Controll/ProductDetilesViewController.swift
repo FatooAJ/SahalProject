@@ -12,11 +12,7 @@ class ProductDetilesViewController: UIViewController ,
 UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
     
     
-    
-    
-    
     //Tags
-    
     @IBOutlet var companyname: UILabel!
     @IBOutlet var Years: UILabel!
     @IBOutlet var carname: UILabel!
@@ -32,15 +28,18 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
     //Product Image
     @IBOutlet var imagecontrol: UIPageControl!
     @IBOutlet var imagescrol: UIScrollView!
-    
-    @IBOutlet var CommentsTable: UITableView!
-    
-    @IBOutlet var scrollview: UIScrollView!
-    
+    //Table
+    @IBOutlet var CommentsTable: Table!
+    @IBOutlet var scroll: UIScrollView!
+    @IBOutlet var Textcomments: UITextField!
+    // var comments = ["I want to buy it","Do not buy it","Shiiiit ","What this????","answer me","I want to buy it"]
+    // var username = ["Ahmed","Mohammed","Jehad","Ahmed","Mohammed","Jehad"]
     var images: [String] = ["1.jpeg","2.jpeg","3.jpg","4.jpg","5.jpg"]
     var frame = CGRect(x:0,y:0,width:0,height:0)
-    var comments = ["I want to buy it","Do not buy it","Shiiiit ","What this????","answer me","I want to buy it"]
-    var username = ["Ahmed","Mohammed","Jehad","Ahmed","Mohammed","Jehad"]
+    var count: Int = 0
+    
+    
+    // image Scroll Func
     func ProductImageScroll(){
         imagecontrol.numberOfPages = images.count
         // Do any additional setup after loading the view.
@@ -53,7 +52,6 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
         }
         imagescrol.contentSize = CGSize(width:(imagescrol.frame.size.width * CGFloat(images.count)), height: imagescrol.frame.size.height)
         imagescrol.delegate = self
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -63,42 +61,43 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
         var pageNumber = imagescrol.contentOffset.x / imagescrol.frame.size.width
         imagecontrol.currentPage = Int(pageNumber)
     }
+    
+    //table Func
+    @IBAction func addRow(_ sender: UIButton) {
+        count = count + 1
+        CommentsTable.reloadData()
+        scroll.contentSize.height = 650 + CommentsTable.contentSize.height
+        //CommentsTable.frame.size.height = CommentsTable.contentSize.height+50
+        // CommentsTable.maxHeight = CommentsTable.contentSize.height
+        print(CommentsTable.contentSize.height)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return comments.count
+        return count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // tableView.frame.size = tableView.contentSize
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentcell", for: indexPath) as! CommentsTableViewCell
+        //let user = username[indexPath.row]
+        //let comment = comments[indexPath.row]
+        let tt1 =  Textcomments.text!
+        cell.commentText?.text = tt1
+        //   cell.commentText?.text = comment
+        cell.Username?.text = "User name  \([indexPath.row+1])"
+        
+        // cell.commentText?.text = "name \([indexPath.row+1])"
+        //Tabel cell Style
+        cell.layer.cornerRadius = 8
+        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.shouldRasterize = true
+        return cell
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        tableView.frame.size = tableView.contentSize
-        let cell = tableView.dequeueReusableCell(withIdentifier: "commentcell", for: indexPath) as! CommentsTableViewCell
-        let user = username[indexPath.row]
-        let comment = comments[indexPath.row]
-        
-        cell.commentText?.text = comment
-        cell.Username?.text = user
-        //        //Tabel cell Style
-        //        cell.layer.cornerRadius = 8
-        //        cell.layer.masksToBounds = true
-        //        cell.backgroundView?.layer.masksToBounds = true
-        //        cell.layer.masksToBounds = false
-        //        cell.layer.shadowOffset = CGSize(width: CGFloat(0), height: CGFloat(3.0))
-        //        cell.layer.shadowColor = UIColor.white.cgColor
-        //        cell.layer.shadowOpacity = 0.23
-        //        cell.layer.shadowRadius = 4
-        //        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners:.allCorners, cornerRadii: CGSize(width: 8, height: 8)).cgPath
-        //        cell.layer.rasterizationScale = UIScreen.main.scale
-        //        cell.layer.borderColor = UIColor.gray.cgColor
-        //        cell.layer.borderWidth = 2
-        //
-        //        cell.layer.shouldRasterize = true
-        return cell
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //Tags Style
-        scrollview.contentSize.height = 1000
+        scroll.contentSize.height = 300
         companyname.applyDesign()
         Years.applyDesign()
         carname.applyDesign()
@@ -107,7 +106,6 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
         //call image function
         ProductImageScroll()
     }
-    
     
 }
 

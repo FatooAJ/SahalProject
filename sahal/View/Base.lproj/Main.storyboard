@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="GGH-Zd-gIc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-1" translatesAutoresizingMaskIntoConstraints="NO" id="GGH-Zd-gIc">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="tintColor" red="1" green="0.57954204149999999" blue="0.80845809400000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
@@ -29,14 +29,14 @@
                                         <rect key="frame" x="144" y="81" width="126" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="55"/>
-                                        <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.18039215689999999" green="0.3411764706" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sahl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ul-pN-7cq">
                                         <rect key="frame" x="144" y="155" width="133" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="55"/>
-                                        <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.18039215689999999" green="0.3411764706" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -198,7 +198,7 @@
                                         </segments>
                                         <color key="tintColor" red="0.11372549019607843" green="0.30196078431372547" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="segmentControl:" destination="itU-d4-xwO" eventType="valueChanged" id="sio-CF-rGJ"/>
+                                            <action selector="segmentControl:" destination="itU-d4-xwO" eventType="valueChanged" id="zTz-f9-UIP"/>
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
@@ -235,7 +235,7 @@
                         <viewLayoutGuide key="safeArea" id="AdR-tw-aMj"/>
                     </view>
                     <connections>
-                        <outlet property="container" destination="lec-l1-bs5" id="7V8-nJ-DdL"/>
+                        <outlet property="container" destination="lec-l1-bs5" id="Tc3-75-JoG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpR-gu-0fQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -250,8 +250,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="R3P-Pz-sYg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1240"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-1" translatesAutoresizingMaskIntoConstraints="NO" id="R3P-Pz-sYg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1024"/>
                                 <color key="tintColor" red="1" green="0.57954204149999999" blue="0.80845809400000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgN-Zo-1He" userLabel="logoView">
@@ -262,14 +262,14 @@
                                         <rect key="frame" x="125.00000000000001" y="88" width="163.33333333333337" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="55"/>
-                                        <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.18039215689999999" green="0.3411764706" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="سهل" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLZ-sW-8Qk">
                                         <rect key="frame" x="132" y="33" width="98.333333333333314" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="55"/>
-                                        <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.18039215689999999" green="0.3411764706" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -348,6 +348,6 @@
     </scenes>
     <resources>
         <image name="Button" width="600" height="80"/>
-        <image name="background" width="698" height="1240"/>
+        <image name="background-1" width="580" height="1024"/>
     </resources>
 </document>

@@ -9,7 +9,6 @@
 import UIKit
 
 class HomeViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
-
     @IBOutlet var changesegment: UISegmentedControl!
     
     @IBOutlet var tableproduct: UITableView!
@@ -23,12 +22,15 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     @IBOutlet var shadowLayer: UIView!
     @IBOutlet var mainBackground: UIView!
     var titleOfproduct = ["cars category 312321 camere germani 3123213","cars category 312321 camere germani 3123213","cars category 312321 camere germani 3123213","cars category 312321 camere germani 3123213","cars category 312321 camere germani 3123213","cars category 312321 camere germani 3123213","cars category 312321 camere germani 3123213"]
-    var SellerName = ["Cars company","hope company", "Joke company","Cars company","hope company", "Joke company","Cars company"]
-    var cityname = ["Makkah","Jeddah","Madina","Riyad","Makkah","Jeddah","Madina"]
-    var Price = ["2,00 SR","500,00SR","700,00SR","2,00SR","2,00SR","2,00SR","200,00SR"]
+    var SellerName = ["Cars company","hope company", "Hassan company","Cars company","hope company", "Ahmed company","Cars company"]
+    var cityname = ["Makkah","Jeddah","Madina","Dammam","Makkah","Jeddah","Madina"]
+    var Price = ["300,0 SR","500,0SR","700,0SR","200,0SR","267,0SR","254,0SR","298,0SR"]
     //  var locationIcon = [""]
     //var shoppingIcon = [""]
     var productimg = ["1.jpeg","2.jpeg","3.jpg","4.jpg","5.jpg","3.jpg","4.jpg"]
+    var productimg2 = ["3.jpg","3.jpg","3.jpg","3.jpg","3.jpg","3.jpg","3.jpg"]
+    var productimg3 = ["4.jpg","4.jpg","4.jpg","4.jpg","4.jpg","4.jpg","4.jpg"]
+    var productimg4 = ["5.jpg","5.jpg","5.jpg","5.jpg","5.jpg","3.jpg","4.jpg"]
     
     
     
@@ -61,18 +63,18 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         let productprice = Price[indexPath.row]
         // let Loctionicon = locationIcon[indexPath.row]
         // let carticon = shoppingIcon[indexPath.row]
-        let Productimg = productimg[indexPath.row]
+        
         switch changesegment.selectedSegmentIndex
         {
         case 0:
             // SHOWING THE HOME VIEW
-            
-            cell.titleproduct?.text = title
-            cell.sellername?.text = Sellername
-            cell.city?.text = cityName
-            cell.price?.text = productprice
+            let Productimg = productimg[indexPath.row]
+            //            cell.titleproduct?.text = title
+            //            cell.sellername?.text = Sellername
+            //            cell.city?.text = cityName
+            // cell.price?.text = productprice
             //    cell.locationicon?.image = UIImage(named: "location.png")
-            cell.ShoppingIcon?.image = UIImage(named: "shopp")
+            // cell.ShoppingIcon?.image = UIImage(named: "shopp")
             cell.productimage?.image = UIImage(named: Productimg)
             //        //Tabel cell Style
             cell.mainBackground.layer.cornerRadius = 10
@@ -91,13 +93,13 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
             
         case 1:
             // SHOWING THE PROFILE VIEW
-            
-            cell.titleproduct?.text = title
-            cell.sellername?.text = Sellername
-            cell.city?.text = cityName
-            cell.price?.text = productprice
+            let Productimg = productimg2[indexPath.row]
+            //            cell.titleproduct?.text = title
+            //            cell.sellername?.text = Sellername
+            //            cell.city?.text = cityName
+            //   cell.price?.text = productprice
             //    cell.locationicon?.image = UIImage(named: "location.png")
-            cell.ShoppingIcon?.image = UIImage(named: "shopp")
+            //   cell.ShoppingIcon?.image = UIImage(named: "shopp")
             cell.productimage?.image = UIImage(named: Productimg)
             
             //        //Tabel cell Style
@@ -116,13 +118,13 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
             
         case 2:
             // SHOWING THE SETTINGS VIEW
-            
-            cell.titleproduct?.text = title
-            cell.sellername?.text = Sellername
-            cell.city?.text = cityName
-            cell.price?.text = productprice
+            let Productimg = productimg3[indexPath.row]
+            //            cell.titleproduct?.text = title
+            //            cell.sellername?.text = Sellername
+            //            cell.city?.text = cityName
+            //   cell.price?.text = productprice
             //    cell.locationicon?.image = UIImage(named: "location.png")
-            cell.ShoppingIcon?.image = UIImage(named: "shopp")
+            //   cell.ShoppingIcon?.image = UIImage(named: "shopp")
             cell.productimage?.image = UIImage(named: Productimg)
             
             //        //Tabel cell Style
@@ -139,13 +141,13 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
             cell.shadowLayer.layer.rasterizationScale = UIScreen.main.scale
             cell.selectionStyle = .none
         case 3:
-            
-            cell.titleproduct?.text = title
-            cell.sellername?.text = Sellername
-            cell.city?.text = cityName
-            cell.price?.text = productprice
+            let Productimg = productimg4[indexPath.row]
+            //            cell.titleproduct?.text = title
+            //            cell.sellername?.text = Sellername
+            //            cell.city?.text = cityName
+            //    cell.price?.text = productprice
             //    cell.locationicon?.image = UIImage(named: "location.png")
-            cell.ShoppingIcon?.image = UIImage(named: "shopp")
+            //    cell.ShoppingIcon?.image = UIImage(named: "shopp")
             cell.productimage?.image = UIImage(named: Productimg)
             
             //        //Tabel cell Style
@@ -182,14 +184,6 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
     
 }

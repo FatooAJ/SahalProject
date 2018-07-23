@@ -9,7 +9,7 @@
 import UIKit
 import DropDown
 class SearchViewController: UIViewController {
-    
+ 
     //MARK: - DropDown's
     let Company = DropDown()
     let Years = DropDown()
@@ -64,9 +64,9 @@ class SearchViewController: UIViewController {
     func setupDropDowns() {
         SetupCompanyDrop()
         setupYearsDropDown()
-        //setupCarNamesDropDown()
-        //setupCarTypeDropDown()
-        //setupCarPieceDropDown()
+        setupCarNamesDropDown()
+        setupCarTypeDropDown()
+        setupCarPieceDropDown()
     }
     
     func SetupCompanyDrop(){
@@ -123,7 +123,42 @@ class SearchViewController: UIViewController {
         // You can manually select a row if needed
         //        dropDown.selectRowAtIndex(3)
     }
-    
+    func setupCarNamesDropDown(){
+        CarName.anchorView = CarNameDropDown // UIView or UIBarButtonItem
+        CarName.dataSource = ["Acura","Audi","BMW","Bugatii","Buik","Audi","Acura","Audi","BMW","Bugatii","Buik","Audi"]
+        CarName.direction = .bottom
+        CarName.bottomOffset = CGPoint(x: 0, y:(CarName.anchorView?.plainView.bounds.height)!)
+        CarName.cellNib = UINib(nibName: "MyCell", bundle: nil)
+        //dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+        //  guard let cell = cell as? MyCell else { return }
+        //cell.suffixLabel.text = "Suffix \(companycars.)"
+        CarName.selectionAction = { [weak self] (index: Int, item: String) in
+            self?.CarNameDropDown.setTitle(item, for: .normal)}
+    }
+    func setupCarTypeDropDown(){
+        CarType.anchorView = CarTypeDropDown // UIView or UIBarButtonItem
+        CarType.dataSource = ["Acura","Audi","BMW","Bugatii","Buik","Audi","Acura","Audi","BMW","Bugatii","Buik","Audi"]
+        CarType.direction = .bottom
+        CarType.bottomOffset = CGPoint(x: 0, y:(CarType.anchorView?.plainView.bounds.height)!)
+        CarType.cellNib = UINib(nibName: "MyCell", bundle: nil)
+        //dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+        //  guard let cell = cell as? MyCell else { return }
+        //cell.suffixLabel.text = "Suffix \(companycars.)"
+        CarType.selectionAction = { [weak self] (index: Int, item: String) in
+            self?.CarTypeDropDown.setTitle(item, for: .normal)}
+    }
+    func setupCarPieceDropDown(){
+        CarPiece.anchorView = CarPieceDropDown // UIView or UIBarButtonItem
+        CarPiece.dataSource = ["213","24433","543","656","443","444","222","333","43543","4234","5355","423423"]
+        CarPiece.direction = .bottom
+        CarPiece.bottomOffset = CGPoint(x: 0, y:(CarPiece.anchorView?.plainView.bounds.height)!)
+        CarPiece.cellNib = UINib(nibName: "MyCell", bundle: nil)
+        //dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+        //  guard let cell = cell as? MyCell else { return }
+        //cell.suffixLabel.text = "Suffix \(companycars.)"
+        CarPiece.selectionAction = { [weak self] (index: Int, item: String) in
+            self?.CarPieceDropDown.setTitle(item, for: .normal)}
+    }
     func customizeDropDown(_ sender: AnyObject) {
         let appearance = DropDown.appearance()
         

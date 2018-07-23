@@ -7,16 +7,28 @@
 //
 
 import UIKit
+import Firebase
 import DropDown
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    let attributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Light", size: 30)!]
+    let attributes2 = [NSAttributedStringKey.foregroundColor: UIColor.white]
+    
+    
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
         DropDown.startListeningToKeyboard()
+        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.9940987229, green: 0.9881885648, blue: 0.9986413121, alpha: 1)
+        UINavigationBar.appearance().tintColor = #colorLiteral(red: 0.4705882353, green: 0.7254901961, blue: 0.7411764706, alpha: 1)
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        UINavigationBar.appearance().titleTextAttributes = attributes2
+        
+        
         return true
     }
 

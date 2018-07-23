@@ -13,11 +13,12 @@ class CustomSerachButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.layer.cornerRadius = 5.0
+        self.layer.cornerRadius = 7
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.borderWidth = 1
-        //  self.backgroundColor = UIColor.gray
+        self.backgroundColor = UIColor(red: 99/255, green: 187/255, blue: 190/255, alpha: 1)
         self.tintColor = UIColor.white
+        
     }
     
     /*

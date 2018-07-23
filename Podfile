@@ -9,7 +9,11 @@ target 'sahal' do
   pod 'DropDown'
   pod 'TextFieldEffects'
   pod 'DLRadioButton', '~> 1.4'
-
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase'
+  
   target 'sahalTests' do
     inherit! :search_paths
     # Pods for testing
