@@ -5,14 +5,15 @@ target 'sahal' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
+pod 'TextFieldEffects'
   # Pods for sahal
   pod 'DropDown'
-  pod 'TextFieldEffects'
   pod 'DLRadioButton', '~> 1.4'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase'
+  
   
   target 'sahalTests' do
     inherit! :search_paths

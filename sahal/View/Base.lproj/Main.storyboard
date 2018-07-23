@@ -161,6 +161,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="email" destination="Ip8-Ut-ZxX" id="A5X-u8-qtV"/>
+                        <outlet property="passWord" destination="2eS-AP-KAa" id="jK4-Ge-rQo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8W-aZ-KRs" userLabel="First Responder" sceneMemberID="firstResponder"/>

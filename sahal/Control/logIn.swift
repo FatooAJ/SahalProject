@@ -14,7 +14,8 @@ class logIn: UIViewController {
     
     @IBOutlet weak internal var email: HoshiTextField!
     
-   
+    @IBOutlet weak var passWord: KaedeTextField?
+    
 
     
     override func viewDidLoad() {
