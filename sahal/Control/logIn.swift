@@ -8,15 +8,14 @@
 
 import UIKit
 import TextFieldEffects
+import Firebase
 
 class logIn: UIViewController {
 
     
-    @IBOutlet weak internal var email: HoshiTextField!
+    @IBOutlet weak var emailOutlet: UITextField!
+    @IBOutlet weak var passwordOutlet: UITextField!
     
-    @IBOutlet weak var passWord: KaedeTextField?
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,5 +44,13 @@ class logIn: UIViewController {
         navigationController?.popToRootViewController(animated: true)
 
     }
+    
+    @IBAction func logInButton(_ sender: UIButton) {
+        guard let emailValue = emailOutlet.text else { return }
+        guard let passValue = passwordOutlet.text else { return }
+        
+     //   Auth.auth
+    }
+    
     
 }

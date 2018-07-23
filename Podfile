@@ -7,6 +7,7 @@ target 'sahal' do
 
 pod 'TextFieldEffects'
   # Pods for sahal
+  pod 'SVProgressHUD'
   pod 'DropDown'
   pod 'DLRadioButton', '~> 1.4'
   pod 'Firebase/Core'
