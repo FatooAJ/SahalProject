@@ -90,7 +90,7 @@ class SignUpController: UIViewController {
         
         
         let usernameValue = buyerSignUpView.userName.text
-        let phoneValue = buyerSignUpView.userName.text
+        let phoneValue = buyerSignUpView.phonNumber.text
         
         guard let emailValue = buyerSignUpView.email.text , let passwordValue = buyerSignUpView.password.text else {
             return
@@ -110,8 +110,8 @@ class SignUpController: UIViewController {
                 return
             }
             
-            let userDatabaserefrence = self.databaseRefrence.child("seller").child(uid)
-            let value = ["bR" : idValue , "company":companyValue , "number": phoneValue]
+            let userDatabaserefrence = self.databaseRefrence.child("buyer").child(uid)
+            let value = ["name": usernameValue , "number":phoneValue]
             userDatabaserefrence.updateChildValues(value , withCompletionBlock : {(error , reference) in
                 if error != nil {
                     print(error)
