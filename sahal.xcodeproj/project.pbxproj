@@ -64,6 +64,7 @@
 		CB7AAB8820FC86ED008260B2 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7AAB8720FC86ED008260B2 /* ProductTableViewCell.swift */; };
 		CB7AAB8E20FC8F28008260B2 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7AAB8D20FC8F28008260B2 /* location.png */; };
 		CB7AAB9020FC8FED008260B2 /* cart.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7AAB8F20FC8FED008260B2 /* cart.png */; };
+		CBD8B4772105E4C1009519B0 /* ProfileBuyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD8B4762105E4C1009519B0 /* ProfileBuyerViewController.swift */; };
 		CBF872A021022E0600C61A28 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF8729F21022E0600C61A28 /* SearchResultViewController.swift */; };
 		CBF872A221022E7200C61A28 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF872A121022E7200C61A28 /* CommentsTableViewCell.swift */; };
 		CBF872B62103CE9500C61A28 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF872B52103CE9500C61A28 /* Table.swift */; };
@@ -161,6 +162,7 @@
 		CB7AAB8720FC86ED008260B2 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductTableViewCell.swift; path = sahal/Controll/ProductTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		CB7AAB8D20FC8F28008260B2 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		CB7AAB8F20FC8FED008260B2 /* cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart.png; sourceTree = "<group>"; };
+		CBD8B4762105E4C1009519B0 /* ProfileBuyerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuyerViewController.swift; sourceTree = "<group>"; };
 		CBF8729F21022E0600C61A28 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		CBF872A121022E7200C61A28 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		CBF872B52103CE9500C61A28 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				C6C3D64120FF643100A35137 /* profileController.swift */,
+				CBD8B4762105E4C1009519B0 /* ProfileBuyerViewController.swift */,
 				CB0B91F520FB5B36004E0FF6 /* ViewController.swift */,
 				CB1251E520FDB8F700117A21 /* SearchViewController.swift */,
 				CB1251E920FDBA4F00117A21 /* CustomSerachButton.swift */,
@@ -657,6 +660,7 @@
 				CB7AAB8620FC7398008260B2 /* ProductDetilesViewController.swift in Sources */,
 				CB7AAB8820FC86ED008260B2 /* ProductTableViewCell.swift in Sources */,
 				CB3ABF7420FBB8B9007E2286 /* HomeViewController.swift in Sources */,
+				CBD8B4772105E4C1009519B0 /* ProfileBuyerViewController.swift in Sources */,
 				C6CEF91B2100285200467ABF /* addProductController.swift in Sources */,
 				C65766DF2105C2E900F7DDEF /* OperationController.swift in Sources */,
 				CBF872BC2103CF3E00C61A28 /* CartTableViewCell.swift in Sources */,
