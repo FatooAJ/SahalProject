@@ -46,7 +46,7 @@ class SignUpController: UIViewController {
     
 
     @objc func sellerSignUpButton(sender : UIButton)  {
-        
+        SVProgressHUD.show()
         let idValue = SellerSignUpView.mobile.text
         let companyValue = SellerSignUpView.companyName.text
         let phoneValue = SellerSignUpView.mobile.text
@@ -57,9 +57,16 @@ class SignUpController: UIViewController {
         Auth.auth().createUser(withEmail: emailValue, password: passwordValue ) {(result , error) in
             if  error == nil && result != nil {
                 print("User is created ^_^")
-                print("id : \(idValue)")
-                print("company : \(companyValue)")
-                print("phone : \(phoneValue)")
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = companyValue
+                changeRequest?.commitChanges { error in
+                    if error == nil {
+                        print("Display name changed")
+                         self.performSegue(withIdentifier: "toSellerSiginUp", sender: self)
+                    }
+                    
+                }
+                
             } else {
                 
                 print("Error : \(error!)")
@@ -79,16 +86,15 @@ class SignUpController: UIViewController {
             })
     
             
-        }}
+        }
+    }
         
         
 
     
     
     @objc func buyerSignUpButton(sender : UIButton)  {
-        print("Active Button")
-        
-        
+         SVProgressHUD.show()
         let usernameValue = buyerSignUpView.userName.text
         let phoneValue = buyerSignUpView.phonNumber.text
         
@@ -97,9 +103,18 @@ class SignUpController: UIViewController {
         }
         Auth.auth().createUser(withEmail: emailValue, password: passwordValue ) {(result , error) in
             if  error == nil && result != nil {
+                
                 print("User is created ^_^")
-                print("username : \(usernameValue)")
-                print("phone : \(phoneValue)")
+                 let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = usernameValue
+                changeRequest?.commitChanges { error in
+                    if error == nil {
+                        print("Display name changed")
+                        self.performSegue(withIdentifier: "toBuyerSiginUp", sender: self)
+                        
+                    }
+                    
+                }
             } else {
                 
                 print("Error : \(error!)")
@@ -119,7 +134,9 @@ class SignUpController: UIViewController {
             })
             
             
-        }}
+        }
+        
+    }
     
     
     @IBAction func segmentControl(_ sender: UISegmentedControl) {

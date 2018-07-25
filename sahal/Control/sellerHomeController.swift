@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
 class sellerHomeController: UIViewController , UITableViewDataSource , UITableViewDelegate {
 
@@ -68,12 +70,11 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
         super.viewDidLoad()
         productArray = creatProductArray()
         tableView.tableFooterView = UIView()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        SVProgressHUD.dismiss()
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 }

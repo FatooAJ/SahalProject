@@ -66,7 +66,6 @@
                                         </state>
                                         <connections>
                                             <action selector="logInButton:" destination="fjG-3P-Y7Z" eventType="touchUpInside" id="4UB-Yb-nDj"/>
-                                            <segue destination="Pge-gd-cwE" kind="show" id="qZK-yT-0RX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPv-BX-M9O">
@@ -174,19 +173,29 @@
                     <connections>
                         <outlet property="emailOutlet" destination="Ip8-Ut-ZxX" id="b3G-h2-XHH"/>
                         <outlet property="passwordOutlet" destination="dgR-r6-2Gg" id="u4h-8D-J3o"/>
+                        <segue destination="l4c-F4-161" kind="show" identifier="toSeller" id="YdH-My-QQg"/>
+                        <segue destination="j3Q-5D-FHB" kind="show" identifier="toBuyer" id="cjt-Iw-MLi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8W-aZ-KRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1692.753623188406" y="2691.847826086957"/>
         </scene>
-        <!--seller-->
-        <scene sceneID="GMR-0Z-1qu">
+        <!--Home-->
+        <scene sceneID="yAE-Bq-7Q0">
             <objects>
-                <viewControllerPlaceholder storyboardName="seller" id="Pge-gd-cwE" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d32-eT-rHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Home" id="j3Q-5D-FHB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yRR-7E-bXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752" y="3282"/>
+            <point key="canvasLocation" x="1437" y="3316"/>
+        </scene>
+        <!--seller-->
+        <scene sceneID="VuP-O3-xMb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="seller" id="l4c-F4-161" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAa-iI-NEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1639" y="3322"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="YXK-5l-YT3">
@@ -249,11 +258,29 @@
                     </view>
                     <connections>
                         <outlet property="container" destination="lec-l1-bs5" id="Tc3-75-JoG"/>
+                        <segue destination="13e-m2-6kJ" kind="show" identifier="toBuyerSiginUp" id="IjY-lO-bmv"/>
+                        <segue destination="vKf-8q-Y0H" kind="show" identifier="toSellerSiginUp" id="6yP-s5-a8v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpR-gu-0fQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2592.753623188406" y="3452.4456521739135"/>
+            <point key="canvasLocation" x="2623" y="3442"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="rEc-hW-HSa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="13e-m2-6kJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSJ-GX-a0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2371" y="3880"/>
+        </scene>
+        <!--seller-->
+        <scene sceneID="Pxv-om-9m3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="seller" id="vKf-8q-Y0H" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOa-xA-nOL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2874" y="3880"/>
         </scene>
         <!--Forget Password -->
         <scene sceneID="F06-Zz-DO2">
@@ -337,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyh-Sm-fZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2397.1014492753625" y="2692.663043478261"/>
+            <point key="canvasLocation" x="2431" y="2187"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cll-P5-epj">

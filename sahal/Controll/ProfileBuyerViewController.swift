@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
+
 class ProfileBuyerViewController: UIViewController , UITextFieldDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate  {
     
     // Database
@@ -32,15 +34,18 @@ class ProfileBuyerViewController: UIViewController , UITextFieldDelegate, UIImag
     override func viewDidLoad() {
         super.viewDidLoad()
         enableanddisableButtons()
-        ApplyImgDesign()
+        SVProgressHUD.dismiss()
+        
+        
+      //  ApplyImgDesign()
         //Database
         
-        databaseReference = Database.database().reference()
-        if Auth.auth().currentUser?.uid == nil {
-            logout()
-        }
-        loadProfileData()
-        
+//        databaseReference = Database.database().reference()
+//        if Auth.auth().currentUser?.uid == nil {
+//
+//        }
+//        loadProfileData()
+//
     }
 
 
@@ -112,67 +117,79 @@ class ProfileBuyerViewController: UIViewController , UITextFieldDelegate, UIImag
         SaveButton.isHidden = true
         
     }
-    func loadProfileData(){
-        
-        //if the user is logged in get the profile data
-        
-        if let userID = Auth.auth().currentUser?.uid{
-            self.databaseReference.child("buyer").child(uid).observe(.value, with: { (snapshot) in
-                
-                //create a dictionary of users profile data
-                let values = snapshot.value as? NSDictionary
-                
-                //if there is a url image stored in photo
-                if let profileImageURL = values?["photo"] as? String{
-                    //using sd_setImage load photo
-                    self.profileImageView.sd_setImage(with: URL(string: profileImageURL))
-                }
-                
-                self.usernameText.text = values?["username"] as? String
-                
-                
-                self.displayNameText.text = values?["display"] as? String
-                
-                
-                self.bioText.text = values?["bio"] as? String
-            })
-            
-        }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    
-    
-    
-    
-    //image
-    func ApplyImgDesign(){
-    ImageProfile.layer.cornerRadius = ImageProfile.frame.size.width / 2
-    ImageProfile.clipsToBounds = true
-    }
-    @IBAction func uploadImageButton(_ sender: Any) {
-        clickedButton = sender.restorationIdentifier
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        let actionSheet = UIAlertController(title: "Photo source", message: "Choose a sourse", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default , handler: { (action:UIAlertAction) in
-            if UIImagePickerController.isSourceTypeAvailable(.camera){
-                imagePickerController.sourceType = .camera
-                self.present(imagePickerController, animated: true, completion: nil)
-            } else {
-                print("Camera is not available :) ")
-            }
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default , handler: { (action:UIAlertAction) in
-            imagePickerController.sourceType = .photoLibrary
-            self.present(imagePickerController, animated: true, completion: nil)
-        }))
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler: nil ))
-        self.present(actionSheet, animated: true, completion: nil )
+    @IBAction func handleLogout(_ sender: UIButton) {
+        try! Auth.auth().signOut()
+        performSegue(withIdentifier: "buyerLogout", sender: self)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+//    func loadProfileData(){
+//
+//        //if the user is logged in get the profile data
+//
+//        if let userID = Auth.auth().currentUser?.uid{
+//            self.databaseReference.child("buyer").child(uid).observe(.value, with: { (snapshot) in
+//
+//                //create a dictionary of users profile data
+//                let values = snapshot.value as? NSDictionary
+//
+//                //if there is a url image stored in photo
+//                if let profileImageURL = values?["photo"] as? String{
+//                    //using sd_setImage load photo
+//                    self.profileImageView.sd_setImage(with: URL(string: profileImageURL))
+//                }
+//
+//                self.usernameText.text = values?["username"] as? String
+//
+//
+//                self.displayNameText.text = values?["display"] as? String
+//
+//
+//                self.bioText.text = values?["bio"] as? String
+//            })
+//
+//        }
+//    }
+//
+//
+//
+//
+//
+//    //image
+//    func ApplyImgDesign(){
+//    ImageProfile.layer.cornerRadius = ImageProfile.frame.size.width / 2
+//    ImageProfile.clipsToBounds = true
+//    }
+//    @IBAction func uploadImageButton(_ sender: Any) {
+//        clickedButton = sender.restorationIdentifier
+//        let imagePickerController = UIImagePickerController()
+//        imagePickerController.delegate = self
+//        let actionSheet = UIAlertController(title: "Photo source", message: "Choose a sourse", preferredStyle: .actionSheet)
+//        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default , handler: { (action:UIAlertAction) in
+//            if UIImagePickerController.isSourceTypeAvailable(.camera){
+//                imagePickerController.sourceType = .camera
+//                self.present(imagePickerController, animated: true, completion: nil)
+//            } else {
+//                print("Camera is not available :) ")
+//            }
+//        }))
+//        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default , handler: { (action:UIAlertAction) in
+//            imagePickerController.sourceType = .photoLibrary
+//            self.present(imagePickerController, animated: true, completion: nil)
+//        }))
+//        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler: nil ))
+//        self.present(actionSheet, animated: true, completion: nil )
+//    }
+//
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//    }
+//
 
 }
