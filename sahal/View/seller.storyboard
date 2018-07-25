@@ -36,7 +36,7 @@
                                             <color key="titleColor" red="0.47058823529999999" green="0.72549019609999998" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="selectImmg1:" destination="AIs-0w-5wa" eventType="touchUpInside" id="lgQ-Qc-eeS"/>
+                                            <action selector="selectImg:" destination="AIs-0w-5wa" eventType="touchUpInside" id="JgZ-37-atT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="button2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89K-9u-VrJ">
@@ -47,7 +47,7 @@
                                             <color key="titleColor" red="0.47058823529999999" green="0.72549019609999998" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="selectImmg1:" destination="AIs-0w-5wa" eventType="touchUpInside" id="t77-vc-qtW"/>
+                                            <action selector="selectImg:" destination="AIs-0w-5wa" eventType="touchUpInside" id="Gev-JN-Sij"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="button3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpC-W9-cfE">
@@ -58,7 +58,7 @@
                                             <color key="titleColor" red="0.47058823529999999" green="0.72549019609999998" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="selectImmg1:" destination="AIs-0w-5wa" eventType="touchUpInside" id="4hV-aV-3S4"/>
+                                            <action selector="selectImg:" destination="AIs-0w-5wa" eventType="touchUpInside" id="QSk-2c-rl7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="button4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0u-FL-aBI">
@@ -69,7 +69,7 @@
                                             <color key="titleColor" red="0.47058823529999999" green="0.72549019609999998" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="selectImmg1:" destination="AIs-0w-5wa" eventType="touchUpInside" id="5ix-WU-CT4"/>
+                                            <action selector="selectImg:" destination="AIs-0w-5wa" eventType="touchUpInside" id="8J8-cu-eM6"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم القطعة :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EK-fS-FRM">
@@ -130,6 +130,9 @@
                                         <state key="normal" title="إضافـــــة" backgroundImage="Button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addButton:" destination="AIs-0w-5wa" eventType="touchUpInside" id="UxM-oH-kOw"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الماركة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3w4-4i-hgw">
                                         <rect key="frame" x="212" y="304" width="137" height="30"/>
@@ -222,8 +225,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="brandTextfeild" destination="3w4-4i-hgw" id="7xl-2I-FKR"/>
+                        <outlet property="descriptionOutlet" destination="9WQ-lJ-8Aj" id="5zw-nC-HW5"/>
                         <outlet property="firstImageOutlet" destination="VZN-fM-zKk" id="x4p-Av-a3J"/>
                         <outlet property="fourthImageOutlet" destination="oPg-tl-yso" id="8HU-OZ-UWU"/>
+                        <outlet property="itemName" destination="yZp-jQ-Fwe" id="6N7-o5-n80"/>
                         <outlet property="modelTextfeild" destination="YLw-EU-fqs" id="dvr-d5-2ak"/>
                         <outlet property="partTextfeild" destination="s2x-g9-1IY" id="sYZ-6s-by9"/>
                         <outlet property="secondImageOutlet" destination="A3o-Dm-Jb0" id="Hng-Tb-yqK"/>
@@ -233,7 +238,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecL-Cg-CTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1818.4000000000001" y="4376.6009852216748"/>
+            <point key="canvasLocation" x="-3239" y="3810"/>
+        </scene>
+        <!--إضافة-->
+        <scene sceneID="m1z-bL-1RL">
+            <objects>
+                <viewController id="eHP-k8-AHa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0vF-Ql-S3F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8X-OI-s7m">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="إضافة قطعة " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0z4-rC-y7Z">
+                                        <rect key="frame" x="166" y="97" width="85" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.30196078430000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FLX-75-eXg">
+                                <rect key="frame" x="0.0" y="150" width="375" height="662"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aaT-Q2-87e"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="إضافة" image="add" selectedImage="add" id="aZg-ZJ-1vK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kT5-tf-alQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2391.1999999999998" y="3809.8522167487686"/>
         </scene>
         <!--الملف الشخصي-->
         <scene sceneID="oEd-V6-bJA">
@@ -550,7 +592,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZI-T9-zap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3926" y="3842"/>
+            <point key="canvasLocation" x="-4164" y="3810"/>
         </scene>
         <!--Main-->
         <scene sceneID="a2J-xy-4rX">
@@ -574,6 +616,7 @@
                         <segue destination="ucS-0E-2fR" kind="relationship" relationship="viewControllers" id="ysP-nK-9Sw"/>
                         <segue destination="Q7Q-mn-5S5" kind="relationship" relationship="viewControllers" id="as1-wd-ZZ1"/>
                         <segue destination="AIs-0w-5wa" kind="relationship" relationship="viewControllers" id="Bn9-dg-DcW"/>
+                        <segue destination="eHP-k8-AHa" kind="relationship" relationship="viewControllers" id="EdM-LX-TNR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTM-Aw-yIo" userLabel="First Responder" sceneMemberID="firstResponder"/>

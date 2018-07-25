@@ -45,6 +45,7 @@ class logIn: UIViewController {
                     
                     if snapshot.key == uID {
                         print("YAAAY!")
+                        
                         self.performSegue(withIdentifier: "toSeller", sender: self)
                     }
                 }

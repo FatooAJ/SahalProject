@@ -10,6 +10,15 @@ import UIKit
 import Firebase
 
 class addProductController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+    var clickedButton: String?
+    
+    var datatbaserefreence : DatabaseReference!
+    
+    var imagePicker : UIImagePickerController!
+    
+    @IBOutlet weak var itemName: UITextField!
+    
+    @IBOutlet weak var descriptionOutlet: UITextView!
     
     @IBOutlet weak var firstImageOutlet: UIImageView!
     
@@ -18,21 +27,30 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     @IBOutlet weak var thirdImageOutlet: UIImageView!
     
     @IBOutlet weak var fourthImageOutlet: UIImageView!
-    var clickedButton: String?
     
-    @IBAction func selectImmg1(_ sender: UIButton) {
+    
+    @IBAction func addButton(_ sender: UIButton) {
+        handleAddingProduct()
+    }
+    
+    
+    @IBAction func selectImg(_ sender: UIButton) {
         
+
         clickedButton = sender.restorationIdentifier
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
+        
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
         
         let actionSheet = UIAlertController(title: "Photo source", message: "Choose a sourse", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default , handler: { (action:UIAlertAction) in
             
             if UIImagePickerController.isSourceTypeAvailable(.camera){
-                imagePickerController.sourceType = .camera
-                self.present(imagePickerController, animated: true, completion: nil)
+                self.imagePicker.sourceType = .camera
+                self.present(self.imagePicker, animated: true, completion: nil)
             } else {
                 
                 print("Camera is not available :) ")
@@ -45,8 +63,8 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
         
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default , handler: { (action:UIAlertAction) in
             
-            imagePickerController.sourceType = .photoLibrary
-            self.present(imagePickerController, animated: true, completion: nil)
+             self.imagePicker.sourceType = .photoLibrary
+            self.present( self.imagePicker, animated: true, completion: nil)
         }))
         
         
@@ -105,15 +123,16 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        datatbaserefreence = Database.database().reference()
         createBrandPicker()
         createTypePicker()
         createModelPicker()
         createPartPicker()
-        
         creatToolbar()
 
-        // Do any additional setup after loading the view.
+        if Auth.auth().currentUser?.uid == nil {
+            logOut()
+        }
     }
 
     func createBrandPicker(){
@@ -140,7 +159,7 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     
     func createPartPicker(){
         let partPicker = UIPickerView()
-        partTextfeild.tag = 3
+        partPicker.tag = 3
         partPicker.delegate = self
         partTextfeild.inputView = partPicker
     }
@@ -178,7 +197,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
             return types.count
         } else  if(pickerView.tag == 2) {
             return models.count
-        } else if(pickerView.tag == 3) {
+        } else if(pickerView.tag == 4 ) {
             return parts.count
         } else {
              return parts.count
@@ -214,7 +233,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
         else if(pickerView.tag == 2)  {
             selectedModel = models[row]
             modelTextfeild.text = selectedModel
-        }        else if(pickerView.tag == 3)  {
+        }        else if(pickerView.tag == 4)  {
             selectedPart = parts[row]
             partTextfeild.text = selectedPart
         } else {
@@ -226,7 +245,34 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
     }
     
     
+    func logOut() {
+        do{
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
     
+    
+    
+    func handleAddingProduct (){
+     guard let itemValue = itemName.text else { return }
+     guard let descriptionValue = descriptionOutlet.text else { return }
+        let price = "50.00"
+        let status = "متاحة"
+        let sellerID = Auth.auth().currentUser?.uid
+     
+        let itemRefrence = self.datatbaserefreence.child("items").childByAutoId()
+        let value = ["buyerId":"none","itemImages":"","name":itemValue , "description":descriptionValue ,"factoryName" : selectedBrand , "type" : selectedType , "year" : selectedModel , "category" : selectedPart  , "price" : price , "status" : status , "sellerId" : sellerID ] as [String : Any]
+        itemRefrence.updateChildValues(value, withCompletionBlock: {(error, refrence) in
+            if error != nil {
+                print(error)
+            } else {
+                print("item is added")
+            }})
+        
+    
+    }
     
     
     

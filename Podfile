@@ -14,6 +14,7 @@ pod 'TextFieldEffects'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase'
+  pod 'Firebase/Storage'
   
   
   target 'sahalTests' do

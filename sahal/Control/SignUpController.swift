@@ -103,7 +103,6 @@ class SignUpController: UIViewController {
         }
         Auth.auth().createUser(withEmail: emailValue, password: passwordValue ) {(result , error) in
             if  error == nil && result != nil {
-                
                 print("User is created ^_^")
                  let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                 changeRequest?.displayName = usernameValue
