@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class addProductController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     var clickedButton: String?
@@ -15,6 +16,10 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     var datatbaserefreence : DatabaseReference!
     
     var imagePicker : UIImagePickerController!
+    
+    var imagesArray = [UIImage]()
+    var imageURLs = [String]()
+    var counter = 0
     
     @IBOutlet weak var itemName: UITextField!
     
@@ -39,11 +44,7 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
 
         clickedButton = sender.restorationIdentifier
         
-        
-        imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = true
-        imagePicker.delegate = self
-        
+
         let actionSheet = UIAlertController(title: "Photo source", message: "Choose a sourse", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default , handler: { (action:UIAlertAction) in
@@ -84,12 +85,16 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         if clickedButton == "button1" {
              firstImageOutlet.image = image
+            imagesArray.append(image)
         } else if clickedButton == "button2"  {
             secondImageOutlet.image = image
+            imagesArray.append(image)
         } else if clickedButton == "button3"  {
             thirdImageOutlet.image = image
+            imagesArray.append(image)
         } else  {
             fourthImageOutlet.image = image
+            imagesArray.append(image)
         }
        
         picker.dismiss(animated: true , completion: nil )
@@ -129,7 +134,10 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
         createModelPicker()
         createPartPicker()
         creatToolbar()
-
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+       
         if Auth.auth().currentUser?.uid == nil {
             logOut()
         }
@@ -195,7 +203,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
            return brands.count
         } else  if(pickerView.tag == 1) {
             return types.count
-        } else  if(pickerView.tag == 2) {
+        } else  if(pickerView.tag   == 2) {
             return models.count
         } else if(pickerView.tag == 4 ) {
             return parts.count
@@ -256,24 +264,123 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
     
     
     func handleAddingProduct (){
-     guard let itemValue = itemName.text else { return }
-     guard let descriptionValue = descriptionOutlet.text else { return }
+     guard let itemValue = itemName.text,
+           let descriptionValue = descriptionOutlet.text,
+           let model = self.selectedModel,
+           let part = selectedPart,
+           let type = selectedType,
+           let brand = selectedBrand else { return }
+        
+        
         let price = "50.00"
         let status = "متاحة"
         let sellerID = Auth.auth().currentUser?.uid
-     
-        let itemRefrence = self.datatbaserefreence.child("items").childByAutoId()
-        let value = ["buyerId":"none","itemImages":"","name":itemValue , "description":descriptionValue ,"factoryName" : selectedBrand , "type" : selectedType , "year" : selectedModel , "category" : selectedPart  , "price" : price , "status" : status , "sellerId" : sellerID ] as [String : Any]
-        itemRefrence.updateChildValues(value, withCompletionBlock: {(error, refrence) in
-            if error != nil {
-                print(error)
-            } else {
-                print("item is added")
-            }})
         
-    
+        print("I'm inside handleAddingProduct")
+        
+        
+
+        
+        
+        
+        self.uploading() { uploaded in
+            print("inside final uploading")
+            if uploaded == true {
+                let urls = ["0":  self.imageURLs[0], "1":  self.imageURLs[1],"2":  self.imageURLs[2],"3":  self.imageURLs[3]]
+                
+                let value = ["buyerId":"none","itemImages":urls,"name":itemValue , "description":descriptionValue ,"factoryName" : brand  , "type" : type , "year" : model , "category" : part  , "price" : price , "status" : status , "sellerId" : sellerID! ] as [String : Any]
+                
+                
+                self.productUploading(values: value)
+            }
+        }
+      
+        
+       
+        
     }
     
     
+    func uploadProductImages(_ image : UIImage , completion : @escaping ((_ urls:String?)->()))  {
+        let imageName = "\(Date().timeIntervalSinceNow)"
+        let storageRefrence = Storage.storage().reference().child("items/\(imageName)")
+        
+            
+            guard let imageData = UIImageJPEGRepresentation(image, 0.75) else {return}
+            
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/jpg"
+            
+            storageRefrence.putData(imageData, metadata: metaData) { (metaData, error) in
+                if error == nil && metaData != nil {
+                    storageRefrence.downloadURL { (url, error) in
+                        guard let downloadURL = url else {
+                            // Uh-oh, an error occurred!
+                            return
+                        }
+                        
+                      completion(downloadURL.absoluteString)
+                       
+                       
+                    }
+                }else { completion(nil) }
+                
+            
+        }
+        
+            
+        }
     
-}
+    
+     func uploading(completion : @escaping ((_ uploaded:Bool?)->()))  {
+        
+        for image in self.imagesArray {
+            
+            
+            self.uploadProductImages(image) { url in
+                
+                print("I'm inside the images loop")
+                
+                self.imageURLs.append(url!)
+                self.counter += 1
+                print(self.counter)
+                print(url!)
+                
+                if (self.counter == 4 ) {
+                    print("inssssside completion")
+                    completion(true)
+                }
+            }
+            
+            
+        }
+        
+      
+       
+    }
+    
+    
+    func productUploading(values: [String:Any]) {
+        let itemRefrence = self.datatbaserefreence.child("items").childByAutoId()
+       
+        itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
+            if error != nil {
+                print(error!)
+            } else {
+                print("item is added")
+            }})
+    }
+        
+        
+        }
+        
+        
+    
+            
+
+
+
+    
+    
+    
+
