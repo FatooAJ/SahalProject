@@ -39,7 +39,7 @@ class logIn: UIViewController {
         Auth.auth().signIn(withEmail: emailValue, password: passValue){ user , error in
             if error == nil && user != nil {
                  print("YAAAY!")
-               let uID = user?.user.uid
+               let uID = Auth.auth().currentUser?.uid
                 self.databaseRefrence.child("seller").observe(.childAdded) { (snapshot) in
                     print(snapshot.key)
                     

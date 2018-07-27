@@ -73,7 +73,7 @@ class SignUpController: UIViewController {
                 
             }
             
-            guard let uid = result?.user.uid else {
+            guard let uid = Auth.auth().currentUser?.uid else {
                 return
             }
             
@@ -120,7 +120,7 @@ class SignUpController: UIViewController {
                 
             }
             
-            guard let uid = result?.user.uid else {
+            guard let uid =  Auth.auth().currentUser?.uid else {
                 return
             }
             
