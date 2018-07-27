@@ -7,12 +7,14 @@
 //
 import UIKit
 import Firebase
+
 class HomeViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
     
     // Database
     var databaseReference : DatabaseReference!
     // var currentUser = Auth.auth().currentUser?
     var Products = [Product]()
+   // var imgproduct = Product()
     
     @IBOutlet var changesegment: UISegmentedControl!
     @IBOutlet var tableproduct: UITableView!
@@ -30,13 +32,13 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     var productimg2 = ["3.jpg","3.jpg","3.jpg","3.jpg","3.jpg","3.jpg","3.jpg"]
     var productimg3 = ["4.jpg","4.jpg","4.jpg","4.jpg","4.jpg","4.jpg","4.jpg"]
     var productimg4 = ["5.jpg","5.jpg","5.jpg","5.jpg","5.jpg","3.jpg","4.jpg"]
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //Database
         databaseReference = Database.database().reference()
         fetchUsers()
+       // loadImages()
     }
     
     
@@ -65,10 +67,8 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "productcell", for: indexPath) as! ProductTableViewCell
-        let title = Products[indexPath.row].producttitle
         //  let Sellername = Products[indexPath.row].title
         //   let cityName = cityname[indexPath.row]
-        let productprice = Products[indexPath.row].Price
         // let Loctionicon = locationIcon[indexPath.row]
         // let carticon = shoppingIcon[indexPath.row]
         
@@ -76,30 +76,49 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         {
         case 0:
             // SHOWING THE HOME VIEW
-            let Productimg = productimg[indexPath.row]
-            cell.titleproduct?.text = title
-            print(cell.titleproduct?.text)
+            let CellProduct = Products[indexPath.row]
+            cell.titleproduct?.text = CellProduct.producttitle
+            cell.price?.text = CellProduct.Price
+         
+        //    let url = URL(string:  Products[indexPath.row].imgproduct)!
+           // cell.productimage?.kf.setImage(with: url)
+           // print(url)
+          //  cell.productimage?.image = UIImage(named: url)
+       
+            //cell.productimage?.image = UIImage(named: Productimg)
+////            if let productimgURL = CellProduct.imgproduct {
+////                let url = URL(string: productimgURL)
+////                URLSession.shared.dataTask(with: url!) { (data, response, error) in
+////                    if error != nil {
+////                        print (error!)
+////                        return
+////                    }
+////                    cell.imageView?.image = UIImage(data: data!)
+//
+//                }.resume()
+         //   }
+    
+            
+           // print(cell.titleproduct?.text)
             //            cell.sellername?.text = Sellername
             //            cell.city?.text = cityName
-            cell.price?.text = productprice
             //    cell.locationicon?.image = UIImage(named: "location.png")
             // cell.ShoppingIcon?.image = UIImage(named: "shopp")
-            cell.productimage?.image = UIImage(named: Productimg)
             //        //Tabel cell Style
             cellDesign(cell: cell)
             
             
         case 1:
             // SHOWING THE PROFILE VIEW
-            let Productimg = productimg2[indexPath.row]
-            cell.titleproduct?.text = title
+          //  let Productimg = productimg2[indexPath.row]
+            //cell.titleproduct?.text = title
             
             //            cell.sellername?.text = Sellername
             //            cell.city?.text = cityName
-            cell.price?.text = productprice
+            //cell.price?.text = productprice
             //    cell.locationicon?.image = UIImage(named: "location.png")
             //   cell.ShoppingIcon?.image = UIImage(named: "shopp")
-            cell.productimage?.image = UIImage(named: Productimg)
+          //  cell.productimage?.image = UIImage(named: Productimg)
             
             //        //Tabel cell Style
             cellDesign(cell: cell)
@@ -107,26 +126,26 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
             
         case 2:
             // SHOWING THE SETTINGS VIEW
-            let Productimg = productimg3[indexPath.row]
+          //  let Productimg = productimg3[indexPath.row]
             //            cell.titleproduct?.text = title
             //            cell.sellername?.text = Sellername
             //            cell.city?.text = cityName
             //   cell.price?.text = productprice
             //    cell.locationicon?.image = UIImage(named: "location.png")
             //   cell.ShoppingIcon?.image = UIImage(named: "shopp")
-            cell.productimage?.image = UIImage(named: Productimg)
+         //   cell.productimage?.image = UIImage(named: Productimg)
             
             //        //Tabel cell Style
             cellDesign(cell: cell)
         case 3:
-            let Productimg = productimg4[indexPath.row]
+          //  let Productimg = productimg4[indexPath.row]
             //            cell.titleproduct?.text = title
             //            cell.sellername?.text = Sellername
             //            cell.city?.text = cityName
             //    cell.price?.text = productprice
             //    cell.locationicon?.image = UIImage(named: "location.png")
             //    cell.ShoppingIcon?.image = UIImage(named: "shopp")
-            cell.productimage?.image = UIImage(named: Productimg)
+       //     cell.productimage?.image = UIImage(named: Productimg)
             
             //Tabel cell Style
             cellDesign(cell: cell)
@@ -135,6 +154,17 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
             break;
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let itemID = self.Products[indexPath.row].productID
+        let iteminfo = self.storyboard?.instantiateViewController(withIdentifier: "Viewproduct") as! ProductDetilesViewController
+        iteminfo.productID = itemID
+        iteminfo.showProductDetail()
+        
+        self.navigationController?.pushViewController(iteminfo, animated: true)
+        
     }
     func cellDesign(cell : ProductTableViewCell){
         
@@ -164,15 +194,55 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         self.databaseReference.child("items").observe(.childAdded) { (snapshots:DataSnapshot) in
             if let dectionary = snapshots.value as? [String:AnyObject] {
-                print(dectionary)
-                let item = Product(dectionary: dectionary)
+                let item = Product(dectionary: dectionary, productID: snapshots.key)
+                //print(snapshots.key)
                 self.Products.append(item)
-                print(self.Products.count)
+               // print("item\(item.imgproduct)")
+             //   print(Products)
                 DispatchQueue.main.async {
                     self.tableproduct.reloadData()
                 }
             }
         }}
+//    func loadImages(){
+//       self.databaseReference.child("items").child("itemImages").observe(.value, with: { (snapShot) in
+//                if snapShot.exists() {
+//                    let array:NSArray = snapShot.children.allObjects as NSArray
+//
+//                    for child in array {
+//                        let snap = child as! DataSnapshot
+//                        if snap.value is NSDictionary {
+//                            let data:NSDictionary = snap.value as! NSDictionary
+//                            if let dict = data.value(forKey: "0") {
+//                                print("hhhhh\(dict)")
+//                                let dictImage:NSDictionary = dict as!
+//                                NSDictionary
+//
+//                                if let image  = dictImage["image1"] {
+//                                    print("Thei is \(image)")
+//                                }
+//                            }
+//                        }
+//
+//                        // newImage1.append(url2)
+//
+//                    }
+//                }
+//            })
+//    }
+//    func uploadimg(){
+//        let storageRef = Storage.storage().reference()
+//        storageRef.child("items").child("itemImages")
+//            if let url = snapshots.value as? NSArray {
+//                print(url)
+//                let arrayimg = (url as Array).filter {$0 is String}
+//                pritn(arrayimg)
+//                }
+//            }
+
     
-    
+
 }
+
+    
+

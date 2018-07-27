@@ -20,7 +20,7 @@ class Product {
         self.description = description
     }
     
-    var imgproduct = [String]()
+    var imgproduct : String!
     var producttitle : String!
     var productdescription : String!
     var Price : String!
@@ -28,12 +28,16 @@ class Product {
     var Companyname : String!
     var Category : String!
     var status : String!
+    var productID : String!
+    var year : String!
+    var type : String!
     // var SellerID
     
     
-    init (dectionary: [String: Any]) {
+    init (dectionary: [String: Any], productID : String) {
         
-        //  self.img = img
+      //  self.imgproduct = storageRef
+        self.productID = productID
         self.producttitle = dectionary["name"] as? String
         self.productdescription = dectionary["description"] as? String
         self.Price = dectionary["price"] as? String
@@ -41,6 +45,24 @@ class Product {
         self.Companyname = dectionary["factoryName"] as? String
         self.Category = dectionary["category"] as? String
         self.status = dectionary["status"] as? String
+        self.year = dectionary["year"] as? String
+        self.type = dectionary["type"] as? String
+        self.imgproduct = dectionary["images"] as? String
+        
+    }
+    init () {
+        
+        //  self.imgproduct = storageRef
+        self.productID = ""
+        self.producttitle = ""
+        self.productdescription = ""
+        self.Price = ""
+        self.City = ""
+        self.Companyname = ""
+        self.Category = ""
+        self.status = ""
+        self.year = ""
+        self.type = ""
         
     }
 }

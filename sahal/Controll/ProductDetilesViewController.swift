@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import Firebase
 class ProductDetilesViewController: UIViewController ,
 UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
     
-    
+    var databaseReference = DatabaseReference()
+    var PRODUCT = Product()
     //Tags
     @IBOutlet var companyname: UILabel!
     @IBOutlet var Years: UILabel!
@@ -32,12 +33,63 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet var CommentsTable: Table!
     @IBOutlet var scroll: UIScrollView!
     @IBOutlet var Textcomments: UITextField!
+    var productID : String?
     // var comments = ["I want to buy it","Do not buy it","Shiiiit ","What this????","answer me","I want to buy it"]
     // var username = ["Ahmed","Mohammed","Jehad","Ahmed","Mohammed","Jehad"]
     var images: [String] = ["1.jpeg","2.jpeg","3.jpg","4.jpg","5.jpg"]
     var frame = CGRect(x:0,y:0,width:0,height:0)
     var count: Int = 0
     
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        showProductDetail()
+//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //Tags Style
+        scroll.contentSize.height = 300
+        companyname.applyDesign()
+        Years.applyDesign()
+        carname.applyDesign()
+        cartype.applyDesign()
+        piece.applyDesign()
+        //call image function
+        
+        databaseReference = Database.database().reference()
+        DispatchQueue.main.async {
+            self.settinguplabels()
+        }
+        ProductImageScroll()
+      //  showProductDetail()
+     //   settinguplabels()
+        
+        
+    }
+
+    
+    func showProductDetail(){
+       
+        //print(self.companyname)
+      //  print("here\(self.productID!)")
+        databaseReference = Database.database().reference().child("items").child(self.productID!)
+//        databaseReference.observeSingleEvent(of: .value, with: { (snapshot) in
+//            let value = snapshot.value as? [String: AnyObject]
+//            print(value)
+//            let title = value?["name"] as? String?
+//            print(title)
+//        })
+        databaseReference.observe(.value, with: { (snapshots:DataSnapshot) in
+            var PRODUCT = Product()
+            //print(snapshots.value as? [String:AnyObject])
+            if let dectionary = snapshots.value as? [String:AnyObject] {
+             //   print(dectionary)
+                let productOBJ = Product(dectionary: dectionary, productID: snapshots.key)
+                PRODUCT = productOBJ
+            }
+            self.PRODUCT = PRODUCT
+            print(PRODUCT.imgproduct)
+        })
+    }
     
     // image Scroll Func
     func ProductImageScroll(){
@@ -93,19 +145,27 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //Tags Style
-        scroll.contentSize.height = 300
-        companyname.applyDesign()
-        Years.applyDesign()
-        carname.applyDesign()
-        cartype.applyDesign()
-        piece.applyDesign()
-        //call image function
-        ProductImageScroll()
+    func settinguplabels(){
+
+        TitleProduct.text = self.PRODUCT.producttitle
+        Description.text = self.PRODUCT.productdescription
+        Price.text = self.PRODUCT.Price
+        //self.City.text = value?["city"] as? String
+        
+        //tags
+        companyname.text = self.PRODUCT.Companyname
+        Years.text = self.PRODUCT.year
+        //  self.carname.text = values?["carname"] as? String
+        cartype.text = self.PRODUCT.type
+        //  self.piece.text = value?["factoryName"] as? String
+        print(self.PRODUCT.type)
+        print(self.PRODUCT.year)
+        
+        
+        
+        
     }
+
     
 }
 

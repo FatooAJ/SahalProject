@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = #colorLiteral(red: 0.4705882353, green: 0.7254901961, blue: 0.7411764706, alpha: 1)
         UINavigationBar.appearance().titleTextAttributes = attributes
         UINavigationBar.appearance().titleTextAttributes = attributes2
+//        let myTabBar = self.window?.rootViewController as! UITabBarController // Getting Tab Bar
+//        myTabBar.selectedIndex = 2
         
         
         return true
