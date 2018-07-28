@@ -99,6 +99,7 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
             frame.origin.x = imagescrol.frame.size.width * CGFloat(index)
             frame.size = imagescrol.frame.size
             let imgView = UIImageView(frame: frame)
+            
             imgView.image = UIImage(named: images[index])
             self.imagescrol.addSubview(imgView)
         }

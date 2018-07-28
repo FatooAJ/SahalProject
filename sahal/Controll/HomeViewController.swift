@@ -38,7 +38,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         //Database
         databaseReference = Database.database().reference()
         fetchUsers()
-       // loadImages()
+      //  loadImages()
     }
     
     
@@ -80,10 +80,22 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
             cell.titleproduct?.text = CellProduct.producttitle
             cell.price?.text = CellProduct.Price
          
-        //    let url = URL(string:  Products[indexPath.row].imgproduct)!
-           // cell.productimage?.kf.setImage(with: url)
-           // print(url)
-          //  cell.productimage?.image = UIImage(named: url)
+            let store = Storage.storage()
+            let storeRef = store.reference().child("items")
+            print(storeRef)
+            storeRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                if let error = error {
+                    print("error: \(error.localizedDescription)")
+                } else {
+                    // Data for "images/island.jpg" is returned
+                    let image = UIImage(data: data!)
+                    cell.productimage?.image = image
+                }}
+//            cell.productimage?.image = UIImage(named: "stroeRef")
+//            let url = URL(string:  Products[indexPath.row].imgproduct)!
+//            cell.productimage?.kf.setImage(with: url)
+//            print(url)
+//            cell.productimage?.image = UIImage(named: url)
        
             //cell.productimage?.image = UIImage(named: Productimg)
 ////            if let productimgURL = CellProduct.imgproduct {
@@ -195,10 +207,8 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         self.databaseReference.child("items").observe(.childAdded) { (snapshots:DataSnapshot) in
             if let dectionary = snapshots.value as? [String:AnyObject] {
                 let item = Product(dectionary: dectionary, productID: snapshots.key)
-                //print(snapshots.key)
                 self.Products.append(item)
-               // print("item\(item.imgproduct)")
-             //   print(Products)
+                print("imag here\(dectionary)")
                 DispatchQueue.main.async {
                     self.tableproduct.reloadData()
                 }
@@ -210,6 +220,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
 //                    let array:NSArray = snapShot.children.allObjects as NSArray
 //
 //                    for child in array {
+//                        print(child)
 //                        let snap = child as! DataSnapshot
 //                        if snap.value is NSDictionary {
 //                            let data:NSDictionary = snap.value as! NSDictionary
