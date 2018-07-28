@@ -9,8 +9,12 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import DLRadioButton
 
 class addProductController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+    
+    var selectedType : String?
+    
     var clickedButton: String?
     
     var datatbaserefreence : DatabaseReference!
@@ -21,9 +25,22 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     var imageURLs = [String]()
     var counter = 0
     
+    
+    @IBOutlet weak var radio1: DLRadioButton!
+    @IBOutlet weak var radio2: DLRadioButton!
+    @IBOutlet weak var radio3: DLRadioButton!
+    @IBOutlet weak var radio4: DLRadioButton!
+    
+    
     @IBOutlet weak var itemName: UITextField!
     
     @IBOutlet weak var descriptionOutlet: UITextView!
+    
+    @IBOutlet weak var cityOutlet: UITextField!
+    
+    
+    @IBOutlet weak var priceOutlet: UITextField!
+    
     
     @IBOutlet weak var firstImageOutlet: UIImageView!
     
@@ -35,11 +52,39 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     
     
     @IBAction func addButton(_ sender: UIButton) {
-        handleAddingProduct()
+        print("Hi")
+       
+            
+            handleAddingProduct()
+        
+       
     }
     
     
+    @IBAction func radioButtons(_ sender: DLRadioButton) {
+        switch sender.selected() {
+        case radio1 :
+            selectedType = "electric"
+            print("\(selectedType!)")
+            break
+        case radio2 :
+            selectedType = "engine"
+            print("\(selectedType!)")
+            break
+        case radio3 :
+            selectedType = "body"
+            print("\(selectedType!)")
+            break
+        case radio4 :
+            selectedType = "external"
+            print("\(selectedType!)")
+            break
+        default:
+            break
+        }
+    }
     @IBAction func selectImg(_ sender: UIButton) {
+        
         
 
         clickedButton = sender.restorationIdentifier
@@ -115,14 +160,14 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     @IBOutlet weak var partTextfeild: UITextField!
     
     
-    let brands = ["Rose Rise" , "BMW" , "Ferari" , "Dodge"]
-    let types = ["type 1" , "type 2" , "type 3" , "type 4"]
-    let models = ["model 1 " , "model 2" , "model 3" , "model 4"]
-    let parts = ["part " , "part 2 " , "part 3 " , "part 4"]
+    let brands = ["تويوتا" , "مازدا" , "هونداي" , "هوندا",  "مرسيدس" , "بي ام دبليو" , "شفروليه"]
+    let types = [ "كامري" , "لاند كروزر" , "كوريلا" , "سبارك" , "اكسنت" , "سوبارو" ]
+    let models = ["2000" , "2001" , "2001" , "2002" , "2003" , "2004" , "2005" , "2006" , "2010" , "2012" , "2018"]
+    let parts = ["type1" , "type2" , "type3" , "type4" , "type5"]
     
     
     var selectedBrand: String?
-    var selectedType: String?
+    var carName: String?
     var selectedModel: String?
     var selectedPart: String?
     
@@ -235,8 +280,8 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
             selectedBrand = brands[row]
             brandTextfeild.text = selectedBrand
         } else if(pickerView.tag == 1)  {
-            selectedType = types[row]
-            typeTextfeild.text = selectedType
+            carName = types[row]
+            typeTextfeild.text = carName
         }
         else if(pickerView.tag == 2)  {
             selectedModel = models[row]
@@ -264,31 +309,44 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
     
     
     func handleAddingProduct (){
+        print("Hello")
+        
      guard let itemValue = itemName.text,
            let descriptionValue = descriptionOutlet.text,
            let model = self.selectedModel,
            let part = selectedPart,
-           let type = selectedType,
-           let brand = selectedBrand else { return }
+           let carName = carName,
+           let brand = selectedBrand ,
+           let price = priceOutlet.text,
+           let city = cityOutlet.text ,
+           let category = selectedType ,
+           let image1 = firstImageOutlet.image,
+           let image2 = secondImageOutlet.image,
+           let image3 = thirdImageOutlet.image ,
+           let image4 = fourthImageOutlet.image
+           else {
+            
+            let alert = UIAlertController(title: "عذرًا", message: "جميع الحقول مطلوبة !", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "موافق", style: .default , handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            return
+        }
         
+          print("I'm inside handleAddingProduct")
         
-        let price = "50.00"
+       
         let status = "متاحة"
         let sellerID = Auth.auth().currentUser?.uid
         
         print("I'm inside handleAddingProduct")
-        
-        
 
-        
-        
-        
         self.uploading() { uploaded in
             print("inside final uploading")
             if uploaded == true {
                 let urls = ["0":  self.imageURLs[0], "1":  self.imageURLs[1],"2":  self.imageURLs[2],"3":  self.imageURLs[3]]
                 
-                let value = ["buyerId":"none","itemImages":urls,"name":itemValue , "description":descriptionValue ,"factoryName" : brand  , "type" : type , "year" : model , "category" : part  , "price" : price , "status" : status , "sellerId" : sellerID! ] as [String : Any]
+                let value = ["itemImages":urls,"itemName":itemValue , "description":descriptionValue ,"city" : city , "category": category ,"factoryName" : brand  , "carName" : carName , "year" : model , "type" : part  , "price" : price , "status" : status , "sellerId" : sellerID! , "buyerId":"none",] as [String : Any]
                 
                 
                 self.productUploading(values: value)
@@ -361,14 +419,48 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
     
     
     func productUploading(values: [String:Any]) {
-        let itemRefrence = self.datatbaserefreence.child("items").childByAutoId()
-       
-        itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
-            if error != nil {
-                print(error!)
-            } else {
-                print("item is added")
-            }})
+        
+        switch self.selectedType {
+        case "electric":
+            let itemRefrence = self.datatbaserefreence.child("items").child("electric").childByAutoId()
+            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
+                if error != nil {
+                    print(error!)
+                } else {
+                    print("electric item is added")
+                }})
+            break
+        case "engine":
+            let itemRefrence = self.datatbaserefreence.child("items").child("engine").childByAutoId()
+            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
+                if error != nil {
+                    print(error!)
+                } else {
+                    print("engine item is added")
+                }})
+            break
+        case "body":
+            let itemRefrence = self.datatbaserefreence.child("items").child("body").childByAutoId()
+            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
+                if error != nil {
+                    print(error!)
+                } else {
+                    print("body item is added")
+                }})
+            break
+        case "external":
+            let itemRefrence = self.datatbaserefreence.child("items").child("external").childByAutoId()
+            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
+                if error != nil {
+                    print(error!)
+                } else {
+                    print("external item is added")
+                }})
+            break
+        default:
+            break
+        }
+        
     }
         
         

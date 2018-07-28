@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,7 +39,19 @@
                                         <color key="textColor" red="0.18039215689999999" green="0.3411764706" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65H-mX-RHu" userLabel="errorlabel">
+                                        <rect key="frame" x="38" y="281" width="306" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.70068607230000002" green="0.22612371279999999" blue="0.15166522169999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="shadowOffset" width="1" height="-1"/>
+                                    </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="65H-mX-RHu" secondAttribute="trailing" constant="31" id="0t2-CM-HC2"/>
+                                    <constraint firstAttribute="bottom" secondItem="65H-mX-RHu" secondAttribute="bottom" constant="8" id="3eW-ei-bh5"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYl-u0-D55" userLabel="Middle">
                                 <rect key="frame" x="29.666666666666657" y="310" width="316" height="192"/>
@@ -49,9 +62,9 @@
                                             <constraint firstAttribute="height" constant="30" id="4kS-WZ-HGn"/>
                                             <constraint firstAttribute="width" constant="316" id="IdZ-Jk-t0z"/>
                                         </constraints>
-                                        <color key="textColor" red="0.55314016340000005" green="0.52470910550000005" blue="0.57261359690000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.090196078430000007" green="0.30196078430000001" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nz4-Hj-Ev5">
                                         <rect key="frame" x="45" y="155" width="217" height="32"/>
@@ -171,6 +184,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailOutlet" destination="Ip8-Ut-ZxX" id="b3G-h2-XHH"/>
+                        <outlet property="errorLabel" destination="65H-mX-RHu" id="n7x-Se-Ycy"/>
                         <outlet property="passwordOutlet" destination="dgR-r6-2Gg" id="u4h-8D-J3o"/>
                         <segue destination="l4c-F4-161" kind="show" identifier="toSeller" id="YdH-My-QQg"/>
                         <segue destination="j3Q-5D-FHB" kind="show" identifier="toBuyer" id="cjt-Iw-MLi"/>
@@ -178,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8W-aZ-KRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692.753623188406" y="2691.847826086957"/>
+            <point key="canvasLocation" x="1692" y="2691.1330049261087"/>
         </scene>
         <!--Home-->
         <scene sceneID="yAE-Bq-7Q0">

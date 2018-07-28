@@ -37,10 +37,10 @@
 		C6CEF91B2100285200467ABF /* addProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CEF91A2100285200467ABF /* addProductController.swift */; };
 		C6D15AED2100B50F0096CD05 /* NewOperationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D15AEB2100B50F0096CD05 /* NewOperationViewController.xib */; };
 		C6D15AF32100B5570096CD05 /* OldOperationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D15AF12100B5570096CD05 /* OldOperationViewController.xib */; };
+		C6FC8E55210BB73400AFA3B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6FC8E54210BB73300AFA3B9 /* Assets.xcassets */; };
 		CAB439BE7471994039D4B5FC /* Pods_sahalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E0BE84DD1A41554B2C22C0B /* Pods_sahalTests.framework */; };
 		CB0B91F620FB5B36004E0FF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0B91F520FB5B36004E0FF6 /* ViewController.swift */; };
 		CB0B91F920FB5B36004E0FF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0B91F720FB5B36004E0FF6 /* Main.storyboard */; };
-		CB0B91FB20FB5B36004E0FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB0B91FA20FB5B36004E0FF6 /* Assets.xcassets */; };
 		CB0B920920FB5B36004E0FF6 /* sahalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0B920820FB5B36004E0FF6 /* sahalTests.swift */; };
 		CB0B921420FB5B36004E0FF6 /* sahalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0B921320FB5B36004E0FF6 /* sahalUITests.swift */; };
 		CB0B922520FB5E0E004E0FF6 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB0B922420FB5E0E004E0FF6 /* Search.storyboard */; };
@@ -133,10 +133,10 @@
 		C6CEF91A2100285200467ABF /* addProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addProductController.swift; sourceTree = "<group>"; };
 		C6D15AEB2100B50F0096CD05 /* NewOperationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewOperationViewController.xib; sourceTree = "<group>"; };
 		C6D15AF12100B5570096CD05 /* OldOperationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OldOperationViewController.xib; sourceTree = "<group>"; };
+		C6FC8E54210BB73300AFA3B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB0B91F020FB5B36004E0FF6 /* sahal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sahal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0B91F520FB5B36004E0FF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB0B91F820FB5B36004E0FF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CB0B91FA20FB5B36004E0FF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB0B91FF20FB5B36004E0FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB0B920420FB5B36004E0FF6 /* sahalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sahalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0B920820FB5B36004E0FF6 /* sahalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sahalTests.swift; sourceTree = "<group>"; };
@@ -305,7 +305,7 @@
 				C68ACF4D20FC761600CCB3AB /* Control */,
 				C68ACF4220FC3E4200CCB3AB /* View */,
 				C68ACF4720FC4C1100CCB3AB /* segment.swift */,
-				CB0B91FA20FB5B36004E0FF6 /* Assets.xcassets */,
+				C6FC8E54210BB73300AFA3B9 /* Assets.xcassets */,
 				CB0B91FF20FB5B36004E0FF6 /* Info.plist */,
 				CB0B922220FB5D92004E0FF6 /* Controll */,
 				CB0B922320FB5DB8004E0FF6 /* View */,
@@ -513,7 +513,6 @@
 				CB3ABF6D20FBB87F007E2286 /* 1.jpeg in Resources */,
 				C6C3D5E820FCC10400A35137 /* LaunchScreen.storyboard in Resources */,
 				CB0B922720FB74FA004E0FF6 /* Home.storyboard in Resources */,
-				CB0B91FB20FB5B36004E0FF6 /* Assets.xcassets in Resources */,
 				C6C712A221055345009F6336 /* SignUpBuyer.xib in Resources */,
 				C6D15AED2100B50F0096CD05 /* NewOperationViewController.xib in Resources */,
 				C6D15AF32100B5570096CD05 /* OldOperationViewController.xib in Resources */,
@@ -534,6 +533,7 @@
 				C6C712A021055307009F6336 /* signUpSeller.xib in Resources */,
 				CB3ABF7120FBB87F007E2286 /* 4.jpg in Resources */,
 				CB0B91F920FB5B36004E0FF6 /* Main.storyboard in Resources */,
+				C6FC8E55210BB73400AFA3B9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
