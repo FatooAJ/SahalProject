@@ -420,46 +420,13 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
     
     func productUploading(values: [String:Any]) {
         
-        switch self.selectedType {
-        case "electric":
-            let itemRefrence = self.datatbaserefreence.child("items").child("electric").childByAutoId()
-            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    print("electric item is added")
-                }})
-            break
-        case "engine":
-            let itemRefrence = self.datatbaserefreence.child("items").child("engine").childByAutoId()
-            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    print("engine item is added")
-                }})
-            break
-        case "body":
-            let itemRefrence = self.datatbaserefreence.child("items").child("body").childByAutoId()
-            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    print("body item is added")
-                }})
-            break
-        case "external":
-            let itemRefrence = self.datatbaserefreence.child("items").child("external").childByAutoId()
-            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    print("external item is added")
-                }})
-            break
-        default:
-            break
-        }
+        let itemRefrence = self.datatbaserefreence.child("items").childByAutoId()
+        itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
+            if error != nil {
+                print(error!)
+            } else {
+                print(" item is added")
+            }})
         
     }
         
