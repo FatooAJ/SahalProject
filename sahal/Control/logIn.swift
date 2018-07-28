@@ -13,6 +13,7 @@ import SVProgressHUD
 
 class logIn: UIViewController {
 
+  
     @IBOutlet weak var errorLabel: UILabel!
     
     @IBOutlet weak var emailOutlet: UITextField!
@@ -24,6 +25,7 @@ class logIn: UIViewController {
         super.viewDidLoad()
 
         databaseRefrence = Database.database().reference()
+        errorLabel.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,11 +35,14 @@ class logIn: UIViewController {
     
     
     @IBAction func logInButton(_ sender: UIButton) {
+        
         guard let emailValue = emailOutlet.text else { return }
         guard let passValue = passwordOutlet.text else { return }
         
         Auth.auth().signIn(withEmail: emailValue, password: passValue){ user , error in
             if error == nil && user != nil {
+               SVProgressHUD.show()
+                self.errorLabel.isHidden = true
                  print("YAAAY!")
                let uID = Auth.auth().currentUser?.uid
                 self.databaseRefrence.child("seller").observe(.childAdded) { (snapshot) in
@@ -59,6 +64,12 @@ class logIn: UIViewController {
                         self.performSegue(withIdentifier: "toBuyer", sender: self)
                     }
                 }
+            } else {
+                print(error)
+                self.errorLabel.isHidden = false
+                self.errorLabel.text = "*يجب إخال بريد إلكتروني وكلمة مرور صحيحتين"
+                
+                print(self.errorLabel.text)
             }
             
         }
