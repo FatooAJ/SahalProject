@@ -15,7 +15,9 @@ pod 'TextFieldEffects'
   pod 'Firebase/Auth'
   pod 'Firebase'
   pod 'Firebase/Storage'
-  
+  pod 'Kingfisher', '~> 4.0'
+  pod 'SDWebImage', '~> 4.0'
+
   
   target 'sahalTests' do
     inherit! :search_paths

@@ -431,7 +431,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="XbZ-Ko-aKe" secondAttribute="trailing" id="olc-hn-cbI"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Hvv-XA-yq0">
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hvv-XA-yq0">
                                                 <rect key="frame" x="119.99999999999999" y="474" width="228.66666666666663" height="15.666666666666686"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عكس" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGi-94-Y2c">
@@ -558,7 +558,7 @@
                         <outlet property="TitleProduct" destination="emL-il-Zhj" id="Ebo-9a-AXh"/>
                         <outlet property="Years" destination="SR9-Li-q1L" id="nw6-3K-Y48"/>
                         <outlet property="carname" destination="out-j8-s7J" id="zqF-he-Nm7"/>
-                        <outlet property="cartype" destination="DjC-uN-ybx" id="Gnv-oL-mC2"/>
+                        <outlet property="cartype" destination="DjC-uN-ybx" id="YTj-bt-DS6"/>
                         <outlet property="companyname" destination="RGi-94-Y2c" id="gbh-m6-gJb"/>
                         <outlet property="imagecontrol" destination="iWI-Eq-yEj" id="yDm-lI-6l7"/>
                         <outlet property="imagescrol" destination="Oe5-k0-fN9" id="ort-We-0W6"/>

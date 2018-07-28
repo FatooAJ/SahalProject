@@ -52,6 +52,7 @@
 		CB1251EE20FDBAC200117A21 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB1251EC20FDBAC200117A21 /* MyCell.xib */; };
 		CB133176210B3A47003213F2 /* SellerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB133175210B3A47003213F2 /* SellerProfile.swift */; };
 		CB133178210B3ABF003213F2 /* ProfileSellerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB133177210B3ABF003213F2 /* ProfileSellerViewController.swift */; };
+		CB13317A210D0250003213F2 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB133179210D0250003213F2 /* Comments.swift */; };
 		CB3ABF6D20FBB87F007E2286 /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CB3ABF6820FBB87E007E2286 /* 1.jpeg */; };
 		CB3ABF6E20FBB87F007E2286 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB3ABF6920FBB87E007E2286 /* 5.jpg */; };
 		CB3ABF6F20FBB87F007E2286 /* 2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CB3ABF6A20FBB87E007E2286 /* 2.jpeg */; };
@@ -153,6 +154,7 @@
 		CB1251EC20FDBAC200117A21 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		CB133175210B3A47003213F2 /* SellerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerProfile.swift; sourceTree = "<group>"; };
 		CB133177210B3ABF003213F2 /* ProfileSellerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSellerViewController.swift; sourceTree = "<group>"; };
+		CB133179210D0250003213F2 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		CB3ABF6820FBB87E007E2286 /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 		CB3ABF6920FBB87E007E2286 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
 		CB3ABF6A20FBB87E007E2286 /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				C661C62C210387CC0087BAB3 /* OperationModel.swift */,
 				CBD8B47821061712009519B0 /* BuyerProfile.swift */,
 				CB133175210B3A47003213F2 /* SellerProfile.swift */,
+				CB133179210D0250003213F2 /* Comments.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -601,6 +604,8 @@
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -612,6 +617,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -678,6 +685,7 @@
 				C65766DF2105C2E900F7DDEF /* OperationController.swift in Sources */,
 				CBF872BC2103CF3E00C61A28 /* CartTableViewCell.swift in Sources */,
 				C6C3D66B20FFAB0E00A35137 /* productCell.swift in Sources */,
+				CB13317A210D0250003213F2 /* Comments.swift in Sources */,
 				C6C712A4210554DF009F6336 /* SignUpBuyer.swift in Sources */,
 				CBD8B47921061712009519B0 /* BuyerProfile.swift in Sources */,
 				C6C7129E21055096009F6336 /* SignUpSeller.swift in Sources */,

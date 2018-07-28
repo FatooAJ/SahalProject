@@ -7,7 +7,7 @@
 //
 import UIKit
 import Firebase
-
+import SDWebImage
 class HomeViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
     
     // Database
@@ -78,19 +78,27 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
             // SHOWING THE HOME VIEW
             let CellProduct = Products[indexPath.row]
             cell.titleproduct?.text = CellProduct.producttitle
-            cell.price?.text = CellProduct.Price
-         
-            let store = Storage.storage()
-            let storeRef = store.reference().child("items")
-            print(storeRef)
-            storeRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                if let error = error {
-                    print("error: \(error.localizedDescription)")
-                } else {
-                    // Data for "images/island.jpg" is returned
-                    let image = UIImage(data: data!)
-                    cell.productimage?.image = image
-                }}
+            cell.price?.text = CellProduct.Price+"ريال" 
+           // cell.city?.text = CellProduct.City
+        //    cell.sellername?.text = CellProduct
+            self.databaseReference.child("items").observe(.childAdded) { (snapshots) in
+               // print(snapshots.childSnapshot(forPath: "itemImages").childSnapshot(forPath: "0").value)
+                let image:String? = snapshots.childSnapshot(forPath: "itemImages").childSnapshot(forPath: "0").value as? String
+                    print(image!)
+                cell.productimage?.sd_setImage(with: URL(string: image!), placeholderImage: UIImage(named: "profilee"))
+               
+            }
+//            let store = Storage.storage()
+//            let storeRef = store.reference().child("items")
+//            print("here\(storeRef)")
+//            storeRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+//                if let error = error {
+//                    print("error: \(error.localizedDescription)")
+//                } else {
+//                    // Data for "images/island.jpg" is returned
+//                    let image = UIImage(data: data!)
+//                    cell.productimage?.image = image
+//                }}
 //            cell.productimage?.image = UIImage(named: "stroeRef")
 //            let url = URL(string:  Products[indexPath.row].imgproduct)!
 //            cell.productimage?.kf.setImage(with: url)
@@ -208,7 +216,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
             if let dectionary = snapshots.value as? [String:AnyObject] {
                 let item = Product(dectionary: dectionary, productID: snapshots.key)
                 self.Products.append(item)
-                print("imag here\(dectionary)")
+               // print("imag here\(dectionary)")
                 DispatchQueue.main.async {
                     self.tableproduct.reloadData()
                 }
