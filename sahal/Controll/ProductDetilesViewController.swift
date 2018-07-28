@@ -8,11 +8,13 @@
 
 import UIKit
 import Firebase
+
 class ProductDetilesViewController: UIViewController ,
 UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
     
     var databaseReference = DatabaseReference()
     var PRODUCT = Product()
+    var ALLCOMMENTS = [Comments]()
     //Tags
     @IBOutlet var companyname: UILabel!
     @IBOutlet var Years: UILabel!
@@ -29,11 +31,14 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
     //Product Image
     @IBOutlet var imagecontrol: UIPageControl!
     @IBOutlet var imagescrol: UIScrollView!
+    
     //Table
     @IBOutlet var CommentsTable: Table!
     @IBOutlet var scroll: UIScrollView!
+    
     @IBOutlet var Textcomments: UITextField!
     var productID : String?
+    
     // var comments = ["I want to buy it","Do not buy it","Shiiiit ","What this????","answer me","I want to buy it"]
     // var username = ["Ahmed","Mohammed","Jehad","Ahmed","Mohammed","Jehad"]
     var images: [String] = ["1.jpeg","2.jpeg","3.jpg","4.jpg","5.jpg"]
@@ -53,6 +58,7 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
         carname.applyDesign()
         cartype.applyDesign()
         piece.applyDesign()
+        loadMessages()
         //call image function
         
         databaseReference = Database.database().reference()
@@ -114,9 +120,16 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
         var pageNumber = imagescrol.contentOffset.x / imagescrol.frame.size.width
         imagecontrol.currentPage = Int(pageNumber)
     }
-    
+
     //table Func
     @IBAction func addRow(_ sender: UIButton) {
+        let databaseREF = databaseReference.child("Comments")
+        let currentUser = Auth.auth().currentUser
+        let senderName = currentUser?.displayName
+        let senderID = currentUser?.uid
+        let values = ["SenderName":senderName!,"SenderID": senderID!,"Comments": Textcomments.text!] as [String:Any]
+        databaseREF.updateChildValues(values)
+        //Textcomments.text = ""
         count = count + 1
         CommentsTable.reloadData()
         scroll.contentSize.height = 650 + CommentsTable.contentSize.height
@@ -124,20 +137,39 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
         // CommentsTable.maxHeight = CommentsTable.contentSize.height
         print(CommentsTable.contentSize.height)
     }
+    func loadMessages() {
+        databaseReference.child("Comments").observe(.childAdded, with: { (snapshot) in
+            if let dectionary = snapshot.value as? [String:AnyObject] {
+                var comment = Comments()
+                comment.BuyerName = dectionary["SenderName"] as? String
+                comment.CommentsFromUser = dectionary["Comments"] as? String
+                self.ALLCOMMENTS.append(comment)
+
+                self.CommentsTable.reloadData()
+            }
+        }, withCancel: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // tableView.frame.size = tableView.contentSize
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentcell", for: indexPath) as! CommentsTableViewCell
-        //let user = username[indexPath.row]
-        //let comment = comments[indexPath.row]
-        let tt1 =  Textcomments.text!
-        cell.commentText?.text = tt1
-        //   cell.commentText?.text = comment
-        cell.Username?.text = "User name  \([indexPath.row+1])"
+//        let comment = ALLCOMMENTS[indexPath.row]
+//        cell.commentText?.text = comment.CommentsFromUser
+//        cell.Username?.text = comment.BuyerName
         
+        
+//        //let user = username[indexPath.row]
+//        //let comment = comments[indexPath.row]
+//        let tt1 =  Textcomments.text!
+//        cell.commentText?.text = tt1
+//        //   cell.commentText?.text = comment
+//        cell.Username?.text = "User name  \([indexPath.row+1])"
+//
         // cell.commentText?.text = "name \([indexPath.row+1])"
+        
         //Tabel cell Style
         cell.layer.cornerRadius = 8
         cell.layer.borderColor = UIColor.gray.cgColor

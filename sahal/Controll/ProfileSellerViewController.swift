@@ -180,9 +180,9 @@ class ProfileSellerViewController: UIViewController , UITextFieldDelegate, UIIma
                 print(values)
                 
                 self.LabelEmail.text = currentuser?.email
-                self.DisplayName.text = values?["companyName"] as? String
-                self.LabelSellerName.text = values?["companyName"] as? String
-                self.LabelPhone.text = values?["mobileNumber"] as? String
+                self.DisplayName.text = values?["company"] as? String
+                self.LabelSellerName.text = values?["company"] as? String
+                self.LabelPhone.text = values?["number"] as? String
                 self.LabelBR.text = values?["bR"] as? String
                 
             })
@@ -199,8 +199,8 @@ class ProfileSellerViewController: UIViewController , UITextFieldDelegate, UIIma
 
             let newValuesForProfile =
                 [ "bR": newBR,
-                "companyName": newUserName,
-                 "mobileNumber": newphone]
+                "company": newUserName,
+                 "number": newphone]
             //update the firebase database for that user
             self.databaseReference.child("seller").child(uid).updateChildValues(newValuesForProfile, withCompletionBlock: { (error, ref) in
                 if error != nil{
