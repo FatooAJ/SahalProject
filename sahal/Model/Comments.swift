@@ -15,6 +15,11 @@ class Comments{
     var BuyerID : String?
     var SellerID : String?
     
-    
+    init (dectionary: [String: Any]) {
+        self.BuyerID = dectionary["SenderID"] as? String
+        self.BuyerName = dectionary["SenderName"] as? String
+        self.CommentsFromUser = dectionary["Comments"] as? String
+        
+    }
     
 }

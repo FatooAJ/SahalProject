@@ -11,11 +11,11 @@ import SDWebImage
 class HomeViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
     
     // Database
-    var databaseReference : DatabaseReference!
+    var databaseReference = DatabaseReference()
     // var currentUser = Auth.auth().currentUser?
     var Products = [Product]()
    // var imgproduct = Product()
-    
+    var imageURLs = [String]()
     @IBOutlet var changesegment: UISegmentedControl!
     @IBOutlet var tableproduct: UITableView!
     
@@ -77,17 +77,17 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         case 0:
             // SHOWING THE HOME VIEW
             let CellProduct = Products[indexPath.row]
+            if CellProduct.Category == "electric"{
             cell.titleproduct?.text = CellProduct.producttitle
             cell.price?.text = CellProduct.Price+"ريال" 
-           // cell.city?.text = CellProduct.City
+            cell.city?.text = CellProduct.City
         //    cell.sellername?.text = CellProduct
-            self.databaseReference.child("items").observe(.childAdded) { (snapshots) in
-               // print(snapshots.childSnapshot(forPath: "itemImages").childSnapshot(forPath: "0").value)
-                let image:String? = snapshots.childSnapshot(forPath: "itemImages").childSnapshot(forPath: "0").value as? String
-                    print(image!)
-                cell.productimage?.sd_setImage(with: URL(string: image!), placeholderImage: UIImage(named: "profilee"))
-               
-            }
+
+            let url = CellProduct.imgproduct[0]
+            //print(url)
+           cell.productimage?.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "noimage"))
+                }
+            
 //            let store = Storage.storage()
 //            let storeRef = store.reference().child("items")
 //            print("here\(storeRef)")
@@ -130,44 +130,45 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
             
         case 1:
             // SHOWING THE PROFILE VIEW
-          //  let Productimg = productimg2[indexPath.row]
-            //cell.titleproduct?.text = title
-            
-            //            cell.sellername?.text = Sellername
-            //            cell.city?.text = cityName
-            //cell.price?.text = productprice
-            //    cell.locationicon?.image = UIImage(named: "location.png")
-            //   cell.ShoppingIcon?.image = UIImage(named: "shopp")
-          //  cell.productimage?.image = UIImage(named: Productimg)
-            
-            //        //Tabel cell Style
+            let CellProduct = Products[indexPath.row]
+            if CellProduct.Category == "body"{
+                cell.titleproduct?.text = CellProduct.producttitle
+                cell.price?.text = CellProduct.Price+"ريال"
+                cell.city?.text = CellProduct.City
+                //    cell.sellername?.text = CellProduct
+                
+                let url = CellProduct.imgproduct[0]
+                //print(url)
+                cell.productimage?.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "noimage"))
+            }
             cellDesign(cell: cell)
             
             
         case 2:
-            // SHOWING THE SETTINGS VIEW
-          //  let Productimg = productimg3[indexPath.row]
-            //            cell.titleproduct?.text = title
-            //            cell.sellername?.text = Sellername
-            //            cell.city?.text = cityName
-            //   cell.price?.text = productprice
-            //    cell.locationicon?.image = UIImage(named: "location.png")
-            //   cell.ShoppingIcon?.image = UIImage(named: "shopp")
-         //   cell.productimage?.image = UIImage(named: Productimg)
-            
-            //        //Tabel cell Style
+            let CellProduct = Products[indexPath.row]
+            if CellProduct.Category == "external"{
+                cell.titleproduct?.text = CellProduct.producttitle
+                cell.price?.text = CellProduct.Price+"ريال"
+                cell.city?.text = CellProduct.City
+                //    cell.sellername?.text = CellProduct
+                
+                let url = CellProduct.imgproduct[0]
+                //print(url)
+                cell.productimage?.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "noimage"))
+            }
             cellDesign(cell: cell)
         case 3:
-          //  let Productimg = productimg4[indexPath.row]
-            //            cell.titleproduct?.text = title
-            //            cell.sellername?.text = Sellername
-            //            cell.city?.text = cityName
-            //    cell.price?.text = productprice
-            //    cell.locationicon?.image = UIImage(named: "location.png")
-            //    cell.ShoppingIcon?.image = UIImage(named: "shopp")
-       //     cell.productimage?.image = UIImage(named: Productimg)
-            
-            //Tabel cell Style
+            let CellProduct = Products[indexPath.row]
+            if CellProduct.Category == "body"{
+                cell.titleproduct?.text = CellProduct.producttitle
+                cell.price?.text = CellProduct.Price+"ريال"
+                cell.city?.text = CellProduct.City
+                //    cell.sellername?.text = CellProduct
+                
+                let url = CellProduct.imgproduct[0]
+                //print(url)
+                cell.productimage?.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "noimage"))
+            }
             cellDesign(cell: cell)
             
         default:
@@ -214,14 +215,26 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         self.databaseReference.child("items").observe(.childAdded) { (snapshots:DataSnapshot) in
             if let dectionary = snapshots.value as? [String:AnyObject] {
+                let img = snapshots.childSnapshot(forPath: "itemImages")
                 let item = Product(dectionary: dectionary, productID: snapshots.key)
-                self.Products.append(item)
-               // print("imag here\(dectionary)")
-                DispatchQueue.main.async {
-                    self.tableproduct.reloadData()
+                //   print(ite)
+             //   print(img)
+                for count in 0...3 {
+                    //      print(count)
+                    let image = img.childSnapshot(forPath: "\(count)").value as? String
+                    // self.imageURLs.append(image!)
+                    item.imgproduct.append(image!)
                 }
+                 self.Products.append(item)
             }
-        }}
+        }
+       
+        // print("imag here\(dectionary)")
+        DispatchQueue.main.async {
+            self.tableproduct.reloadData()
+        }
+        
+    }
 //    func loadImages(){
 //       self.databaseReference.child("items").child("itemImages").observe(.value, with: { (snapShot) in
 //                if snapShot.exists() {

@@ -10,22 +10,23 @@ import UIKit
 
 class Table: UITableView {
 
-    var maxHeight: CGFloat = UIScreen.main.bounds.size.height
+  //  var maxHeight: CGFloat = UIScreen.main.bounds.size.height
     
     
     override func reloadData() {
         super.reloadData()
-        self.invalidateIntrinsicContentSize()
-        //  self.frame.size.height = self.contentSize.height
+        //   self.invalidateIntrinsicContentSize()
+        self.frame.size.height = self.contentSize.height
+        //  se.frame.size = tableView.contentSize
         self.layoutIfNeeded()
     }
-    
-    override var intrinsicContentSize: CGSize {
-        let height = min(contentSize.height, maxHeight)
-        // print(maxHeight+contentSize.height)
-        //   print("\(CGSize(width: contentSize.width, height: height))")
-        return CGSize(width: contentSize.width, height: height)
-    }
+//    
+//    override var intrinsicContentSize: CGSize {
+//        let height = min(contentSize.height, maxHeight)
+//        // print(maxHeight+contentSize.height)
+//        //   print("\(CGSize(width: contentSize.width, height: height))")
+//        return CGSize(width: contentSize.width, height: height)
+//    }
     
     
 }
