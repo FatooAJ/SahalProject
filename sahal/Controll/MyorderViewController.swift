@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class MyorderViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -56,8 +57,8 @@ class MyorderViewController: UIViewController,UITableViewDelegate,UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        SVProgressHUD.dismiss()
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,7 +80,6 @@ class MyorderViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }

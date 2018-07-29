@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import DLRadioButton
+import SVProgressHUD
 
 class addProductController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
@@ -59,6 +60,9 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
         
        
     }
+    
+   
+    
     
     
     @IBAction func radioButtons(_ sender: DLRadioButton) {
@@ -335,6 +339,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
         
           print("I'm inside handleAddingProduct")
         
+        SVProgressHUD.show()
        
         let status = "متاحة"
         let sellerID = Auth.auth().currentUser?.uid
@@ -426,8 +431,35 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
                 print(error!)
             } else {
                 print(" item is added")
+                SVProgressHUD.dismiss()
+               
+                let alert = UIAlertController(title: "", message:"تم إضافة المنتج بنجاح" , preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "حسنًا", style: .default , handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+              self.resetValues()
+                self.performSegue(withIdentifier: "main", sender: self)
+                
             }})
         
+    }
+    
+    func resetValues(){
+        
+        firstImageOutlet.image = nil
+        secondImageOutlet.image = nil
+        thirdImageOutlet.image = nil
+        fourthImageOutlet.image = nil
+        
+        itemName.text = ""
+        descriptionOutlet.text = ""
+        cityOutlet.text = ""
+        priceOutlet.text = ""
+        brandTextfeild.text = ""
+        typeTextfeild.text = ""
+        modelTextfeild.text = ""
+        partTextfeild.text = ""
+        counter = 0
     }
         
         

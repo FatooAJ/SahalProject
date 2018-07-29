@@ -21,16 +21,16 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
         var tempArray : [Product] = []
         
         let product1 = Product(img: "1.jpeg", title: "عكس أمامي أزيرا ", description: "حالة المنتج : متاح ")
-        let product2 = Product(img: "2.jpeg", title: "عكس أمامي أزيرا ", description: " المنتج : متاح ")
-        let product3 = Product(img: "3.jpg", title: "عكس أمامي أزيرا", description: " المنتج : متاح ")
-          let product4 = Product(img: "3.jpg", title: "عكس أمامي أزيرا", description: " المنتج : متاح ")
+        let product2 = Product(img: "2.jpeg", title: "عكس أمامي أزيرا2 ", description: " المنتج : متاح ")
+        let product3 = Product(img: "3.jpg", title: "عكس أمامي أزيرا3", description: " المنتج : متاح ")
+        let product4 = Product(img: "3.jpg", title: "عكس أمامي أزيرا4", description: " المنتج : متاح ")
         
         
         
-        tempArray.append( product1)
-        tempArray.append( product2)
+        tempArray.append(product1)
+        tempArray.append(product2)
         tempArray.append(product3)
-      //  tempArray.append(product4)
+        tempArray.append(product4)
         
         return tempArray
     }
@@ -41,7 +41,6 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let product = productArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! productCell
         
