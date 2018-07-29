@@ -39,12 +39,11 @@
                                         <color key="textColor" red="0.18039215689999999" green="0.3411764706" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65H-mX-RHu" userLabel="errorlabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label LabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65H-mX-RHu" userLabel="errorlabel">
                                         <rect key="frame" x="38" y="281" width="306" height="21"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" red="0.70068607230000002" green="0.22612371279999999" blue="0.15166522169999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="0.78039736675126903" green="0.25076512437095644" blue="0.17014080768132517" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="shadowOffset" width="1" height="-1"/>
                                     </label>
                                 </subviews>
@@ -298,7 +297,7 @@
         <!--Forget Password -->
         <scene sceneID="F06-Zz-DO2">
             <objects>
-                <viewController id="ezZ-0M-8jJ" userLabel="Forget Password " sceneMemberID="viewController">
+                <viewController id="ezZ-0M-8jJ" userLabel="Forget Password " customClass="passwordRecovery" customModule="sahal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kp3-K5-htZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,7 +330,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4h-Gd-3Jr" userLabel="Middle">
                                 <rect key="frame" x="3.6666666666666572" y="344.66666666666669" width="368" height="123"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الإلكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rsr-Mc-RrD" userLabel="Email" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الإلكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rsr-Mc-RrD" userLabel="Email">
                                         <rect key="frame" x="42" y="0.0" width="326" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="KJZ-HQ-vbk"/>
@@ -351,6 +350,9 @@
                                         <state key="normal" title="استعادة كلمة المرور" backgroundImage="Button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="recovery:" destination="ezZ-0M-8jJ" eventType="touchUpInside" id="ZGH-lo-gLh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -374,10 +376,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D6p-Ks-tYM"/>
                     </view>
+                    <connections>
+                        <outlet property="userEmail" destination="Rsr-Mc-RrD" id="1kg-co-aYE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyh-Sm-fZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2431" y="2187"/>
+            <point key="canvasLocation" x="2481" y="2192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cll-P5-epj">

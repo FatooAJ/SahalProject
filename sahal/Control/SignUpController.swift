@@ -46,16 +46,31 @@ class SignUpController: UIViewController {
     
 
     @objc func sellerSignUpButton(sender : UIButton)  {
-        SVProgressHUD.show()
-        let idValue = SellerSignUpView.mobile.text
-        let companyValue = SellerSignUpView.companyName.text
-        let phoneValue = SellerSignUpView.mobile.text
         
-        guard let emailValue = SellerSignUpView.email.text , let passwordValue = SellerSignUpView.password.text else {
+        guard let idValue = SellerSignUpView.mobile.text ,
+              let companyValue = SellerSignUpView.companyName.text ,
+              let phoneValue = SellerSignUpView.mobile.text ,
+              let emailValue = SellerSignUpView.email.text ,
+              let passwordValue = SellerSignUpView.password.text
+              else {
+            let alert = UIAlertController(title: "عذرًا", message: "جميع الحقول مطلوبة !", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "موافق", style: .default , handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return
         }
+        
+        if idValue == "" || companyValue == "" || phoneValue == "" || emailValue == "" || passwordValue == "" {
+            let alert = UIAlertController(title: "عذرًا", message: "جميع الحقول مطلوبة !", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "موافق", style: .default , handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        
+        
         Auth.auth().createUser(withEmail: emailValue, password: passwordValue ) {(result , error) in
             if  error == nil && result != nil {
+                SVProgressHUD.show()
                 print("User is created ^_^")
                 let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                 changeRequest?.displayName = companyValue
@@ -63,6 +78,7 @@ class SignUpController: UIViewController {
                     if error == nil {
                         print("Display name changed")
                          self.performSegue(withIdentifier: "toSellerSiginUp", sender: self)
+                        SVProgressHUD.show()
                     }
                     
                 }
@@ -94,15 +110,27 @@ class SignUpController: UIViewController {
     
     
     @objc func buyerSignUpButton(sender : UIButton)  {
-         SVProgressHUD.show()
+        
         let usernameValue = buyerSignUpView.userName.text
         let phoneValue = buyerSignUpView.phonNumber.text
         
         guard let emailValue = buyerSignUpView.email.text , let passwordValue = buyerSignUpView.password.text else {
             return
         }
+        
+        if emailValue == "" || phoneValue == "" || emailValue == "" || passwordValue == "" {
+            let alert = UIAlertController(title: "عذرًا", message: "جميع الحقول مطلوبة !", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "موافق", style: .default , handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        
+        
+        
         Auth.auth().createUser(withEmail: emailValue, password: passwordValue ) {(result , error) in
             if  error == nil && result != nil {
+                SVProgressHUD.show()
                 print("User is created ^_^")
                  let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                 changeRequest?.displayName = usernameValue
@@ -110,7 +138,7 @@ class SignUpController: UIViewController {
                     if error == nil {
                         print("Display name changed")
                         self.performSegue(withIdentifier: "toBuyerSiginUp", sender: self)
-                        
+                        SVProgressHUD.dismiss()
                     }
                     
                 }

@@ -31,8 +31,10 @@ class Product {
     var productID : String!
     var year : String!
     var type : String!
+
     var carname : String!
     // var SellerID
+
     
     
     init (dectionary: [String: Any], productID : String) {
@@ -50,6 +52,8 @@ class Product {
         self.type = dectionary["type"] as? String
         self.carname = dectionary["carName"] as? String
         self.imgproduct = []
+        self.imgproduct = dectionary["images"] as? String
+
         
     }
     init () {
@@ -65,6 +69,7 @@ class Product {
         self.status = ""
         self.year = ""
         self.type = ""
+
         
     }
 }

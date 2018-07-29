@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import DLRadioButton
+import SVProgressHUD
 
 class addProductController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
@@ -59,6 +60,9 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
         
        
     }
+    
+   
+    
     
     
     @IBAction func radioButtons(_ sender: DLRadioButton) {
@@ -335,6 +339,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
         
           print("I'm inside handleAddingProduct")
         
+        SVProgressHUD.show()
        
         let status = "متاحة"
         let sellerID = Auth.auth().currentUser?.uid
@@ -420,47 +425,41 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
     
     func productUploading(values: [String:Any]) {
         
-        switch self.selectedType {
-        case "electric":
-            let itemRefrence = self.datatbaserefreence.child("items").child("electric").childByAutoId()
-            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    print("electric item is added")
-                }})
-            break
-        case "engine":
-            let itemRefrence = self.datatbaserefreence.child("items").child("engine").childByAutoId()
-            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    print("engine item is added")
-                }})
-            break
-        case "body":
-            let itemRefrence = self.datatbaserefreence.child("items").child("body").childByAutoId()
-            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    print("body item is added")
-                }})
-            break
-        case "external":
-            let itemRefrence = self.datatbaserefreence.child("items").child("external").childByAutoId()
-            itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    print("external item is added")
-                }})
-            break
-        default:
-            break
-        }
+        let itemRefrence = self.datatbaserefreence.child("items").childByAutoId()
+        itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
+            if error != nil {
+                print(error!)
+            } else {
+                print(" item is added")
+                SVProgressHUD.dismiss()
+               
+                let alert = UIAlertController(title: "", message:"تم إضافة المنتج بنجاح" , preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "حسنًا", style: .default , handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+              self.resetValues()
+                self.performSegue(withIdentifier: "main", sender: self)
+                
+            }})
         
+    }
+    
+    func resetValues(){
+        
+        firstImageOutlet.image = nil
+        secondImageOutlet.image = nil
+        thirdImageOutlet.image = nil
+        fourthImageOutlet.image = nil
+        
+        itemName.text = ""
+        descriptionOutlet.text = ""
+        cityOutlet.text = ""
+        priceOutlet.text = ""
+        brandTextfeild.text = ""
+        typeTextfeild.text = ""
+        modelTextfeild.text = ""
+        partTextfeild.text = ""
+        counter = 0
     }
         
         
