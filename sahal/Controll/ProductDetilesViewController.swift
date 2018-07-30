@@ -84,7 +84,7 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
        
         //print(self.companyname)
       //  print("here\(self.productID!)")
-        databaseReference = Database.database().reference().child("items").child(self.productID!)
+        databaseReference = Database.database().reference().child("item").child(self.productID!)
         databaseReference.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? [String: AnyObject]
            // print(value)
