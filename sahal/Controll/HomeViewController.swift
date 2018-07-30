@@ -213,7 +213,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     func fetchUsers(){
         
-        self.databaseReference.child("items").observe(.childAdded) { (snapshots:DataSnapshot) in
+        self.databaseReference.child("item").observe(.childAdded) { (snapshots:DataSnapshot) in
             if let dectionary = snapshots.value as? [String:AnyObject] {
                 let img = snapshots.childSnapshot(forPath: "itemImages")
                 let item = Product(dectionary: dectionary, productID: snapshots.key)
