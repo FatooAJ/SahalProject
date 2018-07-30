@@ -425,7 +425,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
     
     func productUploading(values: [String:Any]) {
         
-        let itemRefrence = self.datatbaserefreence.child("items").childByAutoId()
+        let itemRefrence = self.datatbaserefreence.child("item").childByAutoId()
         itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
             if error != nil {
                 print(error!)

@@ -52,10 +52,12 @@ class Product {
         self.type = dectionary["type"] as? String
         self.carname = dectionary["carName"] as? String
         self.imgproduct = []
-        self.imgproduct = dectionary["images"] as? String
-
+    //    self.imgproduct = dectionary["images"] as? String
+    
         
     }
+    
+    
     init () {
         
         //  self.imgproduct = storageRef
@@ -72,4 +74,8 @@ class Product {
 
         
     }
+    
+//    func getCompany() -> String {
+//        self.Companyname
+//    }
 }

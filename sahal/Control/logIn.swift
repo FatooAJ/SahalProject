@@ -50,8 +50,8 @@ class logIn: UIViewController {
                     
                     if snapshot.key == uID {
                         print("YAAAY!")
-                        
                         self.performSegue(withIdentifier: "toSeller", sender: self)
+                        SVProgressHUD.dismiss()
                     }
                 }
                 
@@ -62,6 +62,7 @@ class logIn: UIViewController {
                     if snapshot.key == uID {
                         print("YAAAY!")
                         self.performSegue(withIdentifier: "toBuyer", sender: self)
+                        SVProgressHUD.dismiss()
                     }
                 }
             } else {
