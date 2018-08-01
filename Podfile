@@ -17,6 +17,9 @@ pod 'TextFieldEffects'
   pod 'Firebase/Storage'
   pod 'Kingfisher', '~> 4.0'
   pod 'SDWebImage', '~> 4.0'
+  # Latest release in CocoaPods
+  pod 'SwipeCellKit'
+  
 
   
   target 'sahalTests' do

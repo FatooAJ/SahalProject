@@ -16,6 +16,7 @@
 		C68ACF4820FC4C1100CCB3AB /* segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68ACF4720FC4C1100CCB3AB /* segment.swift */; };
 		C68ACF4B20FC4DB800CCB3AB /* sellerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68ACF4920FC4DB800CCB3AB /* sellerVC.swift */; };
 		C69A7141210DB4C300D0F490 /* passwordRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A7140210DB4C300D0F490 /* passwordRecovery.swift */; };
+		C69A71632111A43100D0F490 /* editeProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A71622111A43000D0F490 /* editeProduct.swift */; };
 		C6C3D58E20FC853A00A35137 /* logIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3D58D20FC853A00A35137 /* logIn.swift */; };
 		C6C3D5E520FCC07500A35137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3D5E420FCC07500A35137 /* AppDelegate.swift */; };
 		C6C3D5E820FCC10400A35137 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C3D5E620FCC10400A35137 /* LaunchScreen.storyboard */; };
@@ -114,6 +115,7 @@
 		C68ACF4720FC4C1100CCB3AB /* segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segment.swift; sourceTree = "<group>"; };
 		C68ACF4920FC4DB800CCB3AB /* sellerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sellerVC.swift; sourceTree = "<group>"; };
 		C69A7140210DB4C300D0F490 /* passwordRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordRecovery.swift; sourceTree = "<group>"; };
+		C69A71622111A43000D0F490 /* editeProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editeProduct.swift; sourceTree = "<group>"; };
 		C6C3D58D20FC853A00A35137 /* logIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logIn.swift; sourceTree = "<group>"; };
 		C6C3D5E420FCC07500A35137 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C3D5E720FCC10400A35137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				C6C7129D21055096009F6336 /* SignUpSeller.swift */,
 				C6C712A3210554DF009F6336 /* SignUpBuyer.swift */,
 				C69A7140210DB4C300D0F490 /* passwordRecovery.swift */,
+				C69A71622111A43000D0F490 /* editeProduct.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -476,7 +479,7 @@
 				TargetAttributes = {
 					CB0B91EF20FB5B36004E0FF6 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					CB0B920320FB5B36004E0FF6 = {
 						CreatedOnToolsVersion = 9.2;
@@ -610,6 +613,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -623,6 +627,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -694,6 +699,7 @@
 				CBD8B47921061712009519B0 /* BuyerProfile.swift in Sources */,
 				C6C7129E21055096009F6336 /* SignUpSeller.swift in Sources */,
 				CBF872BA2103CF0900C61A28 /* CartViewController.swift in Sources */,
+				C69A71632111A43100D0F490 /* editeProduct.swift in Sources */,
 				CB1251EA20FDBA4F00117A21 /* CustomSerachButton.swift in Sources */,
 				CBF872A021022E0600C61A28 /* SearchResultViewController.swift in Sources */,
 				CBF872BE2103CF5D00C61A28 /* PaymentTableViewCell.swift in Sources */,
@@ -868,8 +874,9 @@
 			baseConfigurationReference = 4917936BE1F8EEC057DB2B15 /* Pods-sahal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P44Q3B4DJQ;
 				INFOPLIST_FILE = sahal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wadimakkah.sahal;
@@ -885,8 +892,9 @@
 			baseConfigurationReference = A23B09F1867CAE88389577A8 /* Pods-sahal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P44Q3B4DJQ;
 				INFOPLIST_FILE = sahal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wadimakkah.sahal;

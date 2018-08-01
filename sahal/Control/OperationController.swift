@@ -23,7 +23,7 @@ class OperationController: UIViewController , UITableViewDataSource , UITableVie
     
     var orderStatuse2 = ["تم التسليم" , "جاري الشحن" , "تم تأكيد الطلب"]
     
-    var date = ["10/2/2018" , "10/2/2018" , "10/2/2018"]
+    var date = ["10/3/2018" , "10/12/2018" , "10/9/2018"]
 
     
 
@@ -50,6 +50,7 @@ class OperationController: UIViewController , UITableViewDataSource , UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! ooerationCell
 
          let img = productimg[indexPath.row]
+        let date = self.date[indexPath.row]
         
         
         
@@ -57,6 +58,7 @@ class OperationController: UIViewController , UITableViewDataSource , UITableVie
         {
         case 0:
             cell.operationImg?.image = UIImage(named: img)
+            cell.orderDate.text = date
 
         case 1:
             cell.operationImg?.image = UIImage(named: img)

@@ -53,8 +53,6 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     
     
     @IBAction func addButton(_ sender: UIButton) {
-        print("Hi")
-       
             
             handleAddingProduct()
         
@@ -130,7 +128,8 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     
     
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         if clickedButton == "button1" {
              firstImageOutlet.image = image
@@ -156,19 +155,16 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     }
     
     
-    
-    
     @IBOutlet weak var brandTextfeild: UITextField!
     @IBOutlet weak var typeTextfeild: UITextField!
     @IBOutlet weak var modelTextfeild: UITextField!
     @IBOutlet weak var partTextfeild: UITextField!
     
     
-    let brands = ["تويوتا" , "مازدا" , "هونداي" , "هوندا",  "مرسيدس" , "بي ام دبليو" , "شفروليه"]
-    let types = [ "كامري" , "لاند كروزر" , "كوريلا" , "سبارك" , "اكسنت" , "سوبارو" ]
-    let models = ["2000" , "2001" , "2001" , "2002" , "2003" , "2004" , "2005" , "2006" , "2010" , "2012" , "2018"]
-    let parts = ["type1" , "type2" , "type3" , "type4" , "type5"]
-    
+    let factory = ["تويوتا" , "مازدا" , "هونداي" , "هوندا",  "مرسيدس" , "بي ام دبليو" , "شفروليه"]
+    let carNames = [ "كامري" , "لاند كروزر" , "كوريلا" , "سبارك" , "اكسنت" , "سوبارو" ]
+    let year = ["2000" , "2001" , "2001" , "2002" , "2003" , "2004" , "2005" , "2006" , "2010" , "2012" , "2018"]
+    let type = ["سيدان" , "هاتشاباك" , "عائلية" , "رياضية"]
     
     var selectedBrand: String?
     var carName: String?
@@ -249,15 +245,15 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(pickerView.tag == 0){
-           return brands.count
+           return factory.count
         } else  if(pickerView.tag == 1) {
-            return types.count
+            return carNames.count
         } else  if(pickerView.tag   == 2) {
-            return models.count
+            return year.count
         } else if(pickerView.tag == 4 ) {
-            return parts.count
+            return type.count
         } else {
-             return parts.count
+             return type.count
         }
         
     }
@@ -266,35 +262,35 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
        
         
         if(pickerView.tag == 0){
-            return brands[row]
+            return factory[row]
         } else  if(pickerView.tag == 1) {
-            return types[row]
+            return carNames[row]
         } else  if(pickerView.tag == 2) {
-            return models[row]
+            return year[row]
         } else if(pickerView.tag == 3)  {
-            return parts[row]
+            return type[row]
         } else {
-            return parts[row]
+            return type[row]
         }
      
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(pickerView.tag == 0){
-            selectedBrand = brands[row]
+            selectedBrand = factory[row]
             brandTextfeild.text = selectedBrand
         } else if(pickerView.tag == 1)  {
-            carName = types[row]
+            carName = carNames[row]
             typeTextfeild.text = carName
         }
         else if(pickerView.tag == 2)  {
-            selectedModel = models[row]
+            selectedModel = year[row]
             modelTextfeild.text = selectedModel
         }        else if(pickerView.tag == 4)  {
-            selectedPart = parts[row]
+            selectedPart = type[row]
             partTextfeild.text = selectedPart
         } else {
-            selectedPart = parts[row]
+            selectedPart = type[row]
             partTextfeild.text = selectedPart
         }
         
@@ -313,8 +309,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
     
     
     func handleAddingProduct (){
-        print("Hello")
-        
+       
      guard let itemValue = itemName.text,
            let descriptionValue = descriptionOutlet.text,
            let model = self.selectedModel,
@@ -323,11 +318,8 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
            let brand = selectedBrand ,
            let price = priceOutlet.text,
            let city = cityOutlet.text ,
-           let category = selectedType ,
-           let image1 = firstImageOutlet.image,
-           let image2 = secondImageOutlet.image,
-           let image3 = thirdImageOutlet.image ,
-           let image4 = fourthImageOutlet.image
+           let category = selectedType
+        
            else {
             
             let alert = UIAlertController(title: "عذرًا", message: "جميع الحقول مطلوبة !", preferredStyle: .alert)
@@ -341,7 +333,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
         
         SVProgressHUD.show()
        
-        let status = "متاحة"
+        let status = "0"
         let sellerID = Auth.auth().currentUser?.uid
         
         print("I'm inside handleAddingProduct")
@@ -351,7 +343,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
             if uploaded == true {
                 let urls = ["0":  self.imageURLs[0], "1":  self.imageURLs[1],"2":  self.imageURLs[2],"3":  self.imageURLs[3]]
                 
-                let value = ["itemImages":urls,"itemName":itemValue , "description":descriptionValue ,"city" : city , "category": category ,"factoryName" : brand  , "carName" : carName , "year" : model , "type" : part  , "price" : price , "status" : status , "sellerId" : sellerID! , "buyerId":"none",] as [String : Any]
+                let value = ["itemImages":urls,"name":itemValue , "description":descriptionValue ,"city" : city , "category": category ,"factoryName" : brand  , "carName" : carName , "year" : model , "type" : part  , "price" : price , "status" : status , "sellerId" : sellerID! , "buyerId":"none",] as [String : Any]
                 
                 
                 self.productUploading(values: value)
@@ -365,7 +357,10 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
     
     
     func uploadProductImages(_ image : UIImage , completion : @escaping ((_ urls:String?)->()))  {
-        let imageName = "\(Date().timeIntervalSinceNow)"
+        
+        
+        //let userId = Auth.auth().currentUser?.uid
+        let imageName = "image-\(NSUUID())-\(NSUUID())"
         let storageRefrence = Storage.storage().reference().child("items/\(imageName)")
         
             
@@ -382,6 +377,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
                             return
                         }
                         
+                        print("Download imagg : \(downloadURL.absoluteURL)")
                       completion(downloadURL.absoluteString)
                        
                        
@@ -438,7 +434,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
                 self.present(alert, animated: true, completion: nil)
                 
               self.resetValues()
-                self.performSegue(withIdentifier: "main", sender: self)
+              //  self.performSegue(withIdentifier: "main", sender: self)
                 
             }})
         
@@ -460,6 +456,18 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
         modelTextfeild.text = ""
         partTextfeild.text = ""
         counter = 0
+        
+        imagesArray.removeAll()
+        imageURLs.removeAll()
+        
+        
+        if (imageURLs.isEmpty && imagesArray.isEmpty) {
+            
+            print("ARRAYS ARE EMPTY *******************************\(imageURLs.count)")
+        }
+        
+       
+        
     }
         
         

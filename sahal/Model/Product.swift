@@ -33,7 +33,7 @@ class Product {
     var type : String!
 
     var carname : String!
-    // var SellerID
+    var SellerID : String!
 
     
     
@@ -41,7 +41,7 @@ class Product {
         
       //  self.imgproduct = storageRef
         self.productID = productID
-        self.producttitle = dectionary["itemName"] as? String
+        self.producttitle = dectionary["name"] as? String
         self.productdescription = dectionary["description"] as? String
         self.Price = dectionary["price"] as? String
         self.City = dectionary["city"] as? String
@@ -51,6 +51,7 @@ class Product {
         self.year = dectionary["year"] as? String
         self.type = dectionary["type"] as? String
         self.carname = dectionary["carName"] as? String
+        self.SellerID = dectionary["sellerId"] as? String
         self.imgproduct = []
     //    self.imgproduct = dectionary["images"] as? String
     
