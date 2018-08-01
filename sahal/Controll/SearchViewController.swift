@@ -62,16 +62,17 @@ class SearchViewController: UIViewController,UICollectionViewDelegate, UICollect
     
     
     func fetchData(){
-        self.databaseReference.child("item").observe(.childAdded) { (snapshots:DataSnapshot) in
+        self.databaseReference.child("items").observe(.childAdded) { (snapshots:DataSnapshot) in
             if let dectionary = snapshots.value as? [String:AnyObject] {
                 let img = snapshots.childSnapshot(forPath: "itemImages")
                 
                 let item = Product(dectionary: dectionary, productID: snapshots.key)
                 //   print(ite)
                 //   print(img)
-                let title = dectionary["name"] as? String
+                let title = dectionary["itemName"] as? String
                 let price = dectionary["price"] as? String
-                let city = dectionary["city"] as? String
+                let city = "مكة المكرمة"
+              //  let city = dectionary["city"] as? String
                 let year = dectionary["year"] as? String
                 let status = dectionary["status"] as? String
                 let type = dectionary["type"] as? String
@@ -81,14 +82,14 @@ class SearchViewController: UIViewController,UICollectionViewDelegate, UICollect
                 let sellerID = dectionary["sellerId"] as? String
                 let category = dectionary["category"] as? String
                 let image = img.childSnapshot(forPath: "0").value as? String
-                self.databaseReference.child("seller").child(sellerID!).child("company").observe(.value) { (snapshot:DataSnapshot) in
+                self.databaseReference.child("seller").child(sellerID!).child("companyName").observe(.value) { (snapshot:DataSnapshot) in
                     let Sellername = snapshot.value as? String
                     print("sellername\(Sellername!)")
                     for count in 0...3 {
                         let imgarray = img.childSnapshot(forPath: "\(count)").value as? String
                         self.ArrayOfImage.append(imgarray!)
                     }
-                    let Data = Items(Title: title!, City: city!, Img: image!, Price: price!, year: year!, status: status!, type: type!, description: description!, carname: carname!, factoryName: factoryName!, sellerID: sellerID!, sellerName: Sellername!,ProductId: snapshots.key, category: category!, ArrayOfImage:self.ArrayOfImage)
+                    let Data = Items(Title: title!, City: city, Img: image!, Price: price!, year: year!, status: status!, type: type!, description: description!, carname: carname!, factoryName: factoryName!, sellerID: sellerID!, sellerName: Sellername!,ProductId: snapshots.key, category: category!, ArrayOfImage:self.ArrayOfImage)
                     // self.DataArray = SearchData(Title:"\(dectionary["itemName"] as? String)")
                     self.DataArray.append(Data)
                     print(self.DataArray)
@@ -369,7 +370,7 @@ class SearchViewController: UIViewController,UICollectionViewDelegate, UICollect
     
     func setupCarPieceDropDown(){
         CarPiece.anchorView = CarPieceDropDown // UIView or UIBarButtonItem
-        CarPiece.dataSource = ["فئة القطعة","قطع خارجية","هيكل","محرك","كهربة"]
+        CarPiece.dataSource = ["فئة القطعة","قطع خارجية","بودي","محركات - وقود","كهرباء"]
         CarPiece.direction = .bottom
         CarPiece.bottomOffset = CGPoint(x: 0, y:(CarPiece.anchorView?.plainView.bounds.height)!)
         CarPiece.cellNib = UINib(nibName: "MyCell", bundle: nil)

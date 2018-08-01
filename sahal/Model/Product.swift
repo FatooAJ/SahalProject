@@ -41,7 +41,7 @@ class Product {
         
       //  self.imgproduct = storageRef
         self.productID = productID
-        self.producttitle = dectionary["name"] as? String
+        self.producttitle = dectionary["ItemName"] as? String
         self.productdescription = dectionary["description"] as? String
         self.Price = dectionary["price"] as? String
         self.City = dectionary["city"] as? String

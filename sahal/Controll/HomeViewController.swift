@@ -74,7 +74,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         {
         case 0:
             let CellProduct = ArrayOfitems[indexPath.row]
-            if CellProduct.category == "electric"{
+            if CellProduct.category == "كهرباء"{
                 cell.titleproduct?.text = CellProduct.Title
                 cell.price?.text = CellProduct.Price + "ريال "
                 cell.city?.text = CellProduct.City
@@ -89,7 +89,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         case 1:
             // SHOWING THE PROFILE VIEW
             let CellProduct = ArrayOfitems[indexPath.row]
-            if CellProduct.category == "engine"{
+            if CellProduct.category == "محركات - وقود"{
                 cell.titleproduct?.text = CellProduct.Title
                 cell.price?.text = CellProduct.Price + "ريال "
                 cell.city?.text = CellProduct.City
@@ -104,7 +104,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
             
         case 2:
             let CellProduct = ArrayOfitems[indexPath.row]
-            if CellProduct.category == "body"{
+            if CellProduct.category == "بودي"{
                 cell.titleproduct?.text = CellProduct.Title
                 cell.price?.text = CellProduct.Price + "ريال "
                 cell.city?.text = CellProduct.City
@@ -171,15 +171,16 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     func GetDataFromFirebase(){
         
-        self.databaseReference.child("item").observe(.childAdded) { (snapshots:DataSnapshot) in
+        self.databaseReference.child("items").observe(.childAdded) { (snapshots:DataSnapshot) in
             if let dectionary = snapshots.value as? [String:AnyObject] {
                 let img = snapshots.childSnapshot(forPath: "itemImages")
                 
                 
                 //                let item = Product(dectionary: dectionary, productID: snapshots.key)
-                let title = dectionary["name"] as? String
+                let title = dectionary["itemName"] as? String
                 let price = dectionary["price"] as? String
-                let city = dectionary["city"] as? String
+                let city = "مكة المكرمة"
+              //  let city = dectionary["city"] as? String
                 let year = dectionary["year"] as? String
                 let status = dectionary["status"] as? String
                 let type = dectionary["type"] as? String
@@ -189,7 +190,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
                 let sellerID = dectionary["sellerId"] as? String
                 let category = dectionary["category"] as? String
                 let image = img.childSnapshot(forPath: "0").value as? String
-                self.databaseReference.child("seller").child(sellerID!).child("company").observe(.value) { (snapshot:DataSnapshot) in
+                self.databaseReference.child("seller").child(sellerID!).child("companyName").observe(.value) { (snapshot:DataSnapshot) in
                     let Sellername = snapshot.value as? String
                     print("sellername\(Sellername!)")
                     
@@ -198,16 +199,16 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
                         self.ArrayOfImage.append(imgarray!)
                     }
                     
-                    let Data = Items(Title: title!, City: city!, Img: image!, Price: price!, year: year!, status: status!, type: type!, description: description!, carname: carname!, factoryName: factoryName!, sellerID: sellerID!, sellerName: Sellername!,ProductId: snapshots.key, category: category!, ArrayOfImage: self.ArrayOfImage)
+                    let Data = Items(Title: title!, City: city, Img: image!, Price: price!, year: year!, status: status!, type: type!, description: description!, carname: carname!, factoryName: factoryName!, sellerID: sellerID!, sellerName: Sellername!,ProductId: snapshots.key, category: category!, ArrayOfImage: self.ArrayOfImage)
                     
                     print(self.ArrayOfitems)
                     
                     
-                    if Data.category.contains("electric"){
+                    if Data.category.contains("كهرباء"){
                         self.electricProduct.append(Data)
                         
                     }
-                    if Data.category.contains("body"){
+                    if Data.category.contains("بودي"){
                         self.BodyProduct.append(Data)
                         
                     }
@@ -215,7 +216,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
                         self.externalProduct.append(Data)
                         
                     }
-                    if Data.category.contains("engine"){
+                    if Data.category.contains("محركات - وقود"){
                         self.engineProduct.append(Data)
                     }
                     self.ArrayOfitems.append(Data)}

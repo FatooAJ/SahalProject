@@ -73,13 +73,13 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
         
         //print(self.companyname)
         //  print("here\(self.productID!)")
-        databaseReference = Database.database().reference().child("item").child(self.productID!)
+        databaseReference = Database.database().reference().child("items").child(self.productID!)
         databaseReference.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? [String: AnyObject]
             // print(value)
-            let title = value?["name"] as? String?
+            let title = value?["itemName"] as? String?
             let sellerID = value?["sellerId"] as? String?
-            self.databaseReference.child("seller").child(sellerID!!).child("company").observe(.value) { (snapshot:DataSnapshot) in
+            self.databaseReference.child("seller").child(sellerID!!).child("companyName").observe(.value) { (snapshot:DataSnapshot) in
                 let Sellername = snapshot.value as? String
                 self.SellerName.text = Sellername
                 print("sellername\(Sellername!)")}
