@@ -172,7 +172,6 @@ class SearchViewController: UIViewController,UICollectionViewDelegate, UICollect
         let iteminfo = self.storyboard?.instantiateViewController(withIdentifier: "Viewproductcollection") as! ProductDetilesViewController
         iteminfo.productID = searchdata
         iteminfo.cleaner()
-        iteminfo.showProductDetail()
         
         self.navigationController?.pushViewController(iteminfo, animated: true)
         

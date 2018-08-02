@@ -20,6 +20,9 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
     var ArrayOfImage = [String]()
     var ArrayOfitems = [Items]()
     
+    @IBAction func BuyIcon(_ sender: UIButton) {
+        Cart.sharedInstance.addProduct(product: Item!)
+    }
     //Tags
     @IBOutlet var companyname: UILabel!
     @IBOutlet var Years: UILabel!
@@ -54,120 +57,115 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Tags Style
+        
         cleaner()
+        
+        
         scroll.contentSize.height = 300
 
         configureTabelView()
         
         databaseReference = Database.database().reference()
-        DispatchQueue.main.async {
-            self.settinguplabels()
-        }
+        showProductDetail()
+        self.imagecontrol.numberOfPages = ArrayOfImage.count
         
     }
     
     func cleaner(){
+        
         ArrayOfImage = []
     }
-    func showProductDetail(){
-        
-        //print(self.companyname)
-        //  print("here\(self.productID!)")
-        databaseReference = Database.database().reference().child("items").child(self.productID!)
-        databaseReference.observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? [String: AnyObject]
-            // print(value)
-            let title = value?["itemName"] as? String?
-            let sellerID = value?["sellerId"] as? String?
-            self.databaseReference.child("seller").child(sellerID!!).child("companyName").observe(.value) { (snapshot:DataSnapshot) in
-                let Sellername = snapshot.value as? String
-                self.SellerName.text = Sellername
-                print("sellername\(Sellername!)")}
-            //  print(title)
-            //var arrayimage = [String]()
-            for index in 0...3{
-                let img = snapshot.childSnapshot(forPath: "itemImages").childSnapshot(forPath: "\(index)").value as? String
+//    func showProductDetail(){
+//
+//        //print(self.companyname)
+//        print("here\(self.productID!)")
+//        self.databaseReference.child("items").child(self.productID!).observe(.value) { (snapshot) in
+//            let value = snapshot.value as? [String: AnyObject]
+//            // print(value)
+//            let title = value?["itemName"] as? String?
+//            print(title)
+//            self.TitleProduct.text = title!
+//            let sellerID = value?["sellerId"] as? String?
+//            print(sellerID)
+////            self.databaseReference.child("seller").child(sellerID!!).child("companyName").observe(.value) { (snapshots:DataSnapshot) in
+////                let Sellername = snapshots.value as? String
+////                self.SellerName.text = Sellername
+////                print("sellername\(Sellername!)")}
+//            //  print(title)
+//            //var arrayimage = [String]()
+//            for index in 0...3{
+//                let img = snapshot.childSnapshot(forPath: "itemImages").childSnapshot(forPath: "\(index)").value as? String
+//
+//                self.ArrayOfImage.append(img!)
+//                print("fetching from array\(index)")
+//            }
+//            print("!!!!!\(self.ArrayOfImage.count)")
+//            self.ProductImageScroll(ArrayOfImage: self.ArrayOfImage)
+//            self.settinguplabels()
+//
+//            var PRODUCT = Product()
+//            //print(snapshots.value as? [String:AnyObject])
+//            if let dectionary = snapshot.value as? [String:AnyObject] {
+//                let productOBJ = Product(dectionary: dectionary, productID: snapshot.key)
+//                PRODUCT = productOBJ
+//            }
+//            self.PRODUCT = PRODUCT
+//            print(self.PRODUCT)
+//
+//        }
+//
+//    }
+        func showProductDetail(){
+    
+            //print(self.companyname)
+            print("here\(self.productID!)")
+            self.databaseReference.child("items").child(self.productID!).observe(.value) { (snapshot) in
+                let dectionary = snapshot.value as? [String: AnyObject]
+                let img = snapshot.childSnapshot(forPath: "itemImages")
+                //  print(dectionary)
+                let title = dectionary?["itemName"] as? String
+                let price = dectionary?["price"] as? String
+                let city = "مكة المكرمة"
+                let year = dectionary?["year"] as? String
+                let status = dectionary?["status"] as? String
+                let type = dectionary?["type"] as? String
+                let description = dectionary?["description"] as? String
+                let carname = dectionary?["carName"] as? String
+                let factoryName = dectionary?["factoryName"] as? String
+                let sellerID = dectionary?["sellerId"] as? String
+                let category = dectionary?["category"] as? String
+                let image = img.childSnapshot(forPath: "0").value as? String
+                for index in 0...3{
+                    let img = snapshot.childSnapshot(forPath: "itemImages").childSnapshot(forPath: "\(index)").value as? String
+                    
+                    self.ArrayOfImage.append(img!)
+                    print("fetching from array\(index)")
+                }
+                print("!!!!!\(self.ArrayOfImage.count)")
+                self.ProductImageScroll(ArrayOfImage: self.ArrayOfImage)
+                self.databaseReference.child("seller").child(sellerID!).child("companyName").observe(.value) { (snapshot:DataSnapshot) in
+                        let Sellername = snapshot.value as? String
+                        print("sellername\(Sellername!)")
+                    var item : Items
+
+                    let Data = Items(Title: title!, City: city, Img: image!, Price: price!, year: year!, status: status!, type: type!, description: description!, carname: carname!, factoryName: factoryName!, sellerID: sellerID!, sellerName: Sellername!,ProductId: snapshot.key, category: category!, ArrayOfImage: self.ArrayOfImage)
+                    self.ArrayOfitems.append(Data)
+                        print(Data)
+                    item = Data
+                    self.Item = item
+                   // print(self.cartype.text)
+                    self.settinguplabels()
+                }
                 
-                self.ArrayOfImage.append(img!)
-                print("fetching from array\(index)")
-            }
-            self.ProductImageScroll(ArrayOfImage: self.ArrayOfImage)
-            print("!!!!!\(self.ArrayOfImage)")
-            //ProductImageScroll(Arrayimage: [String])
-            
-        })
-        
-        databaseReference.observe(.value, with: { (snapshots:DataSnapshot) in
-            var PRODUCT = Product()
-            //print(snapshots.value as? [String:AnyObject])
-            if let dectionary = snapshots.value as? [String:AnyObject] {
-                //   print(dectionary)
-                let productOBJ = Product(dectionary: dectionary, productID: snapshots.key)
-                PRODUCT = productOBJ
-            }
-            self.PRODUCT = PRODUCT
-            
-        })
-    }
-    //    func showProductDetail(){
-    //
-    //        //print(self.companyname)
-    //        print("here\(self.productID!)")
-    //        databaseReference = Database.database().reference().child("item").child(self.productID!)
-    //        databaseReference.observeSingleEvent(of: .value, with: { (snapshot) in
-    //            let value = snapshot.value as? [String: AnyObject]
-    //            // print(value)
-    //            let title = value?["name"] as? String?
-    //            //  print(title)
-    //            var arrayimage = [String]()
-    //            for index in 0...3{
-    //                let img = snapshot.childSnapshot(forPath: "itemImages").childSnapshot(forPath: "\(index)").value as? String
-    //
-    //                arrayimage.append(img!)
-    //            }
-    //            self.ProductImageScroll(Arrayimage: arrayimage)
-    //            //print("!!!!!\(arrayimage)")
-    //            //ProductImageScroll(Arrayimage: [String])
-    //
-    //        })
-    //
-    //        databaseReference.observe(.value, with: { (snapshots:DataSnapshot) in
-    //            if let dectionary = snapshots.value as? [String:AnyObject] {
-    //                var ITEM : Items
-    //                let img = snapshots.childSnapshot(forPath: "itemImages")
-    //              //  print(dectionary)
-    //                let title = dectionary["name"] as? String
-    //                let price = dectionary["price"] as? String
-    //                let city = dectionary["city"] as? String
-    //                let year = dectionary["year"] as? String
-    //                let status = dectionary["status"] as? String
-    //                let type = dectionary["type"] as? String
-    //                let description = dectionary["description"] as? String
-    //                let carname = dectionary["carName"] as? String
-    //                let factoryName = dectionary["factoryName"] as? String
-    //                let sellerID = dectionary["sellerId"] as? String
-    //                let category = dectionary["category"] as? String
-    //                let image = img.childSnapshot(forPath: "0").value as? String
-    //                self.databaseReference.child("seller").child(sellerID!).child("company").observe(.value) { (snapshot:DataSnapshot) in
-    //                    let Sellername = snapshot.value as? String
-    //                    print("sellername\(Sellername!)")
-    //                let Data = Items(Title: title!, City: city!, Img: image!, Price: price!, year: year!, status: status!, type: type!, description: description!, carname: carname!, factoryName: factoryName!, sellerID: sellerID!, sellerName: Sellername!,ProductId: snapshots.key, category: category!, ArrayOfImage: self.ArrayOfImage)
-    //                    print(Data)
-    //                    ITEM = Data
-    //
-    //                }}
-    //
-    //
-    //
-    //
-    //        })
-    //    }
+                    }
+    
+        }
     
     // image Scroll Func
     func ProductImageScroll(ArrayOfImage: [String]){
         
         print(ArrayOfImage.count)
-        imagecontrol.numberOfPages = ArrayOfImage.count
+        self.imagecontrol.numberOfPages = ArrayOfImage.count
         
         // Do any additional setup after loading the view.
         // let image = PRODUCT.imgproduct[]
@@ -250,54 +248,54 @@ UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
-    //    func settinguplabels(){
-    //
-    //        TitleProduct.text = self.Item?.Title
-    //        Description.text = self.Item?.description
-    //        Price.text = self.Item?.Price
-    //        City.text = self.Item?.City
-    //        SellerName.text = self.Item?.sellerName
-    //
-    //        //tags
-    //        companyname.text = self.Item?.factoryName
-    //        Years.text = self.Item?.year
-    //        carname.text = self.Item?.carname
-    //        cartype.text = self.Item?.type
-    //        piece.text = self.Item?.category
-    //
-    //        print("------------------")
-    //        print(companyname.text)
-    //        print(Years.text)
-    //        print(carname.text)
-    //
-    //
-    //
-    //
-    //    }
-    func settinguplabels(){
-        
-        TitleProduct.text = self.PRODUCT.producttitle
-        Description.text = self.PRODUCT.productdescription
-        Price.text = self.PRODUCT.Price + "ريال"
-        City.text = self.PRODUCT.City
-        // SellerName.text = self.PRODUCT.sellername
-        
-        // self.City.text = value?["city"] as? String
-        
-        //tags
-        companyname.text = self.PRODUCT.Companyname
-        Years.text = self.PRODUCT.year
-        carname.text = self.PRODUCT.carname
-        cartype.text = self.PRODUCT.type
-        piece.text = self.PRODUCT.Category
-        
-        //  print(self.PRODUCT.)
-        print(self.PRODUCT.year)
-        
-        
-        
-        
-    }
+        func settinguplabels(){
+    
+            TitleProduct.text = self.Item?.Title
+            Description.text = self.Item?.description
+            Price.text = self.Item?.Price
+            City.text = self.Item?.City
+            SellerName.text = self.Item?.sellerName
+    
+            //tags
+            companyname.text = self.Item?.factoryName
+            Years.text = self.Item?.year
+            carname.text = self.Item?.carname
+            cartype.text = self.Item?.type
+            piece.text = self.Item?.category
+    
+            print("------------------")
+            print(companyname.text)
+            print(Years.text)
+            print(carname.text)
+    
+    
+    
+    
+        }
+//    func settinguplabels(){
+//
+//        TitleProduct.text = self.PRODUCT.producttitle
+//        Description.text = self.PRODUCT.productdescription
+//        Price.text = self.PRODUCT.Price + "ريال"
+//        City.text = self.PRODUCT.City
+//        // SellerName.text = self.PRODUCT.sellername
+//
+//        // self.City.text = value?["city"] as? String
+//
+//        //tags
+//        companyname.text = self.PRODUCT.Companyname
+//        Years.text = self.PRODUCT.year
+//        carname.text = self.PRODUCT.carname
+//        cartype.text = self.PRODUCT.type
+//        piece.text = self.PRODUCT.Category
+//
+//        //  print(self.PRODUCT.)
+//        print(self.PRODUCT.year)
+//
+//
+//
+//
+//    }
     
     func configureTabelView() {
         CommentsTable.rowHeight = UITableViewAutomaticDimension

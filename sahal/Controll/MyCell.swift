@@ -9,7 +9,6 @@
 import UIKit
 import DropDown
 class MyCell: DropDownCell {
-    @IBOutlet weak var suffixLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

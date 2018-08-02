@@ -26,6 +26,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
     @IBOutlet var tableproduct: UITableView!
     
     @IBAction func BuyIconButton(_ sender: Any) {
+        //  Cart.sharedInstance.addProduct(product: )
     }
     
     
@@ -140,7 +141,7 @@ class HomeViewController: UIViewController , UITableViewDataSource, UITableViewD
         let itemID = self.ArrayOfitems[indexPath.row].ProductId
         let iteminfo = self.storyboard?.instantiateViewController(withIdentifier: "Viewproducttable") as! ProductDetilesViewController
         iteminfo.productID = itemID
-        iteminfo.showProductDetail()
+       // iteminfo.showProductDetail()
         
         self.navigationController?.pushViewController(iteminfo, animated: true)
         

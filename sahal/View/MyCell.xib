@@ -12,39 +12,28 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="Vsk-fY-dSC" customClass="MyCell" customModule="droptest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="210" height="40"/>
+        <view contentMode="scaleToFill" id="Vsk-fY-dSC" customClass="MyCell" customModule="sahal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="183" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="optionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su3-mX-zJQ">
-                    <rect key="frame" x="8" y="9" width="90" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="optionLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="su3-mX-zJQ">
+                    <rect key="frame" x="77" y="9" width="90" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="suffixLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5es-je-w9d">
-                    <rect key="frame" x="106" y="9" width="84" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="su3-mX-zJQ" secondAttribute="bottom" constant="10" id="1Rr-sU-7Q3"/>
-                <constraint firstItem="5es-je-w9d" firstAttribute="top" secondItem="Vsk-fY-dSC" secondAttribute="top" constant="9" id="B6v-Yu-HB9"/>
-                <constraint firstItem="5es-je-w9d" firstAttribute="leading" secondItem="su3-mX-zJQ" secondAttribute="trailing" constant="8" id="C3Z-cm-gcv"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5es-je-w9d" secondAttribute="trailing" constant="8" id="JDE-Gh-59p"/>
-                <constraint firstItem="su3-mX-zJQ" firstAttribute="leading" secondItem="Vsk-fY-dSC" secondAttribute="leading" constant="8" id="ewt-XH-TmF"/>
-                <constraint firstItem="su3-mX-zJQ" firstAttribute="top" secondItem="Vsk-fY-dSC" secondAttribute="top" constant="9" id="fri-ui-KC5"/>
-                <constraint firstAttribute="bottom" secondItem="5es-je-w9d" secondAttribute="bottom" constant="10" id="jZL-gu-a8n"/>
+                <constraint firstItem="5Xl-m5-aLy" firstAttribute="bottom" secondItem="su3-mX-zJQ" secondAttribute="bottom" constant="10" id="dwv-F5-gj0"/>
+                <constraint firstItem="5Xl-m5-aLy" firstAttribute="trailing" secondItem="su3-mX-zJQ" secondAttribute="trailing" constant="16" id="hfh-Oe-WJv"/>
+                <constraint firstItem="su3-mX-zJQ" firstAttribute="top" secondItem="5Xl-m5-aLy" secondAttribute="top" constant="9" id="nLh-bK-ubO"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="5Xl-m5-aLy"/>
             <connections>
                 <outlet property="optionLabel" destination="su3-mX-zJQ" id="fl0-6g-k5H"/>
-                <outlet property="suffixLabel" destination="5es-je-w9d" id="vdP-th-dfq"/>
             </connections>
             <point key="canvasLocation" x="-15" y="169"/>
         </view>
