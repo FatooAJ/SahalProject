@@ -1,10 +1,4 @@
-//
-//  sellerHomeController.swift
-//  sahal
-//
-//  Created by Ghufran nour  on 05/11/1439 AH.
-//  Copyright © 1439 wadimakkah. All rights reserved.
-//
+
 
 import UIKit
 import Firebase
@@ -189,11 +183,6 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-       // print("Seller Id : \(sellerId!)\nSeller Id : \(currentUserId!)")
-        
-        
          let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! productCell
         print("Number of items inside cell for row at: \(self.product.count)")
         
@@ -221,7 +210,11 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
         let url = product[indexPath.row].imgproduct[0]
         //print(url)
         cell.imageCell?.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "noimage"))
+        cell.delegate = self
         
+//        cell.editeButton.tag = indexPath.row
+//        cell.editeButton.addTarget(self , action: #selector(editeProduct) , for: .touchUpInside )
+//        
         
        // cell.imageCell.image = UIImage(named: "location")
         
@@ -242,8 +235,28 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
         return cell
     }
     
+//    @IBAction func editeProduct(sender : UIButton){
+//
+//        let titleString = self.product.inde
+//    }
+//
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//         self.performSegue(withIdentifier: "showEditing", sender: self)
+//    }
 
    
+}
+extension sellerHomeController : productCellProtocol {
 
-    
+    func editButtonSelected(title: String) {
+        let alertTitle = "Edite Title"
+        let message = "\(title) , will be edited"
+
+        let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+        present(alert , animated: true , completion: nil )
+    }
 }

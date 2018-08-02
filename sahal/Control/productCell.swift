@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol productCellProtocol {
+    func editButtonSelected(title : String )
+}
+
 class productCell: UITableViewCell {
+    
+    var productItem : Product!
+    var delegate : productCellProtocol?
 
     @IBOutlet weak var mainBackground: UIView!
     @IBOutlet weak var shadowBackground: UIView!
@@ -16,6 +23,9 @@ class productCell: UITableViewCell {
     @IBOutlet weak var imageCell: UIImageView!
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var productDescription: UILabel!
+    @IBOutlet weak var editeButton: CustomSerachButton!
+    
+    
     
     func setProduct (product : Product) {
         //imageCell.image = UIImageView(named: product.img )
@@ -44,5 +54,11 @@ class productCell: UITableViewCell {
             self.layer.rasterizationScale = UIScreen.main.scale
         }
     }
+    
+    
+    @IBAction func editeButton(_ sender: CustomSerachButton) {
+        delegate?.editButtonSelected(title: "Hi" )
+    }
+    
     
 }

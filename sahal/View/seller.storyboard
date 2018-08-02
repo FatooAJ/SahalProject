@@ -403,14 +403,6 @@
             </objects>
             <point key="canvasLocation" x="-2367" y="4080"/>
         </scene>
-        <!--Main-->
-        <scene sceneID="FsK-IG-lh3">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="x6r-6W-Y2n" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M2F-Dx-hSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-301" y="3757"/>
-        </scene>
         <!--العمليات السابقة -->
         <scene sceneID="JbA-KD-ZRR">
             <objects>
@@ -587,6 +579,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xkc-hL-AoD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noContent" translatesAutoresizingMaskIntoConstraints="NO" id="ljc-S3-NTD">
+                                        <rect key="frame" x="23" y="216" width="329" height="208"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="لم تقم بإضافة أي منتجات بعد " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJO-vL-d3Z">
+                                        <rect key="frame" x="97" y="462" width="181" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.77565878880000005" green="0.77191164489999997" blue="0.77940593270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lZj-KP-Scp">
                                 <rect key="frame" x="0.0" y="162" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -635,6 +645,9 @@
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="139" id="VDJ-j3-oXD"/>
                                                             </constraints>
                                                             <state key="normal" title="     التعــــديل " backgroundImage="Button"/>
+                                                            <connections>
+                                                                <action selector="editeButton:" destination="CSg-7R-meL" eventType="touchUpInside" id="b9X-Je-zfw"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -678,24 +691,6 @@
                                     <outlet property="prefetchDataSource" destination="ioC-CB-9zV" id="25g-Jy-cGK"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xkc-hL-AoD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noContent" translatesAutoresizingMaskIntoConstraints="NO" id="ljc-S3-NTD">
-                                        <rect key="frame" x="23" y="216" width="329" height="208"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="لم تقم بإضافة أي منتجات بعد " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJO-vL-d3Z">
-                                        <rect key="frame" x="97" y="462" width="181" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                        <color key="textColor" red="0.77565878880000005" green="0.77191164489999997" blue="0.77940593270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -710,11 +705,39 @@
                     <connections>
                         <outlet property="emptyContent" destination="Xkc-hL-AoD" id="CNn-sL-GjI"/>
                         <outlet property="tableView" destination="lZj-KP-Scp" id="EDd-6W-lVg"/>
+                        <segue destination="FgL-eU-943" kind="show" identifier="showEditing" id="e5g-v6-MQc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAS-fy-NFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-48.799999999999997" y="3158.8669950738918"/>
+        </scene>
+        <!--editing-->
+        <scene sceneID="TUI-Ao-ckr">
+            <objects>
+                <viewController id="FgL-eU-943" userLabel="editing" customClass="editeProduct" customModule="sahal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t1b-Mu-GfY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asn-bx-UWa">
+                                <rect key="frame" x="142" y="372" width="78" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xl3-2J-GaC"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleLable" destination="asn-bx-UWa" id="Zl9-Io-kCa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TH8-hR-jTz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="4000"/>
         </scene>
         <!--الملف الشخصي-->
         <scene sceneID="HUh-6Z-dCF">
