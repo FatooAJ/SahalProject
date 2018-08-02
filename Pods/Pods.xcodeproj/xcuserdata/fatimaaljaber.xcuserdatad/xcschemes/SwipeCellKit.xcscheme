@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "66FE8791C37C02737D9973F6A75C1120"
-               BlueprintName = "TextFieldEffects"
+               BlueprintIdentifier = "4C098AB920E75E19D0CD7605BE87642C"
+               BlueprintName = "SwipeCellKit"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "TextFieldEffects.framework">
+               BuildableName = "SwipeCellKit.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

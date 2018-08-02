@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "66FE8791C37C02737D9973F6A75C1120"
-               BlueprintName = "TextFieldEffects"
+               BlueprintIdentifier = "580E12FA5DD96ED7F8784AEDD03009D7"
+               BlueprintName = "SCLAlertView"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "TextFieldEffects.framework">
+               BuildableName = "SCLAlertView.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

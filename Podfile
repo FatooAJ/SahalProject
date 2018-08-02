@@ -19,6 +19,7 @@ pod 'TextFieldEffects'
   pod 'SDWebImage', '~> 4.0'
   # Latest release in CocoaPods
   pod 'SwipeCellKit'
+  pod 'SCLAlertView'
   
 
   
