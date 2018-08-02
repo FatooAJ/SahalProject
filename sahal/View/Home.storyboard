@@ -572,6 +572,9 @@
                                                     <constraint firstAttribute="width" constant="111" id="5QG-kt-LSO"/>
                                                     <constraint firstAttribute="height" constant="30" id="mqw-Sq-pP5"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="BuyIcon:" destination="0al-rI-BQ8" eventType="touchUpInside" id="5mw-df-JCK"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" عكس امامي يسار ازيرا ٢٠١٢عكس  عكس امامي يسار ازيرا ٢٠١٢عكس امامي يسار ازيرا ٢٠١٢عكس امامي يسار ازيرا ٢٠١٢امامي يسار ازيرا ٢٠١٢" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVX-Xk-Ooq">
                                                 <rect key="frame" x="129" y="363.33333333333331" width="224" height="39.666666666666686"/>
