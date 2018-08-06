@@ -20,6 +20,8 @@ class Product {
         self.description = description
     }
     
+
+    
     var imgproduct = [String]()
     var producttitle : String!
     var productdescription : String!
@@ -31,9 +33,9 @@ class Product {
     var productID : String!
     var year : String!
     var type : String!
-
     var carname : String!
     var SellerID : String!
+    var buyerID : String!
 
     
     
@@ -41,7 +43,7 @@ class Product {
         
       //  self.imgproduct = storageRef
         self.productID = productID
-        self.producttitle = dectionary["ItemName"] as? String
+        self.producttitle = dectionary["itemName"] as? String
         self.productdescription = dectionary["description"] as? String
         self.Price = dectionary["price"] as? String
         self.City = dectionary["city"] as? String
@@ -52,6 +54,7 @@ class Product {
         self.type = dectionary["type"] as? String
         self.carname = dectionary["carName"] as? String
         self.SellerID = dectionary["sellerId"] as? String
+        self.buyerID = dectionary["buyerId"] as? String
         self.imgproduct = []
     //    self.imgproduct = dectionary["images"] as? String
     

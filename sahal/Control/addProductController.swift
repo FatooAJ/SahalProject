@@ -25,6 +25,7 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     var imagesArray = [UIImage]()
     var imageURLs = [String]()
     var counter = 0
+    var itemId = ""
     
     
     @IBOutlet weak var radio1: DLRadioButton!
@@ -66,19 +67,19 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     @IBAction func radioButtons(_ sender: DLRadioButton) {
         switch sender.selected() {
         case radio1 :
-            selectedType = "electric"
+            selectedType = "محركات - وقود"
             print("\(selectedType!)")
             break
         case radio2 :
-            selectedType = "engine"
+            selectedType = "جير - شاسيه"
             print("\(selectedType!)")
             break
         case radio3 :
-            selectedType = "body"
+            selectedType = "بودي"
             print("\(selectedType!)")
             break
         case radio4 :
-            selectedType = "external"
+            selectedType = "كهرباء"
             print("\(selectedType!)")
             break
         default:
@@ -87,10 +88,7 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
     }
     @IBAction func selectImg(_ sender: UIButton) {
         
-        
-
         clickedButton = sender.restorationIdentifier
-        
 
         let actionSheet = UIAlertController(title: "Photo source", message: "Choose a sourse", preferredStyle: .actionSheet)
         
@@ -103,8 +101,6 @@ class addProductController: UIViewController , UIImagePickerControllerDelegate ,
                 
                 print("Camera is not available :) ")
             }
-            
-            
             
         }))
         
@@ -335,6 +331,8 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
        
         let status = "0"
         let sellerID = Auth.auth().currentUser?.uid
+        let itemId = "item\(NSUUID())"
+        self.itemId = itemId
         
         print("I'm inside handleAddingProduct")
 
@@ -343,7 +341,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
             if uploaded == true {
                 let urls = ["0":  self.imageURLs[0], "1":  self.imageURLs[1],"2":  self.imageURLs[2],"3":  self.imageURLs[3]]
                 
-                let value = ["itemImages":urls,"name":itemValue , "description":descriptionValue ,"city" : city , "category": category ,"factoryName" : brand  , "carName" : carName , "year" : model , "type" : part  , "price" : price , "status" : status , "sellerId" : sellerID! , "buyerId":"none",] as [String : Any]
+                let value = ["itemImages":urls,"itemName":itemValue , "description":descriptionValue ,"city" : city , "category": category ,"factoryName" : brand  , "carName" : carName , "year" : model , "type" : part  , "price" : price , "status" : status , "sellerId" : sellerID! , "buyerId":"none", "id" : itemId ] as [String : Any]
                 
                 
                 self.productUploading(values: value)
@@ -420,8 +418,7 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
     
     
     func productUploading(values: [String:Any]) {
-        
-        let itemRefrence = self.datatbaserefreence.child("item").childByAutoId()
+        let itemRefrence = self.datatbaserefreence.child("items").child("\(self.itemId)")
         itemRefrence.updateChildValues(values, withCompletionBlock: {(error, refrence) in
             if error != nil {
                 print(error!)
@@ -437,7 +434,6 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
               //  self.performSegue(withIdentifier: "main", sender: self)
                 
             }})
-        
     }
     
     func resetValues(){
@@ -456,6 +452,11 @@ extension addProductController : UIPickerViewDelegate , UIPickerViewDataSource {
         modelTextfeild.text = ""
         partTextfeild.text = ""
         counter = 0
+        radio1.isSelected = false
+        radio2.isSelected = false
+        radio3.isSelected = false
+        radio4.isSelected = false 
+        
         
         imagesArray.removeAll()
         imageURLs.removeAll()

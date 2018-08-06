@@ -94,7 +94,7 @@ class SignUpController: UIViewController {
             }
             
             let userDatabaserefrence = self.databaseRefrence.child("seller").child(uid)
-            let value = ["bR" : idValue , "company":companyValue , "number": phoneValue]
+            let value = ["bR" : idValue , "companyName":companyValue , "mobileNumber": phoneValue]
             userDatabaserefrence.updateChildValues(value , withCompletionBlock : {(error , reference) in
                 if error != nil {
                     print(error)

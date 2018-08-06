@@ -1,16 +1,15 @@
-
-
 import UIKit
 import Firebase
 import SVProgressHUD
 import SDWebImage
 
 class sellerHomeController: UIViewController , UITableViewDataSource , UITableViewDelegate {
-
     
     @IBOutlet weak var emptyContent: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    var editObj : editeProduct!
+    var editObjArray : [editeProduct] = []
     var productArray:[Product] = []
     var ref : DatabaseReference!
     var cell : productCell!
@@ -19,13 +18,16 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
     var productTiltle : String!
     var productID : String!
     
+    
+    
     func fetchSellerProduct() {
         let currentUserId = Auth.auth().currentUser?.uid
-        self.ref.child("item").observe(.childAdded) { (snapshots:DataSnapshot) in
+        self.ref.child("items").observe(.childAdded) { (snapshots:DataSnapshot) in
             if let dectionary = snapshots.value as? [String:AnyObject] {
-                print(dectionary)
-                self.productID = snapshots.key
-                print("**********************************\nprduct id : \(self.productID!)")
+                let count = dectionary.count
+                print("Number of items \(count)")
+               // self.productID = snapshots.key
+//                print("**********************************\n prduct id : \(self.productID!)")
                 let img = snapshots.childSnapshot(forPath: "itemImages")
                 let item = Product(dectionary: dectionary, productID: snapshots.key)
                 for count in 0...3 {
@@ -77,8 +79,6 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
     
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
-        
         
         var url = [String]()
         url.append(self.product[indexPath.row].imgproduct[0])
@@ -150,7 +150,7 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
         
         
         let productId = product[indexPath.row].productID
-        self.ref.child("item").child(productId!).removeValue { (error, ref) in
+        self.ref.child("items").child(productId!).removeValue { (error, ref) in
             if error != nil {
                 print("Faild tp delete the item")
             }
@@ -185,9 +185,7 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! productCell
         print("Number of items inside cell for row at: \(self.product.count)")
-        
-       
-        
+        cell.setProduct(product: product[indexPath.row])
         cell.productTitle?.text = product[indexPath.row].producttitle
         let statust = product[indexPath.row].status!
         switch statust {
@@ -249,14 +247,18 @@ class sellerHomeController: UIViewController , UITableViewDataSource , UITableVi
 }
 extension sellerHomeController : productCellProtocol {
 
-    func editButtonSelected(title: String) {
-        let alertTitle = "Edite Title"
-        let message = "\(title) , will be edited"
-
-        let alert = UIAlertController(title: alertTitle, message: message, preferredStyle: .alert)
-
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-
-        present(alert , animated: true , completion: nil )
+    func editButtonSelected(title: String , id: String) {
+        editObj = editeProduct()
+        editObj.setId(id: id)
+        self.productID = id
+//        let alert = UIAlertController(title: "Alert", message: id , preferredStyle: UIAlertControllerStyle.alert)
+//        alert.addAction(UIAlertAction(title: title , style: UIAlertActionStyle.default, handler: nil))
+//        self.present(alert, animated: true)
+        performSegue(withIdentifier: "showEditing", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let edit : editeProduct = segue.destination as! editeProduct
+        edit.id = self.productID!
     }
 }

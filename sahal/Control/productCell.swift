@@ -9,13 +9,14 @@
 import UIKit
 
 protocol productCellProtocol {
-    func editButtonSelected(title : String )
+    func editButtonSelected(title : String ,  id : String )
 }
 
 class productCell: UITableViewCell {
     
     var productItem : Product!
     var delegate : productCellProtocol?
+    var editObj : editeProduct!
 
     @IBOutlet weak var mainBackground: UIView!
     @IBOutlet weak var shadowBackground: UIView!
@@ -23,16 +24,12 @@ class productCell: UITableViewCell {
     @IBOutlet weak var imageCell: UIImageView!
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var productDescription: UILabel!
-    @IBOutlet weak var editeButton: CustomSerachButton!
     
     
     
     func setProduct (product : Product) {
-        //imageCell.image = UIImageView(named: product.img )
-        imageCell.image = UIImage(named: product.img)
-        productTitle?.text = product.title
-        productDescription.text = product.description
-      //  UIImageView(named: "" )
+        productItem = product
+        
     }
     
     
@@ -57,7 +54,10 @@ class productCell: UITableViewCell {
     
     
     @IBAction func editeButton(_ sender: CustomSerachButton) {
-        delegate?.editButtonSelected(title: "Hi" )
+        delegate?.editButtonSelected(title:productItem.producttitle , id : productItem.productID )
+        let id = productItem.productID
+        print(id!)
+        
     }
     
     

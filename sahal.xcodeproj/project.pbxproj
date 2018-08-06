@@ -11,12 +11,13 @@
 		9274CAB13E0AF9A113C7AC19 /* Pods_sahal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025092249F48B9B332184DCB /* Pods_sahal.framework */; };
 		C65766DF2105C2E900F7DDEF /* OperationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65766DE2105C2E900F7DDEF /* OperationController.swift */; };
 		C661C62D210387CC0087BAB3 /* OperationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661C62C210387CC0087BAB3 /* OperationModel.swift */; };
-		C661C63321045B9D0087BAB3 /* ooerationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661C63221045B9D0087BAB3 /* ooerationCell.swift */; };
+		C661C63321045B9D0087BAB3 /* operationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661C63221045B9D0087BAB3 /* operationCell.swift */; };
 		C68ACF4420FC403700CCB3AB /* seller.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68ACF4320FC403700CCB3AB /* seller.storyboard */; };
 		C68ACF4820FC4C1100CCB3AB /* segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68ACF4720FC4C1100CCB3AB /* segment.swift */; };
 		C68ACF4B20FC4DB800CCB3AB /* sellerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68ACF4920FC4DB800CCB3AB /* sellerVC.swift */; };
 		C69A7141210DB4C300D0F490 /* passwordRecovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A7140210DB4C300D0F490 /* passwordRecovery.swift */; };
 		C69A71632111A43100D0F490 /* editeProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A71622111A43000D0F490 /* editeProduct.swift */; };
+		C69A71652116ADB100D0F490 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A71642116ADB100D0F490 /* Order.swift */; };
 		C6C3D58E20FC853A00A35137 /* logIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3D58D20FC853A00A35137 /* logIn.swift */; };
 		C6C3D5E520FCC07500A35137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C3D5E420FCC07500A35137 /* AppDelegate.swift */; };
 		C6C3D5E820FCC10400A35137 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C3D5E620FCC10400A35137 /* LaunchScreen.storyboard */; };
@@ -112,12 +113,13 @@
 		BC70CB6DC4B092C210EA275C /* Pods-sahalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sahalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sahalUITests/Pods-sahalUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C65766DE2105C2E900F7DDEF /* OperationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationController.swift; sourceTree = "<group>"; };
 		C661C62C210387CC0087BAB3 /* OperationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationModel.swift; sourceTree = "<group>"; };
-		C661C63221045B9D0087BAB3 /* ooerationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ooerationCell.swift; sourceTree = "<group>"; };
+		C661C63221045B9D0087BAB3 /* operationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = operationCell.swift; sourceTree = "<group>"; };
 		C68ACF4320FC403700CCB3AB /* seller.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = seller.storyboard; sourceTree = "<group>"; };
 		C68ACF4720FC4C1100CCB3AB /* segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segment.swift; sourceTree = "<group>"; };
 		C68ACF4920FC4DB800CCB3AB /* sellerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sellerVC.swift; sourceTree = "<group>"; };
 		C69A7140210DB4C300D0F490 /* passwordRecovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordRecovery.swift; sourceTree = "<group>"; };
 		C69A71622111A43000D0F490 /* editeProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editeProduct.swift; sourceTree = "<group>"; };
+		C69A71642116ADB100D0F490 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		C6C3D58D20FC853A00A35137 /* logIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logIn.swift; sourceTree = "<group>"; };
 		C6C3D5E420FCC07500A35137 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C3D5E720FCC10400A35137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -257,7 +259,7 @@
 		C68ACF4D20FC761600CCB3AB /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				C661C63221045B9D0087BAB3 /* ooerationCell.swift */,
+				C661C63221045B9D0087BAB3 /* operationCell.swift */,
 				C65766DE2105C2E900F7DDEF /* OperationController.swift */,
 				C6C712A52105C180009F6336 /* OperationViewController.swift */,
 				C6C712A72105C1BE009F6336 /* OperationHeaderView.swift */,
@@ -286,6 +288,7 @@
 				CBD8B47821061712009519B0 /* BuyerProfile.swift */,
 				CB133175210B3A47003213F2 /* SellerProfile.swift */,
 				CB133179210D0250003213F2 /* Comments.swift */,
+				C69A71642116ADB100D0F490 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -675,13 +678,14 @@
 				CB0B91F620FB5B36004E0FF6 /* ViewController.swift in Sources */,
 				CBF872B62103CE9500C61A28 /* Table.swift in Sources */,
 				CBF872C02103CF7C00C61A28 /* PaymentViewController.swift in Sources */,
-				C661C63321045B9D0087BAB3 /* ooerationCell.swift in Sources */,
+				C661C63321045B9D0087BAB3 /* operationCell.swift in Sources */,
 				C68ACF4B20FC4DB800CCB3AB /* sellerVC.swift in Sources */,
 				CB6E7D952103D93000D9E995 /* MyorderViewController.swift in Sources */,
 				CB6E7D972103D98000D9E995 /* MyorderTableViewCell.swift in Sources */,
 				CB1251ED20FDBAC200117A21 /* MyCell.swift in Sources */,
 				C6C3D66220FF9D4600A35137 /* sellerHomeController.swift in Sources */,
 				CBF872B82103CEE700C61A28 /* SearchResultCollectionViewCell.swift in Sources */,
+				C69A71652116ADB100D0F490 /* Order.swift in Sources */,
 				C6C712A62105C181009F6336 /* OperationViewController.swift in Sources */,
 				C6C3D67120FFBD7300A35137 /* Operation.swift in Sources */,
 				CB133178210B3ABF003213F2 /* ProfileSellerViewController.swift in Sources */,
